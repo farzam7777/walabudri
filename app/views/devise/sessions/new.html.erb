@@ -1,0 +1,60 @@
+<section class="subheader">
+  <div class="container">
+    <h1>Login</h1>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Login</a></div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<section class="module login">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-4"> 
+        <p>Don't have an account? <strong><a href="<%= new_user_registration_path %>">Register here.</a></strong></p> 
+        <form method="post" class="login-form">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), :class => "login-form") do |f| %>
+          <div class="form-block">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, style: "margin-top: -4%;", :class => "border" %>
+          </div>
+          <div class="form-block">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off", style: "margin-top: -4%;", :class => "border" %>
+          </div>
+          <% if devise_mapping.rememberable? -%>
+            <div class="form-block" style="margin-bottom: 6%;">
+              <%= f.label :remember_me %>
+              <%= f.check_box :remember_me, style: "float: right; margin-top: -7.5%; margin-right: 55%;" %>
+            </div>
+          <% end -%>
+          <div class="form-block">
+            <button class="button button-icon" type="submit"><i class="fa fa-angle-right"></i>Login</button>
+          </div>
+          <div class="form-block" style="margin-top: 5%;">
+            <%= render "devise/shared/links" %>
+          </div>  
+          <div class="divider"></div>    
+        <% end %>
+      </div>
+    </div><!-- end row -->
+
+  </div>
+</section>
+
+<section class="module cta newsletter" style="background-color: #59aee9">
+  <div class="container">
+  <div class="row">
+    <div class="col-lg-7 col-md-7">
+      <h3>Sign up for our <strong>newsletter.</strong></h3>
+      <p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+    </div>
+    <div class="col-lg-5 col-md-5">
+      <form method="post" id="newsletter-form" class="newsletter-form">
+        <input type="email" placeholder="Your email..." />
+        <button type="submit" form="newsletter-form"><i class="fa fa-send"></i></button>
+      </form>
+    </div>
+  </div><!-- end row -->
+  </div><!-- end container -->
+</section>
