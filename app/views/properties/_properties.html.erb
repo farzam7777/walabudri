@@ -1,3 +1,10 @@
+<% flash.each do |key,value| %>
+  <div class="alert-box success" style="width: 35%; margin-left: 32%; margin-top: 2%; margin-bottom: -3%; ">
+    <span style="float: left"><i class="fa fa-check icon"></i></span>
+    <p id="notice" style="margin-bottom: 0%;"><%= value %></p>
+  </div>
+<% end %>
+
 <% @properties.each do |property| %>
 			
 	<div class="property property-row property-row-sidebar shadow-hover">

@@ -9,6 +9,7 @@ gem 'high_voltage', '~> 3.0'
 gem "paperclip", "~> 5.0.0"
 gem 'geocoder'
 gem 'devise'
+gem "cancan"
 #gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 #gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem 'kaminari'
@@ -33,9 +34,9 @@ gem 'rails_12factor', group: :production
 gem 'pg', :group => :production
 
 group :development, :test do
+
   gem 'byebug', platform: :mri
 end
-
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

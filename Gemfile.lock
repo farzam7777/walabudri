@@ -69,6 +69,7 @@ GEM
     arel (7.1.4)
     bindex (0.5.0)
     builder (3.2.3)
+    cancan (1.6.10)
     climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -239,6 +240,7 @@ DEPENDENCIES
   activeadmin!
   bcrypt!
   byebug
+  cancan
   coffee-rails (~> 4.2)
   devise
   geocoder

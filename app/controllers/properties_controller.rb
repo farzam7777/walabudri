@@ -25,10 +25,12 @@ class PropertiesController < ApplicationController
 
   def edit
   	@property = Property.find(params[:id])
+  	authorize! :update, @property 
   end
 
   def update
   	@property = Property.find(params[:id])
+  	authorize! :update, @property
 
     if @property.update_attributes(property_params)
   	  redirect_to property_path, :notice => "Your Property has been Updated. "
@@ -40,6 +42,13 @@ class PropertiesController < ApplicationController
   def show
   	@property = Property.find(params[:id])
   end
+
+  def destroy
+  	@property = Property.find(params[:id])
+  	authorize! :destroy, @property
+  	@property.destroy
+  	redirect_to properties_path, :notice => "Your Location has been Deleted. "
+  end	
 
   def property_params
 	params.require(:property).permit!

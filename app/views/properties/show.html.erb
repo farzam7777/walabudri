@@ -28,7 +28,12 @@
             <div class="clear"></div>
 					</div>
 					<div class="property-single-tags">
-						 <div class="property-tag button alt featured"><%= link_to "Edit", edit_property_path(@property), style: "color: white;" %></div>
+						<% if can? :update, @property %>
+						 	<div class="property-tag button alt featured"><%= link_to "Edit", edit_property_path(@property), style: "color: white;" %></div>
+						 <% end %>
+						 <% if can? :destroy, @property %>
+						 	<div class="property-tag button alt2 featured"><%= link_to "Delete", property_path(@property), style: "color: white;", method: :delete, data: {confirm: "You sure?"} %></div>
+						 <% end %>	
 						<div class="property-tag button status">For Rent</div> 
 						<div class="property-type right">Property Type: <a href="#"><%= @property.listing_type %></a></div>
 					</div>
@@ -74,32 +79,33 @@
 
 			</div><!-- end property title and gallery -->
 
-			<!-- ImageAdd Form -->
-			<div class="widget property-single-item property-agent">
-				<h4>
-					<span>Add Images</span> <%= image_tag "images/divider-half.png", :class => "divider-hex" %>
-					<div class="divider-fade"></div>
-				</h4>
-				<div>
-					<%= form_for ([@property, @property.images.build]), :html => {:class => "login-form", multipart: true} do |f| %>
-			          
-			          <div class="form-block">
-			            <label style="margin-bottom: -2%;">Upload Image</label><br>
-			            <%= f.file_field :image, autofocus: true, :class => "border", style: "padding-left: 4px;" %>
-			          </div>
+			<% if can? :create, @property.images.build %>
+				<!-- ImageAdd Form -->
+				<div class="widget property-single-item property-agent">
+					<h4>
+						<span>Add Images</span> <%= image_tag "images/divider-half.png", :class => "divider-hex" %>
+						<div class="divider-fade"></div>
+					</h4>
+					<div>
+						<%= form_for ([@property, @property.images.build]), :html => {:class => "login-form", multipart: true} do |f| %>
+				          
+				          <div class="form-block">
+				            <label style="margin-bottom: -2%;">Upload Image</label><br>
+				            <%= f.file_field :image, autofocus: true, :class => "border", style: "padding-left: 4px;" %>
+				          </div>
 
-			          <div class="form-block">
-			            <button class="button button-icon" type="submit"><i class="fa fa-angle-right"></i>Add</button>
-			          </div>
+				          <div class="form-block">
+				            <button class="button button-icon" type="submit"><i class="fa fa-angle-right"></i>Add</button>
+				          </div>
 
-			          <div class="divider"></div>
+				          <div class="divider"></div>
 
-			        <% end %>  
-			        <div class="clear"></div>
-			    </div>
-			</div>
-			<!-- End ImageAdd Form -->
-
+				        <% end %>  
+				        <div class="clear"></div>
+				    </div>
+				</div>
+				<!-- End ImageAdd Form -->
+			<% end %>	
 			<div class="widget property-single-item property-description content">
 				<h4>
 					<span>Description</span> <%= image_tag "images/divider-half.png", :class => "divider-hex" %>

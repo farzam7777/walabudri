@@ -36,6 +36,7 @@
         </div>
         <div class="top-bar-right right">
         <% if user_signed_in? %>
+          <p style="float: left;margin-top: 2%;color: green;font-size: medium;">Welcome! <%= current_user.email %></p>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "top-bar-item" %><div class="clear"></div>
         <% else %> 
           <a href="<%= new_user_session_path %>" class="top-bar-item"><i class="fa fa-sign-in icon"></i>Login</a>
