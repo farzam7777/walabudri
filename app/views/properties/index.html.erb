@@ -6,9 +6,16 @@
   </div>
 </section>
 
+<% flash.each do |key,value| %>
+  <div class="alert-box success" style="width: 35%; margin-left: 7.6%; margin-top: 2%; margin-bottom: -3%; ">
+    <span style="float: left"><i class="fa fa-check icon"></i></span>
+    <p id="notice" style="margin-bottom: 0%;"><%= value %></p>
+  </div>
+<% end %>
+
 <section class="module">
   <div class="container">
-  
+
 	<div class="row">
 		<div class="col-lg-8 col-md-8">
 		

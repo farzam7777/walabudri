@@ -47,7 +47,7 @@ class PropertiesController < ApplicationController
   	@property = Property.find(params[:id])
   	authorize! :destroy, @property
   	@property.destroy
-  	redirect_to properties_path, :notice => "Your Location has been Deleted. "
+  	redirect_to properties_path, :notice => "Your Property has been Deleted. "
   end	
 
   def property_params

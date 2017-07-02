@@ -68,6 +68,9 @@ GEM
       activesupport (>= 3.0.0)
     arel (7.1.4)
     bindex (0.5.0)
+    bootstrap-kaminari-views (0.0.5)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     builder (3.2.3)
     cancan (1.6.10)
     climate_control (0.2.0)
@@ -239,6 +242,7 @@ DEPENDENCIES
   active_skin
   activeadmin!
   bcrypt!
+  bootstrap-kaminari-views
   byebug
   cancan
   coffee-rails (~> 4.2)
