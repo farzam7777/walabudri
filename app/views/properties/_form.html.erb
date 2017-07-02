@@ -112,6 +112,6 @@
           <%= f.text_area :description, :class => "border" %>
         </div>
 
-        <span><%= f.submit "Submit", style: "float: right;" %></span>
+        <span><%= f.submit "Submit", style: "float: right;", data: {toggle: "modal", target: "#myModal"} %></span>
 
     <% end %>

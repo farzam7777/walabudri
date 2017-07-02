@@ -17,6 +17,7 @@ gem 'bootstrap-kaminari-views'
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_skin'
 gem 'active_admin_theme'
+gem 'data-confirm-modal', github: 'ifad/data-confirm-modal', branch: 'bootstrap2'
 
 gem 'rails', '~> 5.0.3'
 gem 'puma', '~> 3.0'

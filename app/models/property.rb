@@ -9,4 +9,7 @@ class Property < ApplicationRecord
 	geocoded_by :address
 	after_validation :geocode, :if => :address_changed?
 
+	scope :published, ->{ where(isPublished: 1) }
+	scope :unpublished, ->{ where(isPublished: 0) }
+
 end

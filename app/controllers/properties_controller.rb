@@ -1,6 +1,6 @@
 class PropertiesController < ApplicationController
   def index
-  	@properties = Property.order(:id => :DESC).all
+  	@properties = Property.order(:id => :DESC).where(isPublished: 1)
   	@properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
   	@count = 0
   end

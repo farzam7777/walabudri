@@ -18,6 +18,21 @@
   
 	<div class="row">
 		<div class="col-lg-8 col-md-8">
+
+			<% if !@property.isPublished %>
+				<!-- ImageAdd Form -->
+				<div class="widget property-single-item property-agent">
+					<h4>
+						<span>Important Notice</span> <%= image_tag "images/divider-half.png", :class => "divider-hex" %>
+						<div class="divider-fade"></div>
+					</h4>
+					<div>
+						<p>Your Property is unpublished yet. In order to make it Published contact us. We will further guide you. As soon as your property gets live this notice will be disappeared. Thank you</p>  
+				        <div class="clear"></div>
+				    </div>
+				</div>
+				<!-- End ImageAdd Form -->
+			<% end %>	
 		
 			<div class="property-single-item property-main">
 				<div class="property-header">
@@ -29,12 +44,18 @@
 					</div>
 					<div class="property-single-tags">
 						<% if can? :update, @property %>
-						 	<div class="property-tag button alt featured"><%= link_to "Edit", edit_property_path(@property), style: "color: white;" %></div>
+						 	<div class="property-tag button alt featured"><%= link_to "Edit", 	edit_property_path(@property), style: "color: white;" %></div>
 						 <% end %>
+						 <% if @property.isPublished != false %>
+						 	<div class="property-tag button status"><%= link_to "Published", edit_property_path(@property), style: "color: white;" %></div>
+						 <% else %>
+						 	<div class="property-tag button status"><%= link_to "UnPublished", edit_property_path(@property), style: "color: white;" %></div>
+						 <% end %>	
+
 						 <% if can? :destroy, @property %>
 						 	<div class="property-tag button alt2 featured"><%= link_to "Delete", property_path(@property), style: "color: white;", method: :delete, data: {confirm: "You sure?"} %></div>
 						 <% end %>	
-						<div class="property-tag button status">For Rent</div> 
+
 						<div class="property-type right">Property Type: <a href="#"><%= @property.listing_type %></a></div>
 					</div>
 				</div>

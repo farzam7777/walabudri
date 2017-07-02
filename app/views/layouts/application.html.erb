@@ -16,8 +16,26 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <style type="text/css">
-      .slidess{
-        background-image: url('<%= asset_path 'images/slider-img2.jpg' %>');
+      .modal  {
+    /*   display: block;*/
+    padding-right: 0px;
+    background-color: rgba(4, 4, 4, 0.8); 
+    }
+   
+    .modal-dialog {
+            top: 20%;
+                width: 100%;
+    position: absolute;
+        }
+        .modal-content {
+                border-radius: 0px;
+                border: none;
+    top: 40%;
+            }
+            .modal-body {
+                    background-color: #0f8845;
+    color: white;
+                }
       }
     </style>
   </head>
@@ -139,7 +157,6 @@
 
   </div><!-- end container -->
 </header>
-
 
   <body>
 
