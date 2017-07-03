@@ -14,9 +14,11 @@ class Ability
     
     can :destroy, Property do |property|
         property.user == user
+    end  
+    
+    if user ||= User.new
+        can :manage, Image, :property => { :user_id => user.id }
     end
-
-    can :manage, Image, :property => { :user_id => user.id }        
 
     # Define abilities for the passed in user here. For example:
     #
