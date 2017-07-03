@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  	has_many :properties	
+  	has_many :properties, :dependent => :destroy	
 		
 	# Include default devise modules. Others available are:
 	# :confirmable, :lockable, :timeoutable and :omniauthable
