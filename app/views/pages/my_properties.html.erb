@@ -1,0 +1,74 @@
+<%
+	@properties = current_user.properties
+  	@properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
+ %>
+
+<section class="subheader">
+  <div class="container">
+    <h1>My Properties</h1>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">My Properties</a></div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<section class="module my-properties">
+  <div class="container">
+  
+	<div class="row">
+		<%= render "sidebar" %>
+
+		<div class="col-lg-9 col-md-9">
+			<table class="my-properties-list">
+			  <tr>
+				<th>Image</th>
+				<th>Property</th>
+				<th>Post Status</th>
+				<th>Date Created</th>
+				<th>Actions</th>
+			  </tr>
+			  <% @properties.each do |property| %>
+				  <tr>
+					<td class="property-img"><a href="property-single.html"><%= image_tag property.image.url %></a></td>
+					<td class="property-title">
+						<a href="property-single.html"><%= property.title %></a><br/>
+						<p class="property-address"><i class="fa fa-map-marker icon"></i><%= property.address %></p>
+						<p><strong><%= number_to_currency(property.price) %></strong></p>
+					</td>
+					<td class="property-post-status"><span class="button small alt"><%= isPublished_status(property.isPublished) %></span></td>
+					<td class="property-date"><%= property.created_at.strftime("%m/%d/%Y") %></td>
+					<td class="property-actions">
+						<a href="<%= property_path(property) %>"><i class="fa fa-eye icon"></i>View</a>
+						<a href="<%= edit_property_path(property) %>"><i class="fa fa-pencil icon"></i>Edit</a>
+						<a><i class="fa fa-close icon"></i></a><%= link_to "Delete", property_path(property),  method: :delete, data: {confirm: "You sure?"}, style: "margin-left: -6%;" %>
+					</td>
+				  </tr>
+			  <% end %>
+			  
+			</table>
+			
+			<span style="margin-left: 45%;"><%= paginate @properties, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination-small pagination-centered" %></span>
+			
+			<div class="clear"></div>
+			
+		</div><!-- end col -->
+	</div><!-- end row -->
+
+  </div><!-- end container -->
+</section>
+
+<section class="module cta newsletter" style="background-color: #59aee9">
+  <div class="container">
+	<div class="row">
+		<div class="col-lg-7 col-md-7">
+			<h3>Sign up for our <strong>newsletter.</strong></h3>
+			<p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+		</div>
+		<div class="col-lg-5 col-md-5">
+			<form method="post" id="newsletter-form" class="newsletter-form">
+				<input type="email" placeholder="Your email..." />
+				<button type="submit" form="newsletter-form"><i class="fa fa-send"></i></button>
+			</form>
+		</div>
+	</div><!-- end row -->
+  </div><!-- end container -->
+</section>

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
   get 'images/new'
 
   get 'images/create'
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
   get 'properties/show'
 
   resources :properties do
-    resources :images
+    resources :images 
   end  
 
 
