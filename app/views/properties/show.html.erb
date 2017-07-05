@@ -46,7 +46,7 @@
 						<% if can? :update, @property %>
 						 	<div class="property-tag button alt featured"><%= link_to "Edit", 	edit_property_path(@property), style: "color: white;" %></div>
 						 <% end %>
-						 <% if @property.isPublished != false %>
+						 <% if @property.isPublished == 1 %>
 						 	<div class="property-tag button status"><%= link_to "Published", edit_property_path(@property), style: "color: white;" %></div>
 						 <% else %>
 						 	<div class="property-tag button status"><%= link_to "UnPublished", edit_property_path(@property), style: "color: white;" %></div>
