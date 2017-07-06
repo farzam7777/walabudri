@@ -5,6 +5,16 @@ class PropertiesController < ApplicationController
   	@count = 0
   end
 
+  def mark_favorite
+    @favorite  = Favorite.new(:property_id => params[:id])
+    @favorite.user_id = current_user.id
+    if @favorite.save
+      redirect_to property_path(@favorite.property_id), :notice => "You have marked this property as Favorite. "
+    else
+      redirect_to property_path(@favorite.property_id), :notice => "Your Property is not Marked as Favorite. "
+    end 
+  end
+
   def new
   	if user_signed_in?
   		@property = Property.new
@@ -19,7 +29,7 @@ class PropertiesController < ApplicationController
   	if @property.save
   		redirect_to property_path(@property), :notice => "Your Property has been Saved. "
   	else
-  		render new	
+  		render 'new'	
   	end 
   end	
 

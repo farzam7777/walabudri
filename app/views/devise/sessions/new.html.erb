@@ -14,6 +14,7 @@
         <p>Don't have an account? <strong><a href="<%= new_user_registration_path %>">Register here.</a></strong></p> 
         <form method="post" class="login-form">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), :class => "login-form") do |f| %>
+          <%= devise_error_messages! %>
           <div class="form-block">
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true, style: "margin-top: -4%;", :class => "border" %>
@@ -27,7 +28,7 @@
               <%= f.label :remember_me %>
               <%= f.check_box :remember_me, style: "float: right; margin-top: -7.5%; margin-right: 55%;" %>
             </div>
-          <% end -%>
+          <% end %>
           <div class="form-block">
             <button class="button button-icon" type="submit"><i class="fa fa-angle-right"></i>Login</button>
           </div>

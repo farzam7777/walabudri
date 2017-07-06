@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :favorites, only: ['index']
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -17,7 +19,10 @@ Rails.application.routes.draw do
   get 'properties/show'
 
   resources :properties do
-    resources :images 
+    resources :images
+    member do
+      get 'mark_favorite'
+    end 
   end  
 
 

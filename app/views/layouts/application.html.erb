@@ -55,8 +55,10 @@
         </div>
         <div class="top-bar-right right">
         <% if user_signed_in? %>
-          <p style="float: left;margin-top: 2%;color: green;font-size: medium;">Welcome! <%= current_user.email %></p>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "top-bar-item" %><div class="clear"></div>
+          <p style="float: left;margin-top: 2.8%;color: green;font-size: medium;margin-left: -7%; margin-right: 6%;">Welcome! <%= current_user.email %></p>
+          <span><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "top-bar-item", style: "margin-top: -1%; margin-right: 2%; margin-left: -2%;" %></span>
+          <%= link_to "", edit_user_registration_path, :class => "fa fa-user", style: "font-size: 26px; margin-top: 1%; text-decoration: none" %> 
+          <div class="clear"></div>
         <% else %> 
           <a href="<%= new_user_session_path %>" class="top-bar-item"><i class="fa fa-sign-in icon"></i>Login</a>
           <a href="<%= new_user_registration_path %>" class="top-bar-item"><i class="fa fa-user-plus icon"></i>Register</a>
@@ -147,10 +149,7 @@
         
             </ul>
           </li>
-          <li><a href="<%= page_path('contact') %>">Contact</a></li>
-          <% if user_signed_in? %>
-            <li><a href="<%= edit_user_registration_path %>">User Profile</a></li>
-          <% end %>  
+          <li><a href="<%= page_path('contact') %>">Contact</a></li> 
         </ul>
         <div class="clear"></div>
 

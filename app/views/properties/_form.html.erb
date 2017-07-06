@@ -8,11 +8,11 @@
     <div id="error_explanation">
         <h2><%= pluralize(@property.errors.count, "error") %> prohibited this Property from being submitted:</h2>
 
-        <ul>
+        <ol>
           <% @property.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
+              <li style="font-size: 17px; color: red; margin-left: 2%;"><%= msg %></li>
           <% end %>
-        </ul>
+        </ol>
     </div>  
 <% end %> 
 
@@ -112,6 +112,8 @@
           <%= f.text_area :description, :class => "border" %>
         </div>
 
-        <span><%= f.submit "Submit", style: "float: right;", data: {toggle: "modal", target: "#myModal"} %></span>
+        <span><%= f.submit "Submit", style: "float: right;" %></span>
+
+        <!-- <span><%= f.submit "Submit", style: "float: right;", data: {toggle: "modal", target: "#myModal"} %></span> -->
 
     <% end %>
