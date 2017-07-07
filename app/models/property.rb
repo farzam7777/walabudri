@@ -29,4 +29,8 @@ class Property < ApplicationRecord
 	validates :address, length: { minimum: 10 }
 	validates :description, length: { minimum: 15 }
 
+	def to_param
+		"#{id} #{title}".parameterize
+	end
+
 end
