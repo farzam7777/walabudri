@@ -1,7 +1,7 @@
 <section class="subheader">
   <div class="container">
     <h1><%= @property.title %></h1>
-    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> Properties <i class="fa fa-angle-right"></i> <a href="#" class="current"><%= @property.title %></a></div>
+    <div class="breadcrumb right"> <%= link_to "Home", page_path('index') %> <i class="fa fa-angle-right"></i> <%= link_to "Properties", properties_path %> <i class="fa fa-angle-right"></i> <a href="#" class="current"><%= @property.title %></a></div>
     <div class="clear"></div>
   </div>
 </section> 	

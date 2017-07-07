@@ -6,7 +6,7 @@
 <section class="subheader">
   <div class="container">
     <h1>My Properties</h1>
-    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">My Properties</a></div>
+    <div class="breadcrumb right"> <%= link_to "Home", page_path('index') %> <i class="fa fa-angle-right"></i> <a href="#" class="current"> Properties </a> </div>
     <div class="clear"></div>
   </div>
 </section>
@@ -18,7 +18,8 @@
 		<%= render "sidebar" %>
 
 		<div class="col-lg-9 col-md-9">
-			<table class="my-properties-list">
+		<% if @properties.count > 0 %>
+			<table class="my-properties-list">	
 			  <tr>
 				<th>Image</th>
 				<th>Property</th>
@@ -45,7 +46,9 @@
 			  <% end %>
 			  
 			</table>
-			
+		<% else %>
+			<p align="center" class="no-properties">You have not listed any properties yet. </p>
+		<% end %>		
 			<span style="margin-left: 45%;"><%= paginate @properties, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination-small pagination-centered" %></span>
 			
 			<div class="clear"></div>
