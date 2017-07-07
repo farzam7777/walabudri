@@ -125,7 +125,7 @@
 			<div class="widget widget-sidebar recent-properties">
 			  <h4><span>Recent Properties</span> <%= image_tag "images/divider-half.png" %></h4>
 			  <div class="widget-content">
-			  <% @recents = Property.first(3) %>
+			  <% @recents = Property.order(id: :desc).where(:isPublished => 1).first(3) %>
 			  <% @recents.each do |recent| %>	
 				
 				<div class="recent-property">
