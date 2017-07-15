@@ -14,6 +14,8 @@ class Property < ApplicationRecord
 
 	scope :published, ->{ where(isPublished: 1) }
 	scope :unpublished, ->{ where(isPublished: 0) }
+	scope :featured, ->{ where(isFeatured: 1) }
+	scope :not_featured, ->{ where(isFeatured: 0) }
 
 	validates :title, presence: true
 	validates :address, presence: true
@@ -25,7 +27,6 @@ class Property < ApplicationRecord
 	validates :price, presence: true
 	validates :availibility, presence: true
 	validates :image, presence: true
-
 	validates :address, length: { minimum: 10 }
 	validates :description, length: { minimum: 15 }
 

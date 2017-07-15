@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170706180502) do
+ActiveRecord::Schema.define(version: 20170715184228) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "namespace"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20170706180502) do
     t.float    "longitude",          limit: 24
     t.integer  "user_id"
     t.integer  "isPublished",                      default: 0
+    t.integer  "isFeatured",                       default: 0
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
