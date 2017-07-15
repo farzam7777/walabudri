@@ -1,8 +1,18 @@
 class PropertiesController < ApplicationController
   def index
-  	@properties = Property.order(:id => :DESC).where(isPublished: 1)
-  	@properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
-  	@count = 0
+    
+    if params[:q].present?
+      @search_properties = @search.result
+      @properties = @search_properties.where(:isPublished => 1)
+      @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
+      @locations = Property.distinct.pluck(:location)  
+      @count = @properties.count           
+    else
+      @properties = Property.where(:isPublished => 1).all
+      @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
+      @locations = Property.distinct.pluck(:location)
+      @count = 0;
+    end  
   end
 
   def mark_favorite
@@ -13,6 +23,16 @@ class PropertiesController < ApplicationController
     else
       redirect_to property_path(@favorite.property_id), :notice => "Your Property is not Marked as Favorite. "
     end 
+  end
+
+  def search
+    @search = Property.search(params[:q])
+    @properties = @search.result
+    @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
+    @locations = Property.distinct.pluck(:location)
+
+    @count = 0;
+    render "index"
   end
 
   def new
@@ -50,7 +70,9 @@ class PropertiesController < ApplicationController
   end	
 
   def show
+    @search = Property.ransack(params[:q])  
   	@property = Property.find(params[:id])
+    @locations = Property.distinct.pluck(:location)  
   end
 
   def destroy

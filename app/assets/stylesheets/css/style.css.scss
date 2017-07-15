@@ -28,6 +28,32 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  /* 01 RESET
 /*====================================================================================*/
 
+html, body{
+  min-height: 0!important;
+  height: auto!important;
+  position: inherit!important;
+}
+
+.goog-te-banner{
+  display: none;
+}
+
+.goog-logo-link{
+  display: none !important;
+}
+
+.goog-te-banner-frame{
+  display: none;
+}
+
+.goog-te-gadget{
+   color: transparent !important;
+}
+
+.goog-te-gadget .goog-te-combo{
+   color: black !important;
+}
+
 .img-style{
 	width: 750px;
     position: relative;
@@ -104,7 +130,7 @@ body {
 }
 
 .left { float:left; }
-.right { float:right; }
+.right { float:right; margin-top: 1.5%;}
 .center { text-align:center; margin:0 auto; }
 .clear { clear:both; }
 .show-none { display:none; }
@@ -401,7 +427,8 @@ header { background:white; width:100%; position:relative; z-index:1000; }
 .top-bar {
 	background:#e8ebf3;
 	color:#838893;
-	font-size:12px;
+	font-size: 14px;
+	margin-top: -3.5%;
 }
 
 .top-bar a { color:#838893; }

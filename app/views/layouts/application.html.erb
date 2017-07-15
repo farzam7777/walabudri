@@ -39,10 +39,11 @@
           background-color: #0f8845;
           color: white;
         }
+
     </style>
   </head>
 
- <header class="header-default">
+ <header class="header-default" style="margin-top: 3%;">
 
   <div class="top-bar">
     <div class="container">
@@ -51,18 +52,25 @@
             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
             <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li>
+              <div id="google_translate_element"></div><script type="text/javascript">
+              function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+              }
+              </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            </li>
           </ul>
           <div class="clear"></div>
         </div>
         <div class="top-bar-right right">
         <% if user_signed_in? %>
-          <p style="float: left;margin-top: 2.8%;color: green;font-size: medium;margin-left: -7%; margin-right: 6%;">Welcome! <%= current_user.email %></p>
+          <p style="float: left;margin-top: 2.8%;color: green;font-size: medium;margin-left: -7%; margin-right: 6%;">Welcome <%= current_user.email %></p>
           <span><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "top-bar-item", style: "margin-top: -1%; margin-right: 2%; margin-left: -2%;" %></span>
           <%= link_to "", edit_user_registration_path, :class => "fa fa-user", style: "font-size: 26px; margin-top: 1%; text-decoration: none" %> 
           <div class="clear"></div>
         <% else %> 
-          <a href="<%= new_user_session_path %>" class="top-bar-item"><i class="fa fa-sign-in icon"></i>Login</a>
-          <a href="<%= new_user_registration_path %>" class="top-bar-item"><i class="fa fa-user-plus icon"></i>Register</a>
+          <a href="<%= new_user_session_path %>" class="top-bar-item"><i class="fa fa-sign-in icon"></i> Login </a>
+          <a href="<%= new_user_registration_path %>" class="top-bar-item"><i class="fa fa-user-plus icon"></i> Register </a>
           <div class="clear"></div>
         <% end %> 
         
@@ -82,10 +90,14 @@
               <tr>
               <td><i class="fa fa-search"></i></td>
               <td class="header-item-text">
-                <form class="search-form">
-                  <input type="text" placeholder="Search..." />
-                  <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
+                  
+                <%= search_form_for @search do |f| %>
+                  <div class="form-block border"> 
+                    <%= f.text_field :title_cont, placeholder: "Search by Title", class: "border" %>
+                    <button type="submit" style="float: right; margin-top: -10%; padding-right: 6px"><i class="fa fa-search"></i></button>  
+                  </div>
+                <% end %>  
+
               </td>
             </tr>
           </table>
@@ -129,7 +141,7 @@
     <!-- main menu -->
     <div class="navbar-collapse collapse">
       <div class="main-menu-wrap">
-        <div class="container-fixed">
+        <div class="container-fixed" style="margin-top: -1.5%;">
 
         <div class="member-actions right">
           <a href="<%= new_property_path %>" class="button small alt button-icon"><i class="fa fa-plus"></i>Submit Property</a>
@@ -152,8 +164,7 @@
   </div><!-- end container -->
 </header>
 
-  <body>
-
+  <body style="top: 40px;">
     <%= yield %>
   </body>
 

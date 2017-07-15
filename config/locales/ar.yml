@@ -19,15 +19,15 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+ar:
   pages:
     index:
-      title: "Find your new home today." 
-      image-description: "We would love to make your life easier when it comes to find a suitable property for you. " 
-  
+      title: "العثور على منزلك الجديد اليوم."  
+      image-description: "كنا نحب أن تجعل حياتك أسهل عندما يتعلق الأمر العثور على الممتلكات المناسبة بالنسبة لك."
+
   layouts:
     application:
-      login: "Login"
-      register: "Register"
-      logout: "Logout"
-      welcome: "Welcome!"    
+      login: "تسجيل الدخول"
+      register: "تسجيل"
+      logout: "الخروج"
+      welcome: "أهلا بك!"

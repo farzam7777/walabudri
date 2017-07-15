@@ -10,6 +10,7 @@ gem "paperclip", "~> 5.0.0"
 gem 'geocoder'
 gem 'devise'
 gem "cancan"
+gem 'ransack'
 #gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 #gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem 'kaminari'

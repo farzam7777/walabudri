@@ -33,4 +33,12 @@ class Property < ApplicationRecord
 		"#{id} #{title}".parameterize
 	end
 
+	def self.search(search)
+		if(search)
+			where(["title LIKE ? AND isPublished = ?","%#{search}%", "1"])
+		else
+			order(:id => :DESC).where(isPublished: 1)
+		end	
+	end
+
 end

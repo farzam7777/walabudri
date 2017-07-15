@@ -1,0 +1,58 @@
+<div class="col-lg-4 col-md-4 sidebar">
+		
+<div class="widget widget-sidebar sidebar-properties advanced-search">
+  <h4><span>Advanced Search</span> <%= image_tag "images/divider-half.png" %> </h4>
+  <div class="widget-content box">
+  	<%= search_form_for @search do |f| %>
+
+	  <div class="form-block border">	
+	  	<%= f.label :title_cont, "Title" %>
+	  	<%= f.text_field :title_cont, placeholder: "Any", class: "border" %>	
+	  </div>
+
+	  <div class="form-block border">
+		<%= f.label :location_cont %>
+		<%= f.select :location_cont, options_for_select(@locations), prompt: "Select Location", class: "border" %>
+	  </div>
+	  
+	   <div class="form-block">
+		<label>Price</label>
+		<%= f.number_field :price_gteq, class: "area-filter border", placeholder: "Min Price", min: 0 %>
+		<%= f.number_field :price_lteq, class: "area-filter border", placeholder: "Max Price", min: 0 %>
+		<div class="clear"></div>
+	  </div>
+
+	  <div class="form-block">
+		<label>Beds</label>
+		<%= f.number_field :bedrooms_gteq, class: "area-filter border", placeholder: "Min Beds", min: 0 %>
+		<%= f.number_field :bedrooms_lteq, class: "area-filter border", placeholder: "Max Beds", min: 0 %>
+		<div class="clear"></div>
+	  </div>
+
+	  <div class="form-block">
+		<label>Baths</label>
+		<%= f.number_field :bath_gteq, class: "area-filter border", placeholder: "Min Baths", min: 0 %>
+		<%= f.number_field :bath_lteq, class: "area-filter border", placeholder: "Max Baths", min: 0 %>
+		<div class="clear"></div>
+	  </div>
+
+	  <div class="form-block">
+		<label>Area</label>
+		<%= f.number_field :area_gteq, class: "area-filter border", placeholder: "Min Area in Sq/Ft", min: 0 %>
+		<%= f.number_field :area_lteq, class: "area-filter border", placeholder: "Max Area in Sq/Ft", min: 0 %>
+		<div class="clear"></div>
+	  </div> 
+
+	  <div class="form-block">
+		<input type="submit" class="button" value="Find Properties" />
+	  </div> 
+	  
+	  <% if @count != 0 %>
+		  <div class="form-block">
+		  	<%= link_to "Cancel Search", properties_path, class: "button" %>
+		  </div>
+	  <% end %>
+
+	<% end %>
+  </div><!-- end widget content -->
+</div><!-- end widget -->
