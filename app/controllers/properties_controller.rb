@@ -1,7 +1,7 @@
 class PropertiesController < ApplicationController
   def index
     
-    if params[:q].present?
+    if params[:q].present? && @search.result
       @search_properties = @search.result
       @properties = @search_properties.where(:isPublished => 1)
       @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
@@ -11,7 +11,7 @@ class PropertiesController < ApplicationController
       @properties = Property.where(:isPublished => 1).all
       @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
       @locations = Property.distinct.pluck(:location)
-      @count = 0;
+      @count = @properties.count;
     end  
   end
 
@@ -26,12 +26,11 @@ class PropertiesController < ApplicationController
   end
 
   def search
-    @search = Property.search(params[:q])
-    @properties = @search.result
+    @properties = Property.where(:isPublished => 1).all
     @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
     @locations = Property.distinct.pluck(:location)
-
-    @count = 0;
+    @count = @properties.count;
+    
     render "index"
   end
 
@@ -49,7 +48,7 @@ class PropertiesController < ApplicationController
   	if @property.save
   		redirect_to property_path(@property), :notice => "Your Property has been Saved. "
   	else
-  		render 'new'	
+  		render :new
   	end 
   end	
 
@@ -72,7 +71,7 @@ class PropertiesController < ApplicationController
   def show
     @search = Property.ransack(params[:q])  
   	@property = Property.find(params[:id])
-    @locations = Property.distinct.pluck(:location)  
+    @locations = Property.distinct.pluck(:location)
   end
 
   def destroy

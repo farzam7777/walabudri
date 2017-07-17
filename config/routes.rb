@@ -15,7 +15,11 @@ Rails.application.routes.draw do
 
     collection do 
       get 'search'
-    end    
+    end  
+
+    collection do
+      post :search, to: 'properties#index'
+    end  
   end  
 
 

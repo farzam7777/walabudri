@@ -43,13 +43,14 @@
             <div class="clear"></div>
 					</div>
 					<div class="property-single-tags">
+						<div class="property-tag button status" style="background: blueviolet"><%= link_to @property.tag, "#", style: "color: white;" %></div>
 						<% if can? :update, @property %>
 						 	<div class="property-tag button alt featured"><%= link_to "Edit", 	edit_property_path(@property), style: "color: white;" %></div>
 						 <% end %>
 						 <% if @property.isPublished == 1 %>
-						 	<div class="property-tag button status"><%= link_to "Published", edit_property_path(@property), style: "color: white;" %></div>
+						 	<div class="property-tag button status"><%= link_to "Published", "#", style: "color: white;" %></div>
 						 <% else %>
-						 	<div class="property-tag button status"><%= link_to "Pending", edit_property_path(@property), style: "color: white;" %></div>
+						 	<div class="property-tag button status"><%= link_to "Pending", "#", style: "color: white;" %></div>
 						 <% end %>	
 
 						 <% if can? :destroy, @property %>

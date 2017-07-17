@@ -16,104 +16,145 @@
     </div>  
 <% end %> 
 
-<%= form_for @property, html: {multipart: true} do |f| %>
+ <%= form_for @property, html: {multipart: true} do |f| %>
 
-  <div class="multi-page-form-content active">
+      <div class="multi-page-form-content active">
 
-    <table class="property-submit-title">
-      <tr>
-        <td><span class="property-submit-num">1</span></td>
-        <td>
-          <h4>Submit Property</h4>
-          <p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-        </td>
-      </tr>
-    </table>
+        <table class="property-submit-title">
+          <tr>
+            <td><span class="property-submit-num">1</span></td>
+            <td>
+              <h4>Submit Property</h4>
+              <p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+            </td>
+          </tr>
+        </table>
 
-    <div class="form-block m-bottom">	
-      <%= f.label :title %>
-      <%= f.text_field :title, :class => "border required" %>
-    </div>
-
-    <div class="form-block m-bottom"> 
-      <%= f.label :address %>
-      <%= f.text_field :address, :class => "border required" %>
-    </div>
-
-    <div class="row" style="margin-bottom: 5%;">
-      <div class="col-lg-6 col-md-6">
-        <div class="form-block">
-          <label>Listing Type</label>
-          <span style="font-weight: 500">Apartment</span> <%= radio_button("property", "listing_type", "Apartment", style: "margin-left: 4%; margin-right: 4%;margin-top: 3%;") %>
-          <span style="font-weight: 500">House</span> <%= radio_button("property", "listing_type", "House", style: "margin-left: 4%; margin-right: 4%;") %>
-          <span style="font-weight: 500">Villa</span> <%= radio_button("property", "listing_type", "Villa", style: "margin-left: 4%; margin-right: 4%;") %>
-          <span style="font-weight: 500">Office</span> <%= radio_button("property", "listing_type", "Office", style: "margin-left: 4%; margin-right: 4%;") %>
+        <div class="form-block m-bottom">	
+          <%= f.label :title %>
+          <%= f.text_field :title, :class => "border required" %>
         </div>
-      </div>
-      <div class="col-lg-6 col-md-6">
-        <div class="form-block">
-          <label>Property Location</label>
-          <span style="font-weight: 500">Khartoum</span> <%= radio_button("property", "location", "Khartoum", style: "margin-left: 4%; margin-right: 4%;margin-top: 3%;") %>
-          <span style="font-weight: 500">Bahri</span> <%= radio_button("property", "location", "Bahri", style: "margin-left: 4%; margin-right: 4%;") %>
-          <span style="font-weight: 500">Omdurman</span> <%= radio_button("property", "location", "Omdurman", style: "margin-left: 4%; margin-right: 4%;") %>
-        </div>
-      </div>
-    </div>
 
-    <div class="row" style="margin-bottom: 3%;">
-      <div class="col-lg-4 col-md-4">
-        <div class="form-block">
-          <label>Rent Price</label>
-      	  <%= f.number_field :price, :class => "border required", min: 0, placeholder: "Price Per Month" %>
+        <div class="form-block m-bottom"> 
+          <%= f.label :address %>
+          <%= f.text_field :address, :class => "border required" %>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-4">
-        <div class="form-block">
-          <%= f.label :area %>
-      	  <%= f.number_field :area, :class => "border required", min: 0, placeholder: "Area in Sq Ft" %>
+
+        <div class="row" style="margin-bottom: 5%;">
+          <div class="col-lg-6 col-md-6">
+            <div class="form-block">
+              <label>Listing Tag</label>
+              
+              <span style="font-weight: 500">Rent</span> 
+              <%= radio_button("property", "tag", "Rent", style: "margin-left: 4%; margin-right: 4%;margin-top: 3%;", onclick: "display_listing_type_option('rent')") %>
+              
+              <span style="font-weight: 500">Buy</span> 
+              <%= radio_button("property", "tag", "Buy", style: "margin-left: 4%; margin-right: 4%;", onclick: "display_listing_type_option('buy')") %>
+              
+              <span style="font-weight: 500">Sell</span> 
+              <%= radio_button("property", "tag", "Sell", style: "margin-left: 4%; margin-right: 4%;", onclick: "display_listing_type_option('sell')") %>
+              
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="form-block">
+              <label>Property Location</label>
+              <span style="font-weight: 500">Khartoum</span> <%= radio_button("property", "location", "Khartoum", style: "margin-left: 4%; margin-right: 4%;margin-top: 3%;") %>
+              <span style="font-weight: 500">Bahri</span> <%= radio_button("property", "location", "Bahri", style: "margin-left: 4%; margin-right: 4%;") %>
+              <span style="font-weight: 500">Omdurman</span> <%= radio_button("property", "location", "Omdurman", style: "margin-left: 4%; margin-right: 4%;") %>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-4">
-        <div class="form-block">
-          <label>Property Availability</label>
-      	  <%= f.date_field :availibility, :class => "border required" %>
+
+        <div class="row" style="margin-bottom: 3%;">
+          <div class="col-lg-4 col-md-4">
+            <div class="form-block">
+              <label>Rent Price</label>
+          	  <%= f.number_field :price, :class => "border required", min: 0, placeholder: "Price Per Month" %>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="form-block">
+              <%= f.label :area %>
+          	  <%= f.number_field :area, :class => "border required", min: 0, placeholder: "Area in Sq Ft" %>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="form-block">
+              <label>Property Availability</label>
+          	  <%= f.date_field :availibility, :class => "border required" %>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="row" style="margin-bottom: 3%;">
-      <div class="col-lg-4 col-md-4">
-        <div class="form-block">
-          <%= f.label :bedrooms %>
-      	  <%= f.number_field :bedrooms, :class => "border required", min: 0 %>
+        <div class="row" style="margin-bottom: 3%;">
+          <div class="col-lg-4 col-md-4">
+            <div class="form-block">
+              <%= f.label :bedrooms %>
+          	  <%= f.number_field :bedrooms, :class => "border required", min: 0 %>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="form-block">
+              <label>Bathrooms</label>
+          	  <%= f.number_field :bath, :class => "border required", min: 0 %>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="form-block">
+              <label style="float: left;margin-top: 12%">Furnished</label>
+              <%= f.check_box :furnished, :class => "border required", style: "margin-top: 13%; margin-left: 6%;" %>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-4">
-        <div class="form-block">
-          <label>Bathrooms</label>
-      	  <%= f.number_field :bath, :class => "border required", min: 0 %>
+
+        <div class="form-block" style="margin-bottom: 4%;">
+          <label style="margin-bottom: -1%;">Listing Type</label>
+          
+          <span style="font-weight: 500;">Apartment</span> 
+          <%= radio_button("property", "listing_type", "Apartment", style: "margin-left: 1%; margin-right: 3%;margin-top: 3%;") %>
+          
+          <span style="font-weight: 500">House</span> 
+          <%= radio_button("property", "listing_type", "House", style: "margin-left: 1%; margin-right: 3%;") %>
+          
+          <span style="font-weight: 500">Villa</span> 
+          <%= radio_button("property", "listing_type", "Villa", style: "margin-left: 1%; margin-right: 3%;") %>
+          
+          <span style="font-weight: 500">Office</span> 
+          <%= radio_button("property", "listing_type", "Office", style: "margin-left: 1%; margin-right: 3%;") %>
+          
+          <span style="font-weight: 500">Farm House</span> 
+          <%= radio_button("property", "listing_type", "Farm House", style: "margin-left: 1%; margin-right: 3%;") %>
+          
+          <span id="sale_tag" style="display: none"> 
+            <span style="font-weight: 500">Empty Land</span> <%= radio_button("property", "listing_type", "Empty Land", style: "margin-left: 1%; margin-right: 3%;") %> 
+          </span>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-4">
-        <div class="form-block">
-          <label style="float: left;margin-top: 12%">Furnished</label>
-          <%= f.check_box :furnished, :class => "border required", style: "margin-top: 13%; margin-left: 6%;" %>
+
+        <div class="form-block" style="margin-bottom: 3%;">	
+          <label>Upload Main Image</label>
+          <%= f.file_field :image, :class => "border required", style: "padding-left: 4px;" %>
         </div>
-      </div>
-    </div>
 
-    <div class="form-block" style="margin-bottom: 3%;">	
-      <label>Upload Main Image</label>
-      <%= f.file_field :image, :class => "border required", style: "padding-left: 4px;" %>
-    </div>
+        <div class="form-block" style="margin-bottom: 3%;">
+          <label>Description</label>
+          <%= f.text_area :description, :class => "border" %>
+        </div>
 
-    <div class="form-block" style="margin-bottom: 3%;">
-      <label>Description</label>
-      <%= f.text_area :description, :class => "border" %>
-    </div>
+        <span><%= f.submit "Submit", style: "float: right;" %></span>
 
-    <span><%= f.submit "Submit", style: "float: right;" %></span>
+        <!-- <span><%= f.submit "Submit", style: "float: right;", data: {toggle: "modal", target: "#myModal"} %></span> -->
 
-    <!-- <span><%= f.submit "Submit", style: "float: right;", data: {toggle: "modal", target: "#myModal"} %></span> -->
+    <% end %>
 
-<% end %>
+    <script type="text/javascript">
+      function display_listing_type_option(param){
+        if (param != 'sell'){
+          $("#property_listing_type_empty_land").attr("checked", false);
+          //$("#sale_tag").fadeOut(500)
+        }
+        else{
+          $("#sale_tag").fadeIn(500);
+        }
+      }
+    </script>

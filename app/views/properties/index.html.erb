@@ -21,7 +21,11 @@
 		
 			<div class="property-listing-header">
 				<% if @count != 0 %>
-					<span class="property-count left"> <%= @count %> properties found</span>
+					<strong> 
+						<span class="property-count left"> <%= @count %> properties found</span> 
+					</strong>
+				<% else %>
+					<strong> <p>No Properties Found. </p> </strong>	
 				<% end %>	
 				<!-- <div class="property-layout-toggle right">
 					<a href="property-listing-grid-sidebar.html" class="property-layout-toggle-item"><i class="fa fa-th-large"></i></a>

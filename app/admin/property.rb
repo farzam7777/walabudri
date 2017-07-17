@@ -3,6 +3,9 @@ ActiveAdmin.register Property do
 	permit_params :title, :listing_type, :location, :isPublished, :bedrooms, :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id
 
 	scope :all
+	scope :rent
+	scope :buy
+	scope :sell
 	scope :published
 	scope :unpublished
 	scope :featured

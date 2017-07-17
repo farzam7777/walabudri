@@ -16,6 +16,9 @@ class Property < ApplicationRecord
 	scope :unpublished, ->{ where(isPublished: 0) }
 	scope :featured, ->{ where(isFeatured: 1) }
 	scope :not_featured, ->{ where(isFeatured: 0) }
+	scope :rent, ->{ where(tag: "Rent") }
+	scope :buy, ->{ where(tag: "Buy") }
+	scope :sell, ->{ where(tag: "Sell") }
 
 	validates :title, presence: true
 	validates :address, presence: true
@@ -23,12 +26,20 @@ class Property < ApplicationRecord
 	validates :location, presence: true
 	validates :bedrooms, presence: true
 	validates :bath, presence: true
+	validates :tag, presence: true
 	validates :area, presence: true
 	validates :price, presence: true
 	validates :availibility, presence: true
 	validates :image, presence: true
 	validates :address, length: { minimum: 10 }
 	validates :description, length: { minimum: 15 }
+	validate :empty_land_option_for_sell_tag
+
+	def empty_land_option_for_sell_tag
+		if self.listing_type == "Empty Land" && self.tag != "Sell"
+			errors.add(:tag, "must be selected. ")
+		end
+	end
 
 	def to_param
 		"#{id} #{title}".parameterize
