@@ -1,6 +1,6 @@
 ActiveAdmin.register Property do
 
-	permit_params :title, :listing_type, :location, :isPublished, :bedrooms, :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id
+	permit_params :title, :listing_type, :location, :isPublished, :bedrooms, :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id, :near_by_location
 
 	scope :all
 	scope :rent

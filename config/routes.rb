@@ -11,16 +11,20 @@ Rails.application.routes.draw do
     
     member do
       get 'mark_favorite'
-    end 
+    end
 
     collection do 
       get 'search'
-    end  
+    end
 
     collection do
       post :search, to: 'properties#index'
-    end  
-  end  
+    end
+    
+    collection do 
+      get 'neighbour_hood_locations'
+    end
+  end
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

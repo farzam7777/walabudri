@@ -33,6 +33,15 @@ class PropertiesController < ApplicationController
     
     render "index"
   end
+  
+  def neighbour_hood_locations
+    @properties = Property.near(params[:neighbourhoods], 2)
+    @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
+    @locations = Property.distinct.pluck(:location)
+    @count = @properties.count;
+    
+    render "index"
+  end
 
   def new
   	if user_signed_in?

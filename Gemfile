@@ -11,8 +11,6 @@ gem 'geocoder'
 gem 'devise'
 gem "cancan"
 gem 'ransack'
-#gem 'will_paginate', '~> 3.1', '>= 3.1.6'
-#gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'activeadmin', github: 'activeadmin'
@@ -34,7 +32,7 @@ gem 'mysql2', '>= 0.3.18', '< 0.5', :group => [:development, :test]
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
 gem 'rails_12factor', group: :production
-gem 'pg', :group => :production
+gem 'pg', '~> 0.21.0', group: :production
 
 group :development, :test do
 
