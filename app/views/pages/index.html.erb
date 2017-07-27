@@ -51,20 +51,20 @@
 
   <div class="container">
     <div class="module-header">
-      <h2>Featured <strong>Properties</strong></h2>
+      <h2>Featured <strong>Properties</strong> For Sell</h2>
       <%= image_tag "images/divider.png" %>
       <p>Morbi accumsan ipsum velit nam nec tellus a odiose tincidunt auctor a ornare odio sed non mauris vitae erat consequat auctor</p>
     </div>
   </div>
 
-  <div class="slider-nav slider-nav-properties-featured">
+  <div class="slider-nav slider-nav-properties-featured-for-sell">
     <span class="slider-prev"><i class="fa fa-angle-left"></i></span>
     <span class="slider-next"><i class="fa fa-angle-right"></i></span>
   </div>
   
   <div class="slider-wrap">
     <div class="slider slider-featured">
-    <% @featureds = Property.all.where(isFeatured: 1) %>
+    <% @featureds = Property.all.where(isFeatured: 1, tag: "Sell") %>
     <% @featureds.each do |featured| %>
       <div class="property property-hidden-content slide">
         <a href="<%= property_path(featured) %>" class="property-content">
@@ -83,7 +83,54 @@
         <a href="<%= property_path(featured) %>" class="property-img">
             <div class="img-fade"></div>
             <div class="property-tag button alt featured">Featured</div>
-            <div class="property-tag button status">For Rent</div>
+            <div class="property-tag button status">For <%= featured.tag.capitalize %></div>
+            <div class="property-price">$ <%= featured.price %> </div>
+            <div class="property-color-bar"></div>
+            <%= image_tag featured.image.url, style: "height: 210px; width: 100%;" %>
+        </a>
+      </div>
+    <% end %>
+    </div><!-- end slider -->
+  </div><!-- end slider wrap -->
+</section>
+
+<section class="module no-padding properties featured" style="margin-top: 5%;">
+
+  <div class="container">
+    <div class="module-header">
+      <h2>Featured <strong>Properties</strong> For Rent</h2>
+      <%= image_tag "images/divider.png" %>
+      <p>Morbi accumsan ipsum velit nam nec tellus a odiose tincidunt auctor a ornare odio sed non mauris vitae erat consequat auctor</p>
+    </div>
+  </div>
+
+  <div class="slider-nav slider-nav-properties-featured-for-rent">
+    <span class="slider-prev"><i class="fa fa-angle-left"></i></span>
+    <span class="slider-next"><i class="fa fa-angle-right"></i></span>
+  </div>
+  
+  <div class="slider-wrap" style="margin-top: 4%;">
+    <div class="slider slider-featured2">
+    <% @featureds = Property.all.where(isFeatured: 1, tag: "Rent") %>
+    <% @featureds.each do |featured| %>
+      <div class="property property-hidden-content slide">
+        <a href="<%= property_path(featured) %>" class="property-content">
+          <div class="property-title">
+            <h4> <%= featured.title %> </h4>
+            <p class="property-address"><i class="fa fa-map-marker icon"></i> <%= featured.address %> </p>
+          </div>
+          <table class="property-details">
+            <tr>
+              <td><i class="fa fa-bed"></i>  <%= featured.bedrooms %>  Beds</td>
+              <td><i class="fa fa-tint"></i>  <%= featured.bath %>  Baths</td>
+              <td><i class="fa fa-expand"></i>  <%= featured.area %>  Meter Sq</td>
+            </tr>
+          </table>
+        </a>
+        <a href="<%= property_path(featured) %>" class="property-img">
+            <div class="img-fade"></div>
+            <div class="property-tag button alt featured">Featured</div>
+            <div class="property-tag button status">For <%= featured.tag.capitalize %></div>
             <div class="property-price">$ <%= featured.price %> </div>
             <div class="property-color-bar"></div>
             <%= image_tag featured.image.url, style: "height: 210px; width: 100%;" %>

@@ -57,8 +57,38 @@ jQuery(document).ready(function($) {
 	//SLICK SLIDER - FEATURED PROPERTIES
 	/***************************************************************************/
 	$('.slider.slider-featured').slick({
-		prevArrow: $('.slider-nav-properties-featured .slider-prev'),
-		nextArrow: $('.slider-nav-properties-featured .slider-next'),
+		prevArrow: $('.slider-nav-properties-featured-for-sell .slider-prev'),
+		nextArrow: $('.slider-nav-properties-featured-for-sell .slider-next'),
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		responsive: [
+			{
+			  breakpoint: 990,
+			  settings: {
+				slidesToShow: 3,
+				slidesToScroll: 1
+			  }
+			},
+			{
+			  breakpoint: 767,
+			  settings: {
+				slidesToShow: 2,
+				slidesToScroll: 1
+			  }
+			},
+			{
+			  breakpoint: 589,
+			  settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			  }
+			}
+		]
+	});
+	
+	$('.slider.slider-featured2').slick({
+		prevArrow: $('.slider-nav-properties-featured-for-rent .slider-prev'),
+		nextArrow: $('.slider-nav-properties-featured-for-rent .slider-next'),
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		responsive: [

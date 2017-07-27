@@ -17,6 +17,8 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'active_skin'
 gem 'active_admin_theme'
 gem 'data-confirm-modal', github: 'ifad/data-confirm-modal', branch: 'bootstrap2'
+gem 'ckeditor'
+gem 'bootstrap-datepicker-rails', '~> 1.6', '>= 1.6.4.1'
 
 gem 'rails', '~> 5.0.3'
 gem 'puma', '~> 3.0'

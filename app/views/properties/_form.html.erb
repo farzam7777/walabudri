@@ -54,10 +54,10 @@
             </div>
           </div>
           <div class="col-lg-6 col-md-6">
-            <div class="form-block">
+            <div class="form-block" style="margin-left: -20%;">
               <label>Property Location</label>
               <span style="font-weight: 500">Khartoum</span> <%= radio_button("property", "location", "Khartoum", style: "margin-left: 4%; margin-right: 4%;margin-top: 3%;") %>
-              <span style="font-weight: 500">Bahri</span> <%= radio_button("property", "location", "Bahri", style: "margin-left: 4%; margin-right: 4%;") %>
+              <span style="font-weight: 500">Bahari/Khartoum North</span> <%= radio_button("property", "location", "Bahari/Khartoum North", style: "margin-left: 4%; margin-right: 4%;") %>
               <span style="font-weight: 500">Omdurman</span> <%= radio_button("property", "location", "Omdurman", style: "margin-left: 4%; margin-right: 4%;") %>
             </div>
           </div>
@@ -79,7 +79,7 @@
           <div class="col-lg-4 col-md-4">
             <div class="form-block">
               <label>Property Availability</label>
-          	  <%= f.date_field :availibility, :class => "border required" %>
+              <input type="text" class="border required" name="property[availibility]" id="datepicker" placeholder="dd/mm/yyyy">
             </div>
           </div>
         </div>
@@ -135,7 +135,7 @@
 
         <div class="form-block" style="margin-bottom: 3%;">
           <label>Description</label>
-          <%= f.text_area :description, :class => "border" %>
+          <%= f.cktext_area :description, :class => "border", ckeditor: { language: 'english', uiColor: '#D3D3D3'} %>
         </div>
 
         <span><%= f.submit "Submit", style: "float: right;" %></span>
@@ -153,4 +153,12 @@
           $("#sale_tag").fadeIn(500);
         }
       }
+    </script>
+    
+    <script>
+      $( document ).ready(function() {
+         $('#datepicker').datepicker({
+            dateFormat: 'dd/mm/yy'
+         });
+      });
     </script>
