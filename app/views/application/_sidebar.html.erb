@@ -2,7 +2,9 @@
   <div class="widget member-card">
 	<div class="member-card-header">
 	  <a href="#" class="member-card-avatar"> <%= image_tag current_user.image.url, style: "height: 83px;" %> </a>
-	  <h3><%= current_user.username.capitalize %></h3>
+	  <h3>
+	  	<%= current_user.first_name.capitalize + ' ' + current_user.middle_name.capitalize %>
+	  </h3>
 	  <p><i class="fa fa-envelope icon"></i><%= current_user.email %></p>
 	</div>
 	<div class="member-card-content">

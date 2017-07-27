@@ -27,15 +27,27 @@
           <div class="col-lg-9">
             
             <div class="form-block">
-              <%= f.label :username, style: "margin-bottom: -2%;" %><br />
-              <%= f.text_field :username, autofocus: true, :class => "border" %>
+              <%= f.label :first_name, style: "margin-bottom: -2%;" %><br />
+              <%= f.text_field :first_name, autofocus: true, :class => "border" %>
             </div>
+            
+            <div class="form-block">
+              <%= f.label :middle_name, "Middle/Father Name", style: "margin-bottom: -2%;" %><br />
+              <%= f.text_field :middle_name, :class => "border" %>
+            </div>
+            
+            <div class="form-block">
+              <%= f.label :family_name, style: "margin-bottom: -2%;" %><br />
+              <%= f.text_field :family_name, :class => "border" %>
+            </div>
+            
             <div class="form-block">
               <%= f.label :email, style: "margin-bottom: -2%;" %><br />
               <%= f.email_field :email, :class => "border" %>
             </div>
+            
             <div class="form-block">
-               <%= f.label :contact, style: "margin-bottom: -2%;" %><br />
+               <%= f.label :contact, "Phone Number", style: "margin-bottom: -2%;" %><br />
                <%= f.text_field :contact, :class => "border" %>
             </div>
           </div>

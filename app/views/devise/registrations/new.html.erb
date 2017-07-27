@@ -16,8 +16,18 @@
           <%= devise_error_messages! %>
           
           <div class="form-block">
-            <%= f.label :username, style: "margin-bottom: -2%;" %><br />
-            <%= f.text_field :username, autofocus: true, :class => "border" %>
+            <%= f.label :first_name, style: "margin-bottom: -2%;" %><br />
+            <%= f.text_field :first_name, autofocus: true, :class => "border" %>
+          </div>
+          
+          <div class="form-block">
+            <%= f.label :middle_name, "Middle/Father Name", style: "margin-bottom: -2%;" %><br />
+            <%= f.text_field :middle_name, :class => "border" %>
+          </div>
+          
+          <div class="form-block">
+            <%= f.label :family_name, style: "margin-bottom: -2%;" %><br />
+            <%= f.text_field :family_name, :class => "border" %>
           </div>
           
           <div class="form-block">
@@ -44,8 +54,13 @@
           </div>
 
           <div class="form-block">
-            <%= f.label :contact, style: "margin-bottom: -2%;" %><br />
+            <%= f.label :contact, "Phone Number", style: "margin-bottom: -2%;" %><br />
             <%= f.text_field :contact, :class => "border" %>
+          </div>
+          
+          <div class="form-block" style="margin-top: 2%;">
+            <strong> Terms and Conditions </strong> <%= f.check_box(:terms) %>
+            <%= f.label(:terms, "By checking this box I agree as follows: I am the owner of this property or have the power of attorney to transact on behalf of this property. As such, I will provide accurate information; and I am aware that any inaccurate information entered on this website is illegal and will be punished in the court of law.", style: "font-weight: 100") %>
           </div>
 
           <div class="form-block">
