@@ -10,6 +10,9 @@
        
       <li><a href="<%= page_path('about') %>" data-bind="text: $data.name, click: $parent.menuClick">About</a></li>
       <li><a href="<%= page_path('contact') %>">Contact</a></li>
+      <% if user_signed_in? %>
+        <li><a href="<%= new_property_path %>">Submit New Property</a></li>
+      <% end %>
     </ul>
     
 </div>
@@ -19,6 +22,9 @@
    
     <li><a href="<%= page_path('about') %>">About</a></li>
     <li><a href="<%= page_path('contact') %>">Contact</a></li>
+    <% if user_signed_in? %>
+      <li><a href="<%= new_property_path %>">Submit New Property</a></li>
+    <% end %>
 </ul>
 <div id="secondaryMenu">
   <div class="phone"><a href="tel:+2001234565665">(+200) 123 456 5665</a></div>
