@@ -23,7 +23,11 @@
 <div id="secondaryMenu">
   <div class="phone"><a href="tel:+2001234565665">(+200) 123 456 5665</a></div>
   <div class="sessionInfo">
-    <button class="dark"><a href="<%= new_user_session_path %>" class="top-bar-item"><i class="fa fa-sign-in icon"></i>Login</a></button>
+    <% if user_signed_in? %>
+      <button class="dark"><i class="fa fa-sign-in icon"></i><%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'top-bar-item' %> </a></button>
+    <% else %>
+      <button class="dark"><a href="<%= new_user_session_path %>" class="top-bar-item"><i class="fa fa-sign-in icon"></i>Login</a></button>
+    <% end %>
   </div>
 </div>
 <div class="clearfix"></div>
