@@ -23,6 +23,14 @@ GIT
     bcrypt (3.1.11)
 
 GIT
+  remote: https://github.com/galetahub/ckeditor.git
+  revision: 752bca97f78e5c5df3fbd876e51a06918da804e2
+  specs:
+    ckeditor (4.2.4)
+      cocaine
+      orm_adapter (~> 0.5.0)
+
+GIT
   remote: https://github.com/ifad/data-confirm-modal.git
   revision: 009c7204267e02e1029ade2421e9083522008547
   branch: bootstrap2
@@ -84,9 +92,6 @@ GEM
     builder (3.2.3)
     byebug (9.0.6)
     cancan (1.6.10)
-    ckeditor (4.2.4)
-      cocaine
-      orm_adapter (~> 0.5.0)
     climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -265,7 +270,7 @@ DEPENDENCIES
   bootstrap-kaminari-views
   byebug
   cancan
-  ckeditor
+  ckeditor!
   coffee-rails (~> 4.2)
   data-confirm-modal!
   devise

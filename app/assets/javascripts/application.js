@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require ckeditor/config
 //= require ckeditor/init
+//= require turbolinks
 //= require bootstrap-datepicker
 //= require_tree .
