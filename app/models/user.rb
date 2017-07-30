@@ -19,5 +19,5 @@ class User < ApplicationRecord
 	validates :middle_name, presence: true
 	validates :family_name, presence: true
 	validates :contact, presence: true
-	validates_acceptance_of :terms, :allow_nil => false, :accept => true, :on => :create
+	validates :terms, acceptance: true
 end
