@@ -33,7 +33,7 @@
     <% if user_signed_in? %>
       <button class="dark"><i class="fa fa-sign-in icon"></i><%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'top-bar-item' %> </a></button>
     <% else %>
-      <button class="dark"><a href="<%= new_user_session_path %>" class="top-bar-item"><i class="fa fa-sign-in icon"></i>Login</a></button>
+      <button class="dark"><%= link_to "Login", new_user_session_path %> / <%= link_to "Sign up", new_user_registration_path %> </button>
     <% end %>
   </div>
 </div>
