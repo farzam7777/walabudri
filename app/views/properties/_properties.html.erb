@@ -13,7 +13,7 @@
           <h4><a href="#"><%= link_to property.title, property_path(property) %></a></h4>
           <p class="property-address"><i class="fa fa-map-marker icon"></i><%= property.address %></p>
           <div class="clear"></div>
-          <p class="property-text"><%= property.description.truncate_words(10) %></p>
+          <p class="property-text"><%= raw(property.description.truncate_words(10)) %></p>
         </div>
         <table class="property-details">
           <tr>
