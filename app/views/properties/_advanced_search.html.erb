@@ -12,7 +12,7 @@
 
 	  <div class="form-block border">
 		<%= f.label :location_cont, "Location" %>
-		<%= f.select :location_cont, options_for_select(@locations), prompt: "Select Location", class: "border" %>
+		<%= f.select :location_cont, options_for_select([["Khartoum", "Khartoum"], ["Bahri, Khartoum/north", "Bahri, Khartoum/north"], ["Umdurman", "umdurman"]]), prompt: "Select Location", class: "border" %>
 	  </div>
 
 	  <div class="form-block border">

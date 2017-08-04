@@ -1,6 +1,6 @@
 ActiveAdmin.register Property do
 
-	permit_params :title, :listing_type, :location, :isPublished, :bedrooms, :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id, :near_by_location
+	permit_params :title, :listing_type, :location, :isPublished, :bedrooms, :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id, :near_by_location, :description, :tag
 
 	scope :all
 	scope :rent
@@ -50,5 +50,37 @@ ActiveAdmin.register Property do
 		property.update(isFeatured: 0)
 		redirect_to admin_property_path(property)
 	end	
+	
+	index do
+    column :user do |property|
+      property.user.first_name
+    end
+    Property.column_names.each do |c|
+      column c.to_sym
+    end
+    actions
+  end
+  
+  form do |f|
+    f.inputs "Property Details" do
+    	f.input :user_id, as: :select, collection: User.all.map{|x| [x.first_name, x.id]}
+      f.input :title
+      f.input :listing_type, as: :select, collection: ['Apartment', 'House', 'Villa', 'Office', 'Farm House', 'Empty Land'], include_blank: false
+      f.input :location, as: :select, collection: ['Khartoum', 'Bahri, Khartoum/North', 'Umdurman'], include_blank: false
+      f.input :address
+      f.input :bedrooms
+      f.input :bath
+      f.input :furnished
+      f.input :area
+      f.input :price
+      f.input :description
+      f.input :availibility
+      f.input :image
+      f.input :isPublished
+      f.input :isFeatured
+      f.input :tag, as: :select, collection: ['Rent', 'Sell'], include_blank: false
+    end
+    f.button :Submit
+end
 
 end

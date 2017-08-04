@@ -33,6 +33,7 @@ class Property < ApplicationRecord
 	validates :image, presence: true
 	validates :address, length: { minimum: 10 }
 	validates :description, length: { minimum: 15 }
+	validates :description, presence: true
 	validate :empty_land_option_for_sell_tag
 
 	def empty_land_option_for_sell_tag
