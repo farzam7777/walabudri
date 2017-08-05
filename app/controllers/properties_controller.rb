@@ -1,16 +1,19 @@
 class PropertiesController < ApplicationController
   def index
+    if params[:tag].present?
+      tag = params[:tag]
+    end
     
     if params[:q].present? && @search.result
       @search_properties = @search.result
-      @properties = @search_properties.where(:isPublished => 1)
+      @properties = @search_properties.where(isPublished: 1)
+      @properties = @properties.where(tag: tag)
       @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
-      @locations = Property.distinct.pluck(:location)  
       @count = @properties.count           
     else
       @properties = Property.where(:isPublished => 1).all
+      @properties = @properties.where(tag: tag)
       @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
-      @locations = Property.distinct.pluck(:location)
       @count = @properties.count;
     end  
   end
@@ -28,8 +31,16 @@ class PropertiesController < ApplicationController
   def search
     @properties = Property.where(:isPublished => 1).all
     @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
-    @locations = Property.distinct.pluck(:location)
     @count = @properties.count;
+    
+    render "index"
+  end
+  
+  def tag_search
+    @search_properties = @search.result
+    @properties = @search_properties.where(:isPublished => 1)
+    @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
+    @count = @properties.count 
     
     render "index"
   end

@@ -45,20 +45,20 @@
             <div class="form-block">
               <label>Listing Tag</label>
               
-              <span style="font-weight: 500">Rent</span> 
-              <%= radio_button("property", "tag", "Rent", style: "margin-left: 4%; margin-right: 4%;margin-top: 3%;", onclick: "display_listing_type_option('rent')") %>
+              <%= radio_button("property", "tag", "Rent", style: "margin-left: 4%; margin-right: 1%;margin-top: 3%;", onclick: "display_listing_type_option('rent')") %>
+              <span style="font-weight: 500">Rent</span>
               
-              <span style="font-weight: 500">Sell</span> 
-              <%= radio_button("property", "tag", "Sell", style: "margin-left: 4%; margin-right: 4%;", onclick: "display_listing_type_option('sell')") %>
+              <%= radio_button("property", "tag", "Sell", style: "margin-left: 4%; margin-right: 1%;", onclick: "display_listing_type_option('sell')") %>
+              <span style="font-weight: 500">Sell</span>
               
             </div>
           </div>
           <div class="col-lg-6 col-md-6">
             <div class="form-block" style="margin-left: -20%;">
               <label>Property Location</label>
-              <span style="font-weight: 500">Khartoum</span> <%= radio_button("property", "location", "Khartoum", style: "margin-left: 4%; margin-right: 4%;margin-top: 3%;") %>
-              <span style="font-weight: 500">Bahari/Khartoum North</span> <%= radio_button("property", "location", "Bahari/Khartoum North", style: "margin-left: 4%; margin-right: 4%;") %>
-              <span style="font-weight: 500">Omdurman</span> <%= radio_button("property", "location", "Omdurman", style: "margin-left: 4%; margin-right: 4%;") %>
+               <%= radio_button("property", "location", "Khartoum", style: "margin-left: 4%; margin-right: 1%;margin-top: 3%;") %> <span style="font-weight: 500">Khartoum</span>
+               <%= radio_button("property", "location", "Bahri, Khartoum/north", style: "margin-left: 4%; margin-right: 1%;") %> <span style="font-weight: 500">Bahri, Khartoum/north</span>
+               <%= radio_button("property", "location", "Umdurman", style: "margin-left: 4%; margin-right: 1%;") %> <span style="font-weight: 500">Umdurman</span>
             </div>
           </div>
         </div>
@@ -107,24 +107,25 @@
 
         <div class="form-block" style="margin-bottom: 4%;">
           <label style="margin-bottom: -1%;">Listing Type</label>
+ 
+          <%= radio_button("property", "listing_type", "Apartment", style: "margin-left: 1%; margin-top: 3%;") %>
+          <span style="font-weight: 500; margin-right: 3%">Apartment</span>
           
-          <span style="font-weight: 500;">Apartment</span> 
-          <%= radio_button("property", "listing_type", "Apartment", style: "margin-left: 1%; margin-right: 3%;margin-top: 3%;") %>
+          <%= radio_button("property", "listing_type", "House", style: "margin-left: 1%;") %>
+          <span style="font-weight: 500; margin-right: 3%">House</span>
           
-          <span style="font-weight: 500">House</span> 
-          <%= radio_button("property", "listing_type", "House", style: "margin-left: 1%; margin-right: 3%;") %>
+          <%= radio_button("property", "listing_type", "Villa", style: "margin-left: 1%") %>
+          <span style="font-weight: 500; margin-right: 3%">Villa</span>
           
-          <span style="font-weight: 500">Villa</span> 
-          <%= radio_button("property", "listing_type", "Villa", style: "margin-left: 1%; margin-right: 3%;") %>
+          <%= radio_button("property", "listing_type", "Office", style: "margin-left: 1%") %>
+          <span style="font-weight: 500; margin-right: 3%">Office</span>
           
-          <span style="font-weight: 500">Office</span> 
-          <%= radio_button("property", "listing_type", "Office", style: "margin-left: 1%; margin-right: 3%;") %>
-          
-          <span style="font-weight: 500">Farm House</span> 
-          <%= radio_button("property", "listing_type", "Farm House", style: "margin-left: 1%; margin-right: 3%;") %>
+          <%= radio_button("property", "listing_type", "Farm House", style: "margin-left: 1%") %>
+          <span style="font-weight: 500; margin-right: 3%">Farm House</span> 
           
           <span id="sale_tag" style="display: none"> 
-            <span style="font-weight: 500">Empty Land</span> <%= radio_button("property", "listing_type", "Empty Land", style: "margin-left: 1%; margin-right: 3%;") %> 
+             <%= radio_button("property", "listing_type", "Empty Land", style: "margin-left: 1%") %>
+             <span style="font-weight: 500; margin-right: 3%">Empty Land</span>
           </span>
         </div>
 

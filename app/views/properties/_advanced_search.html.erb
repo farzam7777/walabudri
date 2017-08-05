@@ -11,50 +11,50 @@
 	  </div>
 
 	  <div class="form-block border">
-		<%= f.label :location_cont, "Location" %>
-		<%= f.select :location_cont, options_for_select([["Khartoum", "Khartoum"], ["Bahri, Khartoum/north", "Bahri, Khartoum/north"], ["Umdurman", "umdurman"]]), prompt: "Select Location", class: "border" %>
+			<%= f.label :location_cont, "Location" %>
+			<%= f.select :location_cont, options_for_select([["Khartoum", "Khartoum"], ["Bahri, Khartoum/north", "Bahri, Khartoum/north"], ["Umdurman", "umdurman"]]), prompt: "Select Location", class: "border" %>
 	  </div>
 
 	  <div class="form-block border">
-		<%= f.label :tag_cont, "Property Tag" %>
-		<%= f.select :tag_cont, options_for_select([["Sell", "Sell"], ["Rent", "Rent"], ["Buy", "Sell"]]), prompt: "Select Tag", class: "border" %>
+			<%= f.label :tag_cont, "Property Tag" %>
+			<%= f.select :tag_cont, options_for_select([["Sell", "Sell"], ["Rent", "Rent"], ["Buy", "Sell"]]), prompt: "Select Tag", class: "border" %>
 	  </div>
 
 	  <div class="form-block border">
-		<%= f.label :listing_type_eq, "Property Listing Type" %>
-		<%= f.select :listing_type_eq, options_for_select([["Apartment", "Apartment"], ["House", "House"], ["Villa", "Villa"], ["Office", "Office"], ["Farm House", "Farm House"], ["Empty Land", "Empty Land"]]), prompt: "Select Listing Type", class: "border" %>
+			<%= f.label :listing_type_eq, "Property Listing Type" %>
+			<%= f.select :listing_type_eq, options_for_select([["Apartment", "Apartment"], ["House", "House"], ["Villa", "Villa"], ["Office", "Office"], ["Farm House", "Farm House"], ["Empty Land", "Empty Land"]]), prompt: "Select Listing Type", class: "border" %>
 	  </div>
 	  
-	   <div class="form-block">
-		<label>Price</label>
-		<%= f.number_field :price_gteq, class: "area-filter border", placeholder: "Min Price", min: 0 %>
-		<%= f.number_field :price_lteq, class: "area-filter border", placeholder: "Max Price", min: 0 %>
-		<div class="clear"></div>
+	  <div class="form-block">
+			<label>Price</label>
+			<%= f.number_field :price_gteq, class: "area-filter border", placeholder: "Min Price", min: 0 %>
+			<%= f.number_field :price_lteq, class: "area-filter border", placeholder: "Max Price", min: 0 %>
+			<div class="clear"></div>
 	  </div>
 
 	  <div class="form-block">
-		<label>Beds</label>
-		<%= f.number_field :bedrooms_gteq, class: "area-filter border", placeholder: "Min Beds", min: 0 %>
-		<%= f.number_field :bedrooms_lteq, class: "area-filter border", placeholder: "Max Beds", min: 0 %>
-		<div class="clear"></div>
+			<label>Beds</label>
+			<%= f.number_field :bedrooms_gteq, class: "area-filter border", placeholder: "Min Beds", min: 0 %>
+			<%= f.number_field :bedrooms_lteq, class: "area-filter border", placeholder: "Max Beds", min: 0 %>
+			<div class="clear"></div>
 	  </div>
 
 	  <div class="form-block">
-		<label>Baths</label>
-		<%= f.number_field :bath_gteq, class: "area-filter border", placeholder: "Min Baths", min: 0 %>
-		<%= f.number_field :bath_lteq, class: "area-filter border", placeholder: "Max Baths", min: 0 %>
-		<div class="clear"></div>
+			<label>Baths</label>
+			<%= f.number_field :bath_gteq, class: "area-filter border", placeholder: "Min Baths", min: 0 %>
+			<%= f.number_field :bath_lteq, class: "area-filter border", placeholder: "Max Baths", min: 0 %>
+			<div class="clear"></div>
 	  </div>
 
 	  <div class="form-block">
-		<label>Area</label>
-		<%= f.number_field :area_gteq, class: "area-filter border", placeholder: "Min Area in Meter Sq", min: 0 %>
-		<%= f.number_field :area_lteq, class: "area-filter border", placeholder: "Max Area in Meter Sq", min: 0 %>
-		<div class="clear"></div>
+			<label>Area</label>
+			<%= f.number_field :area_gteq, class: "area-filter border", placeholder: "Min Area in Meter Sq", min: 0 %>
+			<%= f.number_field :area_lteq, class: "area-filter border", placeholder: "Max Area in Meter Sq", min: 0 %>
+			<div class="clear"></div>
 	  </div> 
 
 	  <div class="form-block">
-		<input type="submit" class="button" value="Find Properties" />
+			<input type="submit" class="button" value="Find Properties" />
 	  </div>
 
 	<% end %>

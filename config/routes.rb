@@ -25,6 +25,10 @@ Rails.application.routes.draw do
     collection do 
       get 'neighbour_hood_locations'
     end
+    
+    collection do
+      get 'tag_search'
+    end
   end
 
 
