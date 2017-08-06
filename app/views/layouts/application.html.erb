@@ -32,11 +32,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget">
-                <a class="footer-logo" href="#"><%= image_tag "images/logo-white.png", alt: "" %></a>
-                <p>Lorem ipsum dolor amet, consectetur adipiscing elit. Sed ut 
-                purus eget nunc ut dignissim cursus at a nisl. Mauris vitae 
-                turpis quis eros egestas tempor sit amet a arcu. Duis egestas 
-                hendrerit diam.</p>
+                <a class="footer-logo" href="#"><%= image_tag "images/logo2.png", alt: "", style: 'width: 100%;margin-top: -34%;margin-left: -36%;margin-bottom: -16%;' %></a>
+                <p>Social Networks</p>
                 <div class="divider"></div>
                 <ul class="social-icons circle">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -55,7 +52,7 @@
                       <div class="clear"></div>
                     </li>
                     <li>
-                      <a href="#"><h3>Terms of Service</h3></a>
+                      <a href="<%= page_path('terms') %>"><h3>Terms of Service</h3></a>
                       <div class="clear"></div>
                     </li>
                 </ul>
@@ -65,15 +62,15 @@
                 
                 <ul>
                     <li>
-                      <a href="#"><h3>Questions?</h3></a>
+                      <a href="<%= page_path('faq') %>"><h3>Questions?</h3></a>
                       <div class="clear"></div>
                     </li>
                     <li>
-                      <a href="#"><h3>Website Feedback</h3></a>
+                      <a href="<%= page_path('contact') %>"><h3>Website Feedback</h3></a>
                       <div class="clear"></div>
                     </li>
                     <li>
-                      <a href="#"><h3>Avoid Scams</h3></a>
+                      <a href="<%= page_path('scams') %>"><h3>Avoid Scams</h3></a>
                       <div class="clear"></div>
                     </li>
                 </ul>

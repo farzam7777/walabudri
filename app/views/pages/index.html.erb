@@ -6,23 +6,15 @@
         <p id="notice" style="margin-bottom: 0%; margin-top: auto;"><%= value %></p>
       </div>
     <% end %>
-    <h1> Find your new home today. </h1>
-    <p> We would love to make your life easier when it comes to find a suitable property for you.  </p>
-    <div class="tabs" style="margin-left: -50%;">
-      <ul>
+    <h2 class="main-heading" style="margin-left: -58%; color: white; margin-top: -3%;"> Find your new Property today </h2>
+    <div class="tabs" style="margin-left: -65%; margin-top: 2%;">
+      <ul style="margin-left: -12%;" class="tabs_ul">
         <li><a href="#tabs-1">Rent</a></li>
-        <li><a href="#tabs-2">Sale</a></li>
         <li><a href="#tabs-3">Buy</a></li>
       </ul>
       
       <div id="tabs-1" class="ui-tabs-hide" style="margin-left: 20%;">
         <%= render 'tag_search', tag_value: 'Rent', select_value: '' %>
-      </div>
-      
-      <div id="tabs-2" class="ui-tabs-hide" style="margin-left: 20%;">
-        <div style="width: 30%; margin-left: 22%;" class="widget-content box"> 
-          <p> Sale content will come here </p>
-        </div>
       </div>
       
       <div id="tabs-3" class="ui-tabs-hide" style="margin-left: 20%;">
@@ -32,13 +24,24 @@
   </div><!-- end container -->
 </section>
 
+<section class="module no-padding properties featured" style="margin-bottom: -3%; background: navajowhite; padding-top: 35px;">
+
+  <div class="container">
+    <div class="module-header">
+      <h2>Welcome to <strong>Araddi</strong>.com</h2>
+      <%= image_tag "images/divider.png" %>
+      <p> We provide a simple and convenient way for those in search of real estate in Khartoum to connect with property owners and agents. </p>
+    </div>
+  </div>
+</section> <hr>
+
 <section class="module no-padding properties featured" style="margin-top: 5%;">
 
   <div class="container">
     <div class="module-header">
-      <h2>Featured <strong>Properties</strong> For Sale</h2>
+      <h2>Browse our Featured <strong>Properties</strong> For Sale</h2>
       <%= image_tag "images/divider.png" %>
-      <p>Morbi accumsan ipsum velit nam nec tellus a odiose tincidunt auctor a ornare odio sed non mauris vitae erat consequat auctor</p>
+      <p>These are some luxrious properties for Sale, We have marked them featured. Must have a look at them. </p>
     </div>
   </div>
 
@@ -79,13 +82,13 @@
   </div><!-- end slider wrap -->
 </section>
 
-<section class="module no-padding properties featured" style="margin-top: 5%;">
+<section class="module no-padding properties featured" style="margin-top: 5%; margin-bottom: 10%;">
 
   <div class="container">
     <div class="module-header">
-      <h2>Featured <strong>Properties</strong> For Rent</h2>
+      <h2>Browse our Featured <strong>Properties</strong> For Rent</h2>
       <%= image_tag "images/divider.png" %>
-      <p>Morbi accumsan ipsum velit nam nec tellus a odiose tincidunt auctor a ornare odio sed non mauris vitae erat consequat auctor</p>
+      <p>These are some luxrious properties for Rent, We have marked them featured. Must have a look at them. </p>
     </div>
   </div>
 
@@ -126,19 +129,4 @@
   </div><!-- end slider wrap -->
 </section>
 
-<section class="module cta newsletter" style="background-color: #59aee9; margin-top: 5%;">
-  <div class="container">
-  <div class="row">
-    <div class="col-lg-7 col-md-7">
-      <h3>Sign up for our <strong>newsletter.</strong></h3>
-      <p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-    </div>
-    <div class="col-lg-5 col-md-5">
-      <form method="" id="newsletter-form" class="newsletter-form">
-        <input type="email" placeholder="Your email..." />
-        <button type="submit" form="newsletter-form"><i class="fa fa-send"></i></button>
-      </form>
-    </div>
-  </div><!-- end row -->
-  </div><!-- end container -->
-</section>
+<%= render 'newsletter' %>

@@ -73,7 +73,7 @@
           
           <div class="divider"></div>
           
-          <p class="note">By clicking the "Register" button you agree with our <a href="#">Terms and conditions</a></p>  
+          <p class="note">By clicking the "Register" button you agree with our <a href="<%= page_path('terms') %> ">Terms and conditions</a></p>  
         <% end %>  
       </div>
     </div><!-- end row -->
@@ -81,19 +81,4 @@
   </div>
 </section>
 
-<section class="module cta newsletter" style="background-color: #59aee9">
-  <div class="container">
-  <div class="row">
-    <div class="col-lg-7 col-md-7">
-      <h3>Sign up for our <strong>newsletter.</strong></h3>
-      <p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-    </div>
-    <div class="col-lg-5 col-md-5">
-      <form method="post" id="newsletter-form" class="newsletter-form">
-        <input type="email" placeholder="Your email..." />
-        <button type="submit" form="newsletter-form"><i class="fa fa-send"></i></button>
-      </form>
-    </div>
-  </div><!-- end row -->
-  </div><!-- end container -->
-</section>
+<%= render 'newsletter' %>

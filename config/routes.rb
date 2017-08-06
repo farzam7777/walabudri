@@ -29,6 +29,14 @@ Rails.application.routes.draw do
     collection do
       get 'tag_search'
     end
+    
+    collection do
+      post 'contact_form'
+    end
+    
+    collection do
+      post 'newsletter'
+    end
   end
 
 

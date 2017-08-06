@@ -100,6 +100,35 @@ class PropertiesController < ApplicationController
   	@property.destroy
   	redirect_to properties_path, :notice => "Your Property has been Deleted. "
   end	
+  
+  def contact_form
+    @name = params[:name]
+    @email = params[:email]
+    @phone = params[:phone]
+    @subject = params[:subject]
+    @message = params[:message]
+    
+    if ContactMailer.contact(@name, @email, @phone, @subject, @message).deliver
+      redirect_to page_path('contact'), notice: 'Thank you for contacting us.'
+    else
+      redirect_to page_path('contact'), notice: 'Some problem Occured, try again later.'
+    end
+  end
+  
+  def newsletter
+    @email = params[:email]
+    @newsletter = Newsletter.create(email: @email)
+    
+    respond_to do |format|
+      if @newsletter.save
+       format.html { redirect_to page_path('index'), notice: 'Thank you for Subscribing.' }
+       format.js
+      else
+       format.html { redirect_to page_path('index'), notice: 'Some problem Occured, try again later.' }
+       format.js
+      end
+    end
+  end
 
   def property_params
 	params.require(:property).permit!

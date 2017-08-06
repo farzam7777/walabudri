@@ -38,7 +38,7 @@
 				<div class="property-header">
 					<div class="property-title">
 						<h4><%= @property.title %></h4>
-            <div class="property-price-single right">$<%= @property.price %> <span>Per Month</span></div>
+            <div class="property-price-single right"><%= @property.price %> SD G <span>Per Month</span></div>
 						<p class="property-address"><i class="fa fa-map-marker icon"></i><%= @property.address %></p>
             <div class="clear"></div>
 					</div>
@@ -251,19 +251,4 @@
   </div><!-- end container -->
 </section>
 
-<section class="module cta newsletter" style="background-color: #59aee9" >
-  <div class="container">
-	<div class="row">
-		<div class="col-lg-7 col-md-7">
-			<h3>Sign up for our <strong>newsletter.</strong></h3>
-			<p>Lorem molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-		</div>
-		<div class="col-lg-5 col-md-5">
-			<form method="post" id="newsletter-form" class="newsletter-form">
-				<input type="email" placeholder="Your email..." />
-				<button type="submit" form="newsletter-form"><i class="fa fa-send"></i></button>
-			</form>
-		</div>
-	</div><!-- end row -->
-  </div><!-- end container -->
-</section>
+<%= render 'newsletter' %>

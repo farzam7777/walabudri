@@ -1,0 +1,80 @@
+<section class="subheader">
+  <div class="container">
+    <h1>Terms & Services</h1>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Terms & Services</a></div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<section class="module">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-8 col-md-8">
+        <div id="accordion" class="content">
+          <h3>Terms of Service</h3>
+          <div>
+            <p>
+            Welcome to this website (“Site”), as operated by Araddi Real Estate company. (“Company”). Company operates the Site and other associated services and offerings, including, without limitation, mobile and tablet applications, that allow individuals to list or locate apartments, houses or other real estate for rent or sale (collectively, the "Service"), and makes it available to you subject to the following terms and conditions of service (the "Terms"). The Terms are a legal contract between you, an individual user or single entity (individually “User” or collectively, "Users"), and Company regarding your use of the Service. You will also be subject to any additional posted guidelines or rules applicable to specific premium services, products, and features offered through the Service, which are hereby incorporated into these Terms. </p>
+            <p>You are granted permission to use the Service, provided that you comply with the Terms. BY ACCESSING AND USING THE SERVICE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THE TERMS. IF YOU DO NOT AGREE TO THESE TERMS AT ANY TIME, PLEASE DO NOT USE THE SERVICE.  We reserve the right, at our sole discretion, to change, modify, add, or delete portions of these Terms of Use at any time without further notice. 
+            </p>
+          </div>
+          <h3>Accuracy of Information</h3>
+          <div>
+            <p>
+            Araddi makes an honest and diligent effort to acquire accurate information provided by the landlords or property agents. The greater portion of Araddi information is obtained by use of telephone; therefore, our representation and description of rentals and for sale properties will reflect the information given to us by the landlord or property agent. Accordingly we cannot be responsible for the accuracy of property descriptions or conditions. As such, we ask each all clients, site members, and visitors to thoroughly conduct due diligence on all property of interest and their agents and owners.
+            </p>
+          </div>
+          <h3>Membership & Account Registration</h3>
+          <div>
+            <p>
+            Upon registration of your account you will be considered a member of Araddi with user permissions eligible to use Araddi or permitted activities, including the listing and browsing through properties. You are responsible for keeping all of your account information accurate and current. You are responsible for maintaining the confidentiality of you password and account information and are fully responsible for all activities that occur under your password or account. We permit only one account per person. You may not share your password with anyone else. </p>
+            <p> You agree to notify Araddi immediately on any unauthorized use of your account, username, or password. Araddi shall not be liable for any loss that you incur as a result of someone else using your password, either with or without your knowledge. You may be held liable for any losses incurred by Araddi, its affiliates, officers, directors, employees, consultants, agents, and representatives due to someone else's use of your account or password. </p>
+            <p> You may not provide false registration information or select a user name that infringes third party rights or misleads about your credibility or affiliation. Any inaccurate or false information submitted by any person using our site is deemed misleading and shall be punished in the court of law. 
+            </p>
+          </div>
+          <h3>General Ownership of Content</h3>
+          <div>
+            <p>
+            Araddi retains all its rights, title, and interest in and to the Services, and any software or Content of any kind used by Araddi in providing the Services or featured through the Services, including without limitation photos, text, videos, design elements, and works of authorship. Any rights not expressly granted to you herein are reserved by Araddi. You acknowledge that the Services and the software used by Araddi in providing the Services may contain Araddi proprietary and confidential information. You agree that except as may be expressly permitted in these Terms or via the Services by Araddi, you will not copy, distribute, rent, lease, loan, modify or create derivative works, adapt, translate, perform, reproduce in whole or in part, display (except as necessary to exercise your rights hereunder), sublicense, or transfer the Services, any information contained therein, the Content provided or featured through the Services by Araddi or other Users, or any software used by in providing the Services, without the prior written permission of Araddi. On the condition that you comply with these Terms and satisfy any and all of your applicable payment and other obligations related to the Services, Araddi grants you a non-exclusive, limited, revocable, non-transferable license to access and use the Services for your soley for your personal purposes and may not used for commercial purposes. You may not resell or grant third-party access to the Services. </p>  
+             <p> If you violate the terms of this section, Araddi may terminate your account without notice and may hold you liable in the court of law. Further, and notwithstanding anything in the foregoing to the contrary, the foregoing license shall not extend to permit your use of the Services to share and without our consent. If you are under the legal age as specified by the law, we do not permit you to use any of our services.
+            </p>            
+          </div>
+          <h3>Changes to the Terms of Service</h3>
+          <div>
+            <p>
+            We may change the Terms and the Services without notice, and you are responsible for checking these Terms periodically for revisions. All amended Terms are effective upon our posting through the Services, and any use of the Services after such revisions have been posted and any opt in consent that you may provide through the Services signifies your consent to the changes.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4">
+
+        <div class="widget widget-sidebar recent-properties">
+        <h4><span>Recent Properties</span> <%= image_tag "images/divider-half.png" %></h4>
+        <div class="widget-content">
+        <% @recents = Property.order(id: :desc).where(:isPublished => 1).first(3) %>
+        <% @recents.each do |recent| %> 
+        
+        <div class="recent-property">
+          <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4"><a href="<%= property_path(recent) %>"><%= image_tag recent.image.url %></a></div>
+          <div class="col-lg-8 col-md-8 col-sm-8">
+            <h5><a href="<%= property_path(recent) %>"><%= recent.title %></a></h5>
+            <p><strong>$<%= recent.price %></strong> Per Month</p>
+          </div>
+          </div>
+        </div>
+         
+         <% end %>  
+        
+        </div><!-- end widget content -->
+      </div><!-- end widget -->
+        
+      </div>
+    </div><!-- end row -->
+
+  </div>
+</section>
+
+<%= render 'newsletter' %>

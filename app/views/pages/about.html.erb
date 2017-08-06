@@ -10,22 +10,19 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-lg-6 col-md-6">
+      <div class="col-lg-12 col-md-12">
+        <h3> Our Story </h3>
         <%= image_tag "images/divider-half.png", alt: "" %>
         <p><strong>Araddi was born out of the cumbersome process we personally experienced
         when searching for properties to buy and rent in Khartoum.</strong></p>
-        <p>It was difficult finding a real estate agent we could trust, and experienced lots of aimless driving around followed by viewing substandard properties that did not meet our needs. </p>
+        <p>It was difficult finding a real estate agent we could trust, and experienced lots of aimless driving around followed by viewing substandard properties that did not meet our needs.
         
-        <p> We realized there must be a convenient and hassle free way to find properties in Khartoum and communicate directly with property managers and owners in a
-        safe and efficient way. </p>
+        We realized there must be a convenient and hassle free way to find properties in Khartoum and communicate directly with property managers and owners in a
+        safe and efficient way.
         
-        <p> We at Arradi want to make searching for real estate an enjoyable experience. We want to help you find the perfect property while giving you back valuable time to enjoy life. If you can’t find exactly what you’re looking for on our platform, you
+        We at Arradi want to make searching for real estate an enjoyable experience. We want to help you find the perfect property while giving you back valuable time to enjoy life. If you can’t find exactly what you’re looking for on our platform, you
           may contact us directly and we will put all effort to ensure your needs are met.
         </p>
-      </div>
-      <div class="col-lg-6 col-md-6">
-         <a href="https://youtu.be/mehLx_Fjv_c" class="html5lightbox"><%= image_tag "images/about-video.jpg", alt: "about-video", :class => "about-video-thumb" %></a>
-        <div class="clear"></div>
       </div>
     </div> 
 
@@ -72,18 +69,4 @@
   </div><!-- end container -->
 </section>
 
-<section class="module cta newsletter">
-  <div class="container">
-	<div class="row">
-		<div class="col-lg-7 col-md-7">
-			<h3>Sign up for our <strong>newsletter.</strong></h3>
-		</div>
-		<div class="col-lg-5 col-md-5">
-			<form method="post" id="newsletter-form" class="newsletter-form">
-				<input type="email" placeholder="Your email..." />
-				<button type="submit" form="newsletter-form"><i class="fa fa-send"></i></button>
-			</form>
-		</div>
-	</div><!-- end row -->
-  </div><!-- end container -->
-</section>
+<%= render 'newsletter' %>
