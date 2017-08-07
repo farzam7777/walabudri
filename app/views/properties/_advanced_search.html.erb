@@ -12,17 +12,17 @@
 
 	  <div class="form-block border">
 			<%= f.label :location_cont, "Location" %>
-			<%= f.select :location_cont, options_for_select([["Khartoum", "Khartoum"], ["Bahri, Khartoum/north", "Bahri, Khartoum/north"], ["Umdurman", "umdurman"]]), prompt: "Select Location", class: "border" %>
+			<%= f.select :location_cont, options_for_select([["Khartoum", "Khartoum"], ["Bahri, Khartoum/north", "Bahri, Khartoum/north"], ["Umdurman", "umdurman"]]), include_blank: "Select Location", class: "border" %>
 	  </div>
 
 	  <div class="form-block border">
 			<%= f.label :tag_cont, "Property Tag" %>
-			<%= f.select :tag_cont, options_for_select([["Sell", "Sell"], ["Rent", "Rent"], ["Buy", "Sell"]]), prompt: "Select Tag", class: "border" %>
+			<%= f.select :tag_cont, options_for_select([["Sell", "Sell"], ["Rent", "Rent"], ["Buy", "Sell"]]), include_blank: "Select Tag", class: "border" %>
 	  </div>
 
 	  <div class="form-block border">
 			<%= f.label :listing_type_eq, "Property Listing Type" %>
-			<%= f.select :listing_type_eq, options_for_select([["Apartment", "Apartment"], ["House", "House"], ["Villa", "Villa"], ["Office", "Office"], ["Farm House", "Farm House"], ["Empty Land", "Empty Land"]]), prompt: "Select Listing Type", class: "border" %>
+			<%= f.select :listing_type_eq, options_for_select([["Apartment", "Apartment"], ["House", "House"], ["Villa", "Villa"], ["Office", "Office"], ["Farm House", "Farm House"], ["Empty Land", "Empty Land"]]), include_blank: "Select Listing Type", class: "border" %>
 	  </div>
 	  
 	  <div class="form-block">
