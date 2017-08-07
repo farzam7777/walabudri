@@ -3,12 +3,12 @@ class PropertiesController < ApplicationController
     if params[:q].present? && @search.result
       @search_properties = @search.result
       @properties = @search_properties.where(isPublished: 1)
+      @count = @properties.count
       @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
-      @count = @properties.count           
     else
       @properties = Property.where(:isPublished => 1).all
+      @count = @properties.count
       @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
-      @count = @properties.count;
     end  
   end
 
@@ -25,8 +25,8 @@ class PropertiesController < ApplicationController
   def search
     @search_properties = @search.result
     @properties = @search_properties.where(:isPublished => 1)
-    @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
     @count = @properties.count
+    @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
     
     render 'index'
   end
@@ -34,16 +34,16 @@ class PropertiesController < ApplicationController
   def tag_search
     @search_properties = @search.result
     @properties = @search_properties.where(:isPublished => 1)
-    @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
     @count = @properties.count
+    @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
     
     render "index"
   end
   
   def neighbour_hood_locations
     @properties = Property.near(params[:neighbourhoods], 2)
+    @count = @properties.count
     @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
-    @count = @properties.count;
     
     render "index"
   end
@@ -127,8 +127,8 @@ class PropertiesController < ApplicationController
   def rent
     @properties = Property.where(isPublished: 1)
     @properties = @properties.where(tag: 'Rent')
-    @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
     @count = @properties.count
+    @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
     
     render 'index'
   end
@@ -136,8 +136,8 @@ class PropertiesController < ApplicationController
   def buy
     @properties = Property.where(isPublished: 1)
     @properties = @properties.where(tag: 'Sell')
-    @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
     @count = @properties.count
+    @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
     
     render 'index'
   end
