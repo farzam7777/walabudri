@@ -37,6 +37,14 @@ Rails.application.routes.draw do
     collection do
       post 'newsletter'
     end
+    
+    collection do 
+      get 'rent'
+    end
+    
+    collection do 
+      get 'buy'
+    end
   end
 
 

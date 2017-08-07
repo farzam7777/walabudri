@@ -1,18 +1,12 @@
 class PropertiesController < ApplicationController
   def index
-    if params[:tag].present?
-      tag = params[:tag]
-    end
-    
     if params[:q].present? && @search.result
       @search_properties = @search.result
       @properties = @search_properties.where(isPublished: 1)
-      @properties = @properties.where(tag: tag)
       @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
       @count = @properties.count           
     else
       @properties = Property.where(:isPublished => 1).all
-      @properties = @properties.where(tag: tag)
       @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
       @count = @properties.count;
     end  
@@ -29,18 +23,19 @@ class PropertiesController < ApplicationController
   end
 
   def search
-    @properties = Property.where(:isPublished => 1).all
+    @search_properties = @search.result
+    @properties = @search_properties.where(:isPublished => 1)
     @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
-    @count = @properties.count;
+    @count = @properties.count
     
-    render "index"
+    render 'index'
   end
   
   def tag_search
     @search_properties = @search.result
     @properties = @search_properties.where(:isPublished => 1)
     @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
-    @count = @properties.count 
+    @count = @properties.count
     
     render "index"
   end
@@ -48,7 +43,6 @@ class PropertiesController < ApplicationController
   def neighbour_hood_locations
     @properties = Property.near(params[:neighbourhoods], 2)
     @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
-    @locations = Property.distinct.pluck(:location)
     @count = @properties.count;
     
     render "index"
@@ -128,6 +122,24 @@ class PropertiesController < ApplicationController
        format.js
       end
     end
+  end
+  
+  def rent
+    @properties = Property.where(isPublished: 1)
+    @properties = @properties.where(tag: 'Rent')
+    @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
+    @count = @properties.count
+    
+    render 'index'
+  end
+  
+  def buy
+    @properties = Property.where(isPublished: 1)
+    @properties = @properties.where(tag: 'Sell')
+    @properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
+    @count = @properties.count
+    
+    render 'index'
   end
 
   def property_params

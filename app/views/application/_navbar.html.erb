@@ -4,9 +4,9 @@
 <!-- ko component: { name: 'hamburger-menu',  params: $root } --><div class="hamburger" onClick="hamburgerToggle()"></div>
 <div class="mobileMenu" data-bind="visible: mobileMenu() &amp;&amp; $root.isPortrait()" style="display: none;" id="mobile_menu">
     <ul>
-      <li><a href="<%= properties_path(tag: 'Rent') %>" data-bind="text: $data.name, click: $parent.menuClick">Rent</a></li>
+      <li><a href="<%= rent_properties_path %>" data-bind="text: $data.name, click: $parent.menuClick">Rent</a></li>
       
-      <li><a href="<%= properties_path(tag: 'Sell') %>" data-bind="text: $data.name, click: $parent.menuClick">Buy</a></li>
+      <li><a href="<%= buy_properties_path %>" data-bind="text: $data.name, click: $parent.menuClick">Buy</a></li>
       
       <li><a href="#" data-bind="text: $data.name, click: $parent.menuClick">Sale</a></li>
       <li><a href="#" data-bind="text: $data.name, click: $parent.menuClick">Blog</a></li>
@@ -21,8 +21,8 @@
     
 </div>
 <ul id="mainMenu" style="margin-left: -6%;">
-    <li> <a href="<%= properties_path(tag: 'Rent') %>">Rent</a> </li>
-    <li> <a href="<%= properties_path(tag: 'Sell') %>">Buy</a> </li>
+    <li> <a href="<%= rent_properties_path %>">Rent</a> </li>
+    <li> <a href="<%= buy_properties_path %>">Buy</a> </li>
     <li> <a href="#">Sale</a> </li>
     <li> <a href="#">Blog</a> </li>
    
