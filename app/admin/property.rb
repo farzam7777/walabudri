@@ -81,6 +81,22 @@ ActiveAdmin.register Property do
       f.input :tag, as: :select, collection: ['Rent', 'Sell'], include_blank: false
     end
     f.button :Submit
-end
-
+  end
+  
+  filter :user_id, as: :select, collection: User.all.map{|x| [x.email, x.id]}
+  filter :title
+  filter :address
+  filter :location
+  filter :tag, as: :select, collection: ['Rent', 'Sell']
+  filter :listing_type, as: :select, collection: ['Apartment', 'House', 'Villa', 'Office', 'Farm House', 'Empty Land']
+  filter :bedrooms
+  filter :bath
+  filter :furnished
+  filter :area
+  filter :price
+  filter :description
+  filter :availibility
+  filter :image
+  filter :isPublished, as: :select, collection: ['1', '0']
+  filter :isFeatured, as: :select, collection: ['1', '0']
 end

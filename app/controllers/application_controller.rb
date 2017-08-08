@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   
   # before_filter :set_locale
-  before_filter :set_search_param
+  before_filter :set_search_param, :set_cookie
 
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -29,4 +29,11 @@ class ApplicationController < ActionController::Base
 	  	devise_parameter_sanitizer.permit(:sign_in){|u| u.permit(:email, :password, :remember_me)}
 	  	devise_parameter_sanitizer.permit(:account_update){|u| u.permit(:first_name, :middle_name, :family_name, :email, :password, :remember_me, :image, :contact, :current_password)}
 	  end
+    
+    def set_cookie
+      cookies[:googtrans] = {
+       :value => '',
+       :expires => 1.year.from_now
+     }
+    end
 end
