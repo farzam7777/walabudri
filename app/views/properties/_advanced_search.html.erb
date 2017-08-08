@@ -11,13 +11,13 @@
 	  </div>
 
 	  <div class="form-block border">
-			<%= f.label :location_cont, "Location" %>
-			<%= f.select :location_cont, options_for_select([["Khartoum", "Khartoum"], ["Bahri, Khartoum/north", "Bahri, Khartoum/north"], ["Umdurman", "umdurman"]]), include_blank: "Select Location", class: "border" %>
+			<%= f.label :location_eq, "Location" %>
+			<%= f.select :location_eq, options_for_select([["Khartoum", "Khartoum"], ["Bahri, Khartoum/north", "Bahri, Khartoum/north"], ["Umdurman", "umdurman"]]), include_blank: "Select Location", class: "border" %>
 	  </div>
 
 	  <div class="form-block border">
 			<%= f.label :tag_cont, "Property Tag" %>
-			<%= f.select :tag_cont, options_for_select([["Sell", "Sell"], ["Rent", "Rent"], ["Buy", "Sell"]]), include_blank: "Select Tag", class: "border" %>
+			<%= f.select :tag_cont, options_for_select([["Rent", "Rent"], ["Buy", "Sell"]]), include_blank: "Select Tag", class: "border" %>
 	  </div>
 
 	  <div class="form-block border">

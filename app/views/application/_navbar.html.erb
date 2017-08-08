@@ -8,7 +8,7 @@
       
       <li><a href="<%= buy_properties_path %>" data-bind="text: $data.name, click: $parent.menuClick">Buy</a></li>
       
-      <li><a href="#" data-bind="text: $data.name, click: $parent.menuClick">Sell</a></li>
+      <li><a href="<%= page_path('sell') %>" data-bind="text: $data.name, click: $parent.menuClick">Sell</a></li>
       <li><a href="#" data-bind="text: $data.name, click: $parent.menuClick">Blog</a></li>
        
       <li><a href="<%= page_path('about') %>" data-bind="text: $data.name, click: $parent.menuClick">Our Story</a></li>
@@ -23,7 +23,7 @@
 <ul id="mainMenu" style="margin-left: -6%;">
     <li> <a href="<%= rent_properties_path %>">Rent</a> </li>
     <li> <a href="<%= buy_properties_path %>">Buy</a> </li>
-    <li> <a href="#">Sell</a> </li>
+    <li> <a href="<%= page_path('sell') %>">Sell</a> </li>
     <li> <a href="#">Blog</a> </li>
    
     <li><a href="<%= page_path('about') %>">Our Story</a></li>
