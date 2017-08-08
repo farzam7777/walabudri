@@ -33,58 +33,56 @@
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget">
                 <a class="footer-logo" href="#"><%= image_tag "images/logo2.png", alt: "", style: 'width: 100%;margin-top: -34%;margin-left: -36%;margin-bottom: -16%;' %></a>
-                <p>Social Networks</p>
+                <p style="font-size: 15px">Follow Us</p>
                 <div class="divider"></div>
                 <ul class="social-icons circle">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li style="margin-right: 6%;"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li style="margin-right: 6%;"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li style="margin-right: 6%;"><a href="#"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget from-the-blog">
-                <h4><span>Company</span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
+                <h4><span style="color: #D0D3D4">Company</span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
                 <ul>
                     <li>
-                      <a href="#"><h3>About Us</h3></a>
+                      <a href="<%= page_path('about') %>"><h3 style="color: #D0D3D4">About Us</h3></a>
                       <div class="clear"></div>
                     </li>
                     <li>
-                      <a href="<%= page_path('terms') %>"><h3>Terms of Service</h3></a>
+                      <a href="<%= page_path('terms') %>"><h3 style="color: #D0D3D4">Terms of Service</h3></a>
                       <div class="clear"></div>
                     </li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget from-the-blog">
-                <h4><span>Help & Support</span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
+                <h4><span style="color: #D0D3D4">Help & Support</span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
                 
                 <ul>
                     <li>
-                      <a href="<%= page_path('faq') %>"><h3>Questions?</h3></a>
+                      <a href="<%= page_path('faq') %>"><h3 style="color: #D0D3D4">Questions?</h3></a>
                       <div class="clear"></div>
                     </li>
                     <li>
-                      <a href="<%= page_path('contact') %>"><h3>Website Feedback</h3></a>
+                      <a href="<%= page_path('feedback') %>"><h3 style="color: #D0D3D4">Website Feedback</h3></a>
                       <div class="clear"></div>
                     </li>
                     <li>
-                      <a href="<%= page_path('scams') %>"><h3>Avoid Scams</h3></a>
+                      <a href="<%= page_path('scams') %>"><h3 style="color: #D0D3D4">Avoid Scams</h3></a>
                       <div class="clear"></div>
                     </li>
                 </ul>
             </div>
             
             <div class="col-lg-3 col-md-3 col-sm-12 widget footer-widget from-the-blog">
-                <h4><span>Contact Us</span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
+                <h4><span style="color: #D0D3D4">Contact Us</span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
                 <ul>
                     <li>
-                      <a href="#"><h3>(+249) 9123 70 343</h3></a>
+                      <a href="#"><h3 style="color: #D0D3D4">(+249) 9123 70 343</h3></a>
                       <div class="clear"></div>
                     </li>
                     <li>
-                      <a href="#"><h3>info@araddi.com</h3></a>
+                      <a href="#"><h3 style="color: #D0D3D4">info@araddi.com</h3></a>
                       <div class="clear"></div>
                     </li>
                 </ul>
@@ -94,7 +92,7 @@
 </footer>
 
 <div class="bottom-bar">
-    <div class="container">
+    <div class="container" style="color: #D0D3D4">
     © 2017  |  Araddi - All Rights Reserved
     </div>
 </div>

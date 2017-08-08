@@ -1,6 +1,6 @@
 <header data-bind="component: { name: 'main-header', params: $data }, visible: (!isPortrait() || showingModals() <= 0) &amp;&amp; headerVisible">
 
-<a href="<%= page_path('index') %>"> <%= image_tag 'images/logo2.png', class: "logo responsive_logo", 'data-bind' => "click: logoClick", style: 'margin-left: -3%;' %> </a>
+<a href="<%= page_path('index') %>"> <%= image_tag 'images/logo3.ico', class: "logo responsive_logo", 'data-bind' => "click: logoClick", style: 'margin-left: -3%;' %> </a>
 <!-- ko component: { name: 'hamburger-menu',  params: $root } --><div class="hamburger" onClick="hamburgerToggle()"></div>
 <div class="mobileMenu" data-bind="visible: mobileMenu() &amp;&amp; $root.isPortrait()" style="display: none;" id="mobile_menu">
     <ul>
@@ -8,7 +8,7 @@
       
       <li><a href="<%= buy_properties_path %>" data-bind="text: $data.name, click: $parent.menuClick">Buy</a></li>
       
-      <li><a href="#" data-bind="text: $data.name, click: $parent.menuClick">Sale</a></li>
+      <li><a href="#" data-bind="text: $data.name, click: $parent.menuClick">Sell</a></li>
       <li><a href="#" data-bind="text: $data.name, click: $parent.menuClick">Blog</a></li>
        
       <li><a href="<%= page_path('about') %>" data-bind="text: $data.name, click: $parent.menuClick">Our Story</a></li>
@@ -23,7 +23,7 @@
 <ul id="mainMenu" style="margin-left: -6%;">
     <li> <a href="<%= rent_properties_path %>">Rent</a> </li>
     <li> <a href="<%= buy_properties_path %>">Buy</a> </li>
-    <li> <a href="#">Sale</a> </li>
+    <li> <a href="#">Sell</a> </li>
     <li> <a href="#">Blog</a> </li>
    
     <li><a href="<%= page_path('about') %>">Our Story</a></li>
@@ -31,6 +31,13 @@
     <% if user_signed_in? %>
       <li><a href="<%= edit_user_registration_path %>">Profile</a></li>
     <% end %>
+    <li> 
+      <div id="google_translate_element"></div><script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL, multilanguagePage: true}, 'google_translate_element');
+      }
+      </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </li>
 </ul>
 <div id="secondaryMenu">
   <div class="phone"> <a href="tel:+2001234565665">(+249) 9123 70 343</a> </div>

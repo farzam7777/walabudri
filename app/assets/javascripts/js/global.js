@@ -59,7 +59,7 @@ jQuery(document).ready(function($) {
 	$('.slider.slider-featured').slick({
 		prevArrow: $('.slider-nav-properties-featured-for-sell .slider-prev'),
 		nextArrow: $('.slider-nav-properties-featured-for-sell .slider-next'),
-		slidesToShow: 4,
+		slidesToShow: 3,
 		slidesToScroll: 1,
 		responsive: [
 			{
@@ -89,7 +89,7 @@ jQuery(document).ready(function($) {
 	$('.slider.slider-featured2').slick({
 		prevArrow: $('.slider-nav-properties-featured-for-rent .slider-prev'),
 		nextArrow: $('.slider-nav-properties-featured-for-rent .slider-next'),
-		slidesToShow: 4,
+		slidesToShow: 3,
 		slidesToScroll: 1,
 		responsive: [
 			{

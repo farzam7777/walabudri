@@ -38,7 +38,7 @@
 				<div class="property-header">
 					<div class="property-title">
 						<h4><%= @property.title %></h4>
-            <div class="property-price-single right"><%= @property.price %> SD G <span>Per Month</span></div>
+            <div class="property-price-single right"><%= @property.price %> SDG <span>Per Month</span></div>
 						<p class="property-address"><i class="fa fa-map-marker icon"></i><%= @property.address %></p>
             <div class="clear"></div>
 					</div>
@@ -63,7 +63,7 @@
 
 				<table class="property-details-single">
 					<tr>
-						<td><i class="fa fa-bed"></i> <span><%= @property.bedrooms %></span> Beds</td>
+						<td><i class="fa fa-bed"></i> <span><%= @property.bedrooms %></span> Bedrooms</td>
 						<td><i class="fa fa-tint"></i> <span><%= @property. bath %></span> Baths</td>
 						<td><i class="fa fa-expand"></i> <span><%= @property.area %></span> Meter Sq </td>
 					</tr>
@@ -129,7 +129,7 @@
 			          <ul class="additional-details-list">
 			          	<li>Property Location: <span><%= @property.location %></span></li>
 			          	<li>Property Availability: <span><%= @property.availibility %></span></li>
-			          	<li>Is Furnished <span><%= @property.furnished %></span></li>
+			          	<li>Is Furnished <span><%= human_boolean(@property.furnished) %></span></li>
 			          	<li>Posted at <span><%= time_ago_in_words(@property.created_at) %> ago</span></li>
 			          	<li>Longitude <span><%= @property.longitude %></span></li>
 			          	<li>Latitude <span><%= @property.latitude %></span></li>
@@ -167,20 +167,11 @@
 				            <%= image_tag @property.user.image.url, alt: "" %>
 				        </a>
 				        <div class="agent-content">
-				            <a href="#" class="button button-icon small right"><i class="fa fa-angle-right"></i>Contact Agent</a>
-				            <a href="#" class="button button-icon small grey right"><i class="fa fa-angle-right"></i>Agent Details</a>
-				            <div class="agent-details">
+				            <div class="agent-details" style="line-height: 2.5em">
 				                <h4><a href="#"><%= @property.user.first_name.capitalize %></a></h4>
 				                <p><i class="fa fa-envelope icon"></i><%= @property.user.email %></p>
 				                <p><i class="fa fa-phone icon"></i><%= @property.user.contact %></p>
 				            </div>
-				            <ul class="social-icons">
-				                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-				                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-				                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-				            </ul>
 				        </div>
 				        <div class="clear"></div>
 				    </div>
@@ -192,17 +183,16 @@
 						<div class="divider-fade"></div>
 					</h4>
 					<div class="agent">
-				        <a href="#" class="agent-img">
-				            <div class="img-fade"></div>
-				            <div class="button alt agent-tag"><%= Property.all.count %> Properties</div>
-				            <%= image_tag "images/agent-img4.jpg" %>
+				        <a href="#" class="agent-img" style="width: 36%; margin-left: -4%; margin-top: 0%;">
+				            <div class=""></div>
+				            <%= image_tag "images/white-bg-logo.jpg" %>
 				        </a>
-				        <div class="agent-content">
-				            <a href="#" class="button button-icon small right"><i class="fa fa-angle-right"></i>Contact US</a>
+				        <div class="agent-content" style="float: none">
+				            <a href="<%= page_path('contact') %>" class="button button-icon small right" style="float: right;"><i class="fa fa-angle-right"></i>Contact US</a>
 				            <div class="agent-details">
-				                <h4><a href="#">Walabudri</a></h4>
-				                <p><i class="fa fa-envelope icon"></i>wala@gmail.com</p>
-				                <p><i class="fa fa-phone icon"></i>0900 78601</p>
+				                <h4><a href="#">Araddi Agent</a></h4>
+				                <p><i class="fa fa-envelope icon"></i>info@araddi.com</p>
+				                <p><i class="fa fa-phone icon"></i>(+249) 9123 70 343  </p>
 				            </div>
 				            <ul class="social-icons">
 				                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -234,7 +224,7 @@
 					<div class="col-lg-4 col-md-4 col-sm-4"><a href="<%= property_path(recent) %>"><%= image_tag recent.image.url %></a></div>
 					<div class="col-lg-8 col-md-8 col-sm-8">
 					  <h5><a href="<%= property_path(recent) %>"><%= recent.title %></a></h5>
-					  <p><strong>$<%= recent.price %></strong> Per Month</p>
+					  <p><strong><%= recent.price %> SDG</strong> Per Month</p>
 					</div>
 				  </div>
 				</div>

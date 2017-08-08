@@ -4,19 +4,7 @@
     </div>
   <% end %> 
 
- <% if @property.errors.any? %>
-    <div id="error_explanation">
-        <h2><%= pluralize(@property.errors.count, "error") %> prohibited this Property from being submitted:</h2>
-
-        <ol>
-          <% @property.errors.full_messages.each do |msg| %>
-              <li style="font-size: 17px; color: red; margin-left: 2%;"><%= msg %></li>
-          <% end %>
-        </ol>
-    </div>  
-<% end %> 
-
- <%= form_for @property, html: {multipart: true} do |f| %>
+ <%= simple_form_for @property, html: {multipart: true} do |f| %>
 
       <div class="multi-page-form-content active">
 
@@ -30,35 +18,23 @@
           </tr>
         </table>
 
-        <div class="form-block m-bottom">	
-          <%= f.label :title %>
-          <%= f.text_field :title, :class => "border required" %>
+        <div class="form-block border">	
+          <%= f.input :title, input_html: { class: 'border' } %>
         </div>
 
         <div class="form-block m-bottom"> 
-          <%= f.label :address %>
-          <%= f.text_field :address, :class => "border required" %>
+          <%= f.input :address, input_html: { class: 'border', placeholder: 'Use COMMA appropriately to get exact MAP location' } %>
         </div>
 
         <div class="row" style="margin-bottom: 5%;">
           <div class="col-lg-6 col-md-6">
-            <div class="form-block">
-              <label>Listing Tag</label>
-              
-              <%= radio_button("property", "tag", "Rent", style: "margin-left: 4%; margin-right: 1%;margin-top: 3%;", onclick: "display_listing_type_option('rent')") %>
-              <span style="font-weight: 500">Rent</span>
-              
-              <%= radio_button("property", "tag", "Sell", style: "margin-left: 4%; margin-right: 1%;", onclick: "display_listing_type_option('sell')") %>
-              <span style="font-weight: 500">Sell</span>
-              
+            <div class="form-block border">
+              <%= f.input :tag, as: :select, collection: ['Rent', 'Sell'], include_blank:' Select Tag' %>
             </div>
           </div>
           <div class="col-lg-6 col-md-6">
-            <div class="form-block" style="margin-left: -20%;">
-              <label>Property Location</label>
-               <%= radio_button("property", "location", "Khartoum", style: "margin-left: 4%; margin-right: 1%;margin-top: 3%;") %> <span style="font-weight: 500">Khartoum</span>
-               <%= radio_button("property", "location", "Bahri, Khartoum/north", style: "margin-left: 4%; margin-right: 1%;") %> <span style="font-weight: 500">Bahri, Khartoum/north</span>
-               <%= radio_button("property", "location", "Umdurman", style: "margin-left: 4%; margin-right: 1%;") %> <span style="font-weight: 500">Umdurman</span>
+            <div class="form-block border">
+               <%= f.input :location, as: :select, collection: ['Khartoum', 'Bahri, Khartoum/north', 'Umdurman'], include_blank:' Select Location' %>
             </div>
           </div>
         </div>
@@ -66,20 +42,17 @@
         <div class="row" style="margin-bottom: 3%;">
           <div class="col-lg-4 col-md-4">
             <div class="form-block">
-              <label>Rent Price</label>
-          	  <%= f.number_field :price, :class => "border required", min: 0, placeholder: "Price Per Month SD G" %>
+              <%= f.input :price, input_html: { class: 'border', min: 0, placeholder: "Price Per Month SDG" }, label: 'Rent Price' %>
             </div>
           </div>
           <div class="col-lg-4 col-md-4">
             <div class="form-block">
-              <%= f.label :area %>
-          	  <%= f.number_field :area, :class => "border required", min: 0, placeholder: "Area in Meter Sq" %>
+              <%= f.input :area, input_html: { class: 'border', min: 0, placeholder: "Area in Meter Sq" } %>
             </div>
           </div>
           <div class="col-lg-4 col-md-4">
-            <div class="form-block">
-              <label>Property Availability</label>
-              <input type="text" class="border required" name="property[availibility]" id="datepicker" placeholder="dd/mm/yyyy">
+            <div class="form-block border">
+              <%= f.input :availibility, as: :date, order: [:day, :month, :year], label: 'Availibility (DD/MM/YYYY)' %>
             </div>
           </div>
         </div>
@@ -87,56 +60,36 @@
         <div class="row" style="margin-bottom: 3%;">
           <div class="col-lg-4 col-md-4">
             <div class="form-block">
-              <%= f.label :bedrooms %>
-          	  <%= f.number_field :bedrooms, :class => "border required", min: 0 %>
+              <%= f.input :bedrooms, input_html: { class: 'border', min: 0, placeholder: 'Select number of bedrooms' } %>
             </div>
           </div>
           <div class="col-lg-4 col-md-4">
             <div class="form-block">
-              <label>Bathrooms</label>
-          	  <%= f.number_field :bath, :class => "border required", min: 0 %>
+              <%= f.input :bath, input_html: { class: 'border', min: 0, placeholder: 'Select number of baths' } %>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4">
-            <div class="form-block">
-              <label style="float: left;margin-top: 12%">Furnished</label>
-              <%= f.check_box :furnished, :class => "border required", style: "margin-top: 13%; margin-left: 6%;" %>
+          <div class="col-lg-4 col-md-4" style="margin-top: 3%">
+            <div class="form-block" style="margin-left: 8%; width: 25% ">
+              <%= f.input :furnished, input_html: { class: 'border' } %>
             </div>
           </div>
         </div>
-
-        <div class="form-block" style="margin-bottom: 4%;">
-          <label style="margin-bottom: -1%;">Listing Type</label>
- 
-          <%= radio_button("property", "listing_type", "Apartment", style: "margin-left: 1%; margin-top: 3%;") %>
-          <span style="font-weight: 500; margin-right: 3%">Apartment</span>
-          
-          <%= radio_button("property", "listing_type", "House", style: "margin-left: 1%;") %>
-          <span style="font-weight: 500; margin-right: 3%">House</span>
-          
-          <%= radio_button("property", "listing_type", "Villa", style: "margin-left: 1%") %>
-          <span style="font-weight: 500; margin-right: 3%">Villa</span>
-          
-          <%= radio_button("property", "listing_type", "Office", style: "margin-left: 1%") %>
-          <span style="font-weight: 500; margin-right: 3%">Office</span>
-          
-          <%= radio_button("property", "listing_type", "Farm House", style: "margin-left: 1%") %>
-          <span style="font-weight: 500; margin-right: 3%">Farm House</span> 
-          
-          <span id="sale_tag" style="display: none"> 
-             <%= radio_button("property", "listing_type", "Empty Land", style: "margin-left: 1%") %>
-             <span style="font-weight: 500; margin-right: 3%">Empty Land</span>
-          </span>
-        </div>
-
-        <div class="form-block" style="margin-bottom: 3%;">	
-          <label>Upload Main Image</label>
-          <%= f.file_field :image, :class => "border required", style: "padding-left: 4px;" %>
+        
+        <div class="row" style="margin-bottom: 5%;">
+          <div class="col-lg-6 col-md-6">
+            <div class="form-block border" style="margin-bottom: 4%;">
+              <%= f.input :listing_type, as: :select, collection: ['Apartment', 'House', 'Villa', 'Office', 'Farm House', 'Empty Land'], include_blank: 'Select Listing Type' %>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="form-block" style="margin-bottom: 3%;"> 
+              <%= f.input :image, input_html: { class: 'border', style: 'padding: 8px; width: 100%;' } %>
+            </div>
+          </div>
         </div>
 
         <div class="form-block" style="margin-bottom: 3%;">
-          <label>Description</label>
-          <%= f.cktext_area :description, :class => "border", ckeditor: { language: 'english', uiColor: '#D3D3D3'} %>
+          <%= f.input :description, as: :ckeditor, input_html: { :height => 300 } %>
         </div>
 
         <span><%= f.submit "Submit", style: "float: right;" %></span>

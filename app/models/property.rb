@@ -38,7 +38,7 @@ class Property < ApplicationRecord
 
 	def empty_land_option_for_sell_tag
 		if self.listing_type == "Empty Land" && self.tag != "Sell"
-			errors.add(:tag, "must be selected. ")
+			errors.add(:tag, "can't be rent for Empty Land type property. ")
 		end
 	end
 

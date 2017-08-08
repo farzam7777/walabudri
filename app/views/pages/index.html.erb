@@ -1,12 +1,12 @@
 <section class="subheader simple-search">
   <div class="container">
     <% flash.each do |key,value| %>
-      <div class="alert-box success" style="width: 42%; margin-left: 29%; margin-top: 0%; margin-bottom: 2%; background-color: transparent;">
+      <div class="alert-box success" style="width: 42%; margin-left: 29%; margin-top: -2%; margin-bottom: 5%; background-color: transparent;">
         <span style="float: left; margin-top: 1%;"><i class="fa fa-check icon"></i></span>
         <p id="notice" style="margin-bottom: 0%; margin-top: auto;"><%= value %></p>
       </div>
     <% end %>
-    <h2 class="main-heading" style="margin-left: -58%; color: white; margin-top: -3%;"> Find your new Property today </h2>
+    <h2 class="main-heading" style="margin-left: -33%; color: white; margin-top: -3%;"> A Simple Way to Find Real Estate in Khartoum </h2>
     <div class="tabs" style="margin-left: -65%; margin-top: 2%;">
       <ul style="margin-left: -12%;" class="tabs_ul">
         <li><a href="#tabs-1">Rent</a></li>
@@ -24,7 +24,7 @@
   </div><!-- end container -->
 </section>
 
-<section class="module no-padding properties featured" style="margin-bottom: -3%; background: navajowhite; padding-top: 35px;">
+<section class="module no-padding properties featured" style="margin-bottom: -3%; margin-top: 3%;">
 
   <div class="container">
     <div class="module-header">
@@ -41,7 +41,7 @@
     <div class="module-header">
       <h2>Browse our Featured <strong>Properties</strong> For Sale</h2>
       <%= image_tag "images/divider.png" %>
-      <p>These are some luxrious properties for Sale, We have marked them featured. Must have a look at them. </p>
+      <p></p>
     </div>
   </div>
 
@@ -50,7 +50,7 @@
     <span class="slider-next"><i class="fa fa-angle-right"></i></span>
   </div>
   
-  <div class="slider-wrap">
+  <div class="slider-wrap" style="width: 80%; margin-left: 10%;">
     <div class="slider slider-featured">
     <% @featureds = Property.all.where(isFeatured: 1, tag: "Sell") %>
     <% @featureds.each do |featured| %>
@@ -62,7 +62,7 @@
           </div>
           <table class="property-details">
             <tr>
-              <td><i class="fa fa-bed"></i>  <%= featured.bedrooms %>  Beds</td>
+              <td><i class="fa fa-bed"></i>  <%= featured.bedrooms %>  Bedrooms</td>
               <td><i class="fa fa-tint"></i>  <%= featured.bath %>  Baths</td>
               <td><i class="fa fa-expand"></i>  <%= featured.area %>  Meter Sq</td>
             </tr>
@@ -72,7 +72,7 @@
             <div class="img-fade"></div>
             <div class="property-tag button alt featured">Featured</div>
             <div class="property-tag button status">For <%= featured.tag.capitalize %></div>
-            <div class="property-price">$ <%= featured.price %> </div>
+            <div class="property-price"> <%= featured.price %> SDG</div>
             <div class="property-color-bar"></div>
             <%= image_tag featured.image.url, style: "height: 210px; width: 100%;" %>
         </a>
@@ -88,7 +88,7 @@
     <div class="module-header">
       <h2>Browse our Featured <strong>Properties</strong> For Rent</h2>
       <%= image_tag "images/divider.png" %>
-      <p>These are some luxrious properties for Rent, We have marked them featured. Must have a look at them. </p>
+      <p></p>
     </div>
   </div>
 
@@ -97,7 +97,7 @@
     <span class="slider-next"><i class="fa fa-angle-right"></i></span>
   </div>
   
-  <div class="slider-wrap" style="margin-top: 4%;">
+  <div class="slider-wrap" style="margin-top: 4%;width: 80%; margin-left: 10%;">
     <div class="slider slider-featured2">
     <% @featureds = Property.all.where(isFeatured: 1, tag: "Rent") %>
     <% @featureds.each do |featured| %>
@@ -109,7 +109,7 @@
           </div>
           <table class="property-details">
             <tr>
-              <td><i class="fa fa-bed"></i>  <%= featured.bedrooms %>  Beds</td>
+              <td><i class="fa fa-bed"></i>  <%= featured.bedrooms %>  Bedrooms</td>
               <td><i class="fa fa-tint"></i>  <%= featured.bath %>  Baths</td>
               <td><i class="fa fa-expand"></i>  <%= featured.area %>  Meter Sq</td>
             </tr>
@@ -119,7 +119,7 @@
             <div class="img-fade"></div>
             <div class="property-tag button alt featured">Featured</div>
             <div class="property-tag button status">For <%= featured.tag.capitalize %></div>
-            <div class="property-price">$ <%= featured.price %> </div>
+            <div class="property-price"> <%= featured.price %> SDG</div>
             <div class="property-color-bar"></div>
             <%= image_tag featured.image.url, style: "height: 210px; width: 100%;" %>
         </a>

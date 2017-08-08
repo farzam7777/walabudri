@@ -26,7 +26,7 @@
 					<td class="property-title">
 						<a href="property-single.html"> <%= Property.find(property).title %> </a><br/>
 						<p class="property-address"><i class="fa fa-map-marker icon"></i> <%= Property.find(property).title %> </p>
-						<p><strong><%= number_to_currency(Property.find(property).price) %></strong></p>
+						<p><strong><%= Property.find(property).price %> SDG </strong></p>
 					</td>
 					<td class="property-actions">
 						<a href="<%= property_path(property) %>"><i class="fa fa-eye icon"></i>View</a>

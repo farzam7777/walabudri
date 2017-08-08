@@ -1,10 +1,14 @@
 <% @properties.each do |property| %>
 			
 	<div class="property property-row property-row-sidebar shadow-hover">
-      <a href="#" class="property-img">
+      <a href="<%= property_path(property) %>" class="property-img">
         <div class="img-fade"></div>
-        <div class="property-tag button status">For <%= property.tag %> </div>
-        <div class="property-price"> <%= property.price %> SD G </div>
+        <% if property.tag == 'Sell' %>
+          <div class="property-tag button status">For Sale </div>
+        <% else %>
+          <div class="property-tag button status">For <%= property.tag %> </div>
+        <% end %>
+        <div class="property-price"> <%= property.price %> SDG </div>
         <div class="property-color-bar"></div>
         <%= image_tag property.image.url, style: "width: 100%; height: 245px;" %>
       </a>
@@ -17,7 +21,7 @@
         </div>
         <table class="property-details">
           <tr>
-            <td><i class="fa fa-bed"></i> <%= property.bedrooms %> Beds </td>
+            <td><i class="fa fa-bed"></i> <%= property.bedrooms %> Bedrooms </td>
             <td><i class="fa fa-tint"></i> <%= property.bath %> Baths </td>
             <td><i class="fa fa-expand"></i> <%= property.area %> Meter Sq </td>
           </tr>
