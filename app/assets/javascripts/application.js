@@ -14,6 +14,5 @@
 //= require jquery_ujs
 //= require ckeditor/config
 //= require ckeditor/init
-//= require social-share-button
 //= require turbolinks
 //= require_tree .

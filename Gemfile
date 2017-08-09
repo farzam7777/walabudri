@@ -21,7 +21,6 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'bootstrap-datepicker-rails', '~> 1.6', '>= 1.6.4.1'
 gem 'simple_form'
 gem 'non-stupid-digest-assets', '~> 1.0.4'
-gem 'social-share-button', ref: '1f95d81', github: 'vrybas/social-share-button'
 
 gem 'rails', '~> 5.0.3'
 gem 'puma', '~> 3.0'
