@@ -36,4 +36,4 @@ Rails.application.config.assets.precompile += %w( js/wNumb.js )
 Rails.application.config.assets.precompile += %w( application.js )
 Rails.application.config.assets.precompile += %w( cable.js )
 Rails.application.config.assets.precompile += %w( assets/chosen-1.6.2/chosen.jquery.min.js )
-
+Rails.application.config.assets.precompile += %w( ckeditor/* )
