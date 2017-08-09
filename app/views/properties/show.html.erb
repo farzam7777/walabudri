@@ -133,6 +133,7 @@
 			          	<li>Posted at <span><%= time_ago_in_words(@property.created_at) %> ago</span></li>
 			          	<li>Longitude <span><%= @property.longitude %></span></li>
 			          	<li>Latitude <span><%= @property.latitude %></span></li>
+			          	<li> <%= social_share_button_tag(@property.title) %> </li>
 			          </ul>
 			        </div>
 			    </div>
