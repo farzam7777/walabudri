@@ -24,8 +24,5 @@ test:
   database: walabudri
 
 production:
-  adapter: postgresql
-  timeout: 5000
-  host: localhost
-  url:  <%= ENV["DATABASE_URL"] %>
-  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+  <<: *default
+  database: walabudri
