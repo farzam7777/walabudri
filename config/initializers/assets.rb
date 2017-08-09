@@ -10,6 +10,7 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 
+Rails.application.config.assets.precompile += %w( ckeditor/*)
 Rails.application.config.assets.precompile += %w( assets/chosen-1.6.2/chosen.min.css )
 Rails.application.config.assets.precompile += %w( assets/font-awesome-4.7.0/css/font-awesome.min.css )
 Rails.application.config.assets.precompile += %w( assets/html5lightbox/html5lightbox.js )
@@ -36,4 +37,3 @@ Rails.application.config.assets.precompile += %w( js/wNumb.js )
 Rails.application.config.assets.precompile += %w( application.js )
 Rails.application.config.assets.precompile += %w( cable.js )
 Rails.application.config.assets.precompile += %w( assets/chosen-1.6.2/chosen.jquery.min.js )
-Rails.application.config.assets.precompile += %w( ckeditor/* )

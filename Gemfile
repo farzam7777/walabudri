@@ -17,7 +17,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'active_skin'
 gem 'active_admin_theme'
 gem 'data-confirm-modal', github: 'ifad/data-confirm-modal', branch: 'bootstrap2'
-gem "ckeditor", :git => "https://github.com/galetahub/ckeditor.git"
+gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'bootstrap-datepicker-rails', '~> 1.6', '>= 1.6.4.1'
 gem 'simple_form'
 gem 'non-stupid-digest-assets', '~> 1.0.4'
