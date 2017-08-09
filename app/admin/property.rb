@@ -83,6 +83,7 @@ ActiveAdmin.register Property do
     f.button :Submit
   end
   
+  filter :user_id, as: :select, collection: User.all.map{|x| [x.email, x.id]}
   filter :title
   filter :address
   filter :location
