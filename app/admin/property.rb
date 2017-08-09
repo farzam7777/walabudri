@@ -63,7 +63,7 @@ ActiveAdmin.register Property do
   
   form do |f|
     f.inputs "Property Details" do
-    	f.input :user_id, as: :select, collection: User.all.map{|x| [x.first_name, x.id]}
+    	f.input :user_id, as: :select, collection: User.all.map{|x| [x.email, x.id]}
       f.input :title
       f.input :listing_type, as: :select, collection: ['Apartment', 'House', 'Villa', 'Office', 'Farm House', 'Empty Land'], include_blank: false
       f.input :location, as: :select, collection: ['Khartoum', 'Bahri, Khartoum/North', 'Umdurman'], include_blank: false
