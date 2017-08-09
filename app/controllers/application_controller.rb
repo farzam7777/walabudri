@@ -1,17 +1,14 @@
 class ApplicationController < ActionController::Base
   
   # before_filter :set_locale
-  before_filter :set_search_param, :set_cookie
+  before_filter :set_search_param
+  before_filter :set_cookie
 
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to main_app.root_url, :alert => exception.message
-  end
-
-  def set_search_param
-    @search = Property.ransack(params[:q])
   end
 
   # def set_locale
@@ -35,5 +32,9 @@ class ApplicationController < ActionController::Base
        :value => '',
        :expires => 1.year.from_now
      }
+    end
+    
+    def set_search_param
+      @search = Property.ransack(params[:q])
     end
 end
