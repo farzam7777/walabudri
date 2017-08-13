@@ -52,6 +52,7 @@ ActiveAdmin.register Property do
 	end	
 	
 	index do
+    selectable_column
     column :user do |property|
       property.user.first_name
     end
