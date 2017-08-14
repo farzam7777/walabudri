@@ -15,7 +15,7 @@
           <h3>How do I list my property?</h3>
           <div>
             <p>
-            To list your property, you must first register here. Once you’re registered, click List property and follow the required steps. 
+            To list your property, you must first <%= link_to 'Register', new_user_registration_path, style: 'color: blue' %> here. Once you’re registered, click <%= link_to 'List Property', new_property_path, style: 'color: blue' %> and follow the required steps. 
             </p>
           </div>
           <h3>What happens after I list my property?</h3>
@@ -27,7 +27,7 @@
           <h3>How do I edit my property information once it’s posted?</h3>
           <div>
             <p>
-            To edit your listings click login, enter your email and password then click edit to change any of the information. 
+            To edit your listings click <%= link_to 'Login', new_user_session_path, style: 'color: blue' %>, enter your email and password then click edit to change any of the information. 
             </p>
           </div>
           <h3>Can I have more than one listings?</h3>
@@ -39,7 +39,7 @@
           <h3>My property is no longer available, how do I bring it down?</h3>
           <div>
             <p>
-            You may login using your username and password to delete your property. If having trouble, please contact us.
+            You may <%= link_to 'Login', new_user_session_path, style: 'color: blue' %> using your username and password to delete your property. If having trouble, please <%= link_to 'Contact Us', page_path('contact'), style: 'color: blue' %>.
             </p>
           </div>
           <h3>How long will my property be posted?</h3>
@@ -63,7 +63,7 @@
           <h3>I’m having trouble reaching the listing agent, what do I do?</h3>
           <div>
             <p>
-            If you’re having trouble reaching the listing agent you may contact us and we will assist you. 
+            If you’re having trouble reaching the listing agent you may <%= link_to 'Contact Us', page_path('contact'), style: 'color: blue' %> and we will assist you. 
             </p>
           </div>
           <h3>How do I make a payment once I find a property?</h3>

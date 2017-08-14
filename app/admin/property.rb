@@ -1,6 +1,6 @@
 ActiveAdmin.register Property do
 
-	permit_params :title, :listing_type, :location, :isPublished, :bedrooms, :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id, :near_by_location, :description, :tag
+	permit_params :title, :listing_type, :location, :isPublished, :bedrooms, :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id, :near_by_location, :description, :tag, :longitude, :latitude
 
 	scope :all
 	scope :rent
@@ -56,6 +56,9 @@ ActiveAdmin.register Property do
     column :user do |property|
       property.user.first_name
     end
+    column "Image" do |image|
+        image_tag image.image.url(:thumb)
+    end
     Property.column_names.each do |c|
       column c.to_sym
     end
@@ -76,7 +79,11 @@ ActiveAdmin.register Property do
       f.input :price
       f.input :description
       f.input :availibility
-      f.input :image
+      f.input :image, :as => :file, :hint => f.object.image.present? \
+      ? image_tag(f.object.image.url(:medium))
+      : content_tag(:span, "no image yet") 
+      f.input :longitude
+      f.input :latitude
       f.input :isPublished
       f.input :isFeatured
       f.input :tag, as: :select, collection: ['Rent', 'Sell'], include_blank: false
