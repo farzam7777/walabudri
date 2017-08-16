@@ -1,6 +1,6 @@
 <header data-bind="component: { name: 'main-header', params: $data }, visible: (!isPortrait() || showingModals() <= 0) &amp;&amp; headerVisible">
 
-<a href="<%= page_path('index') %>"> <%= image_tag 'images/logo4.png', class: "logo responsive_logo", 'data-bind' => "click: logoClick", style: 'margin-left: 1%;' %> </a>
+<a href="<%= page_path('index') %>"> <%= image_tag 'images/logo6.png', class: "logo responsive_logo", 'data-bind' => "click: logoClick", style: 'margin-left: 1%;' %> </a>
 <!-- ko component: { name: 'hamburger-menu',  params: $root } --><div class="hamburger" onClick="hamburgerToggle()"></div>
 <div class="mobileMenu" data-bind="visible: mobileMenu() &amp;&amp; $root.isPortrait()" style="display: none;" id="mobile_menu">
     <ul>
