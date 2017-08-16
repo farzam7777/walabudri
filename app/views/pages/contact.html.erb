@@ -10,36 +10,45 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-lg-3 col-md-3">
+      <div class="col-lg-4 col-md-4">
         <div class="contact-item">
           <i class="fa fa-envelope"></i>
           <h4>Email Us</h4>
           <p>info@araddi.com</p>
         </div>
       </div>
-      <div class="col-lg-3 col-md-3">
+      <div class="col-lg-4 col-md-4">
         <div class="contact-item">
           <i class="fa fa-phone"></i>
           <h4>Call Us</h4>
-          <p>Support: (+249) 9123 70 343</p>
+          <p>(+249) 901-93-3162</p>
         </div>
       </div>
-      <div class="col-lg-3 col-md-3">
-        <div class="contact-item">
-          <i class="fa fa-map-marker"></i>
-          <h4>Visit Us</h4>
-          <p>1234 Smith Drive<br/> Annapolis, MD 21012 USA</p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3">
+      <div class="col-lg-4 col-md-4">
         <div class="contact-item">
           <i class="fa fa-share-alt"></i>
           <h4>Connect With Us</h4>
           <ul class="social-icons">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube" style="font-size: 22px"></i></a></li>
+                    <li>
+                      <a href="https://www.facebook.com/araddirealestate/">
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/araddi_com/?hl=en">
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/AraddiRealty">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-youtube" style="font-size: 22px"></i>
+                      </a>
+                    </li>
                 </ul>
         </div>
       </div>
@@ -64,7 +73,10 @@
 
         <div class="comment-form">
           <h4><span>Quick Contact</span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
-          <p><b>Fill out the form below, How can we improve our site?</b> We’re always working to improve our user experience and we value your feedback. Let us know what we can do better.</p>
+          <p> 
+            <b> Tell us how we can improve our site? </b> 
+            We’re always working to improve our user’s experience and we value your feedback. Let us know what we can do better.
+          </p>
           
 		  <form action="<%= contact_form_properties_path %>" method="post">
         <input name="utf8" type="hidden" value="✓">
@@ -83,7 +95,7 @@
           <div class="col-lg-6 col-md-6">
             <div class="form-block">
               <label>Phone</label>
-              <input type="number" placeholder="Your phone" name="phone" value="" />
+              <input type="text" placeholder="Your phone" name="phone" value="" />
             </div>
           </div>
         </div>
@@ -104,7 +116,7 @@
 
         <div class="divider"></div><br/>
         <h4>Still need help?</h4>
-        <p>If you still have questions, try visiting our <a href="#"><b>FAQ</b></a> page to assit you. Morbi accumsan ipsum velit Nam nec tellus a odio tincidunt auctor a ornare odio sedlon maurisvitae erat consequat auctor</p>
+        <p> <b> Do you have any questions? </b> Visit our <%= link_to 'FAQs', page_path('faq') %> page to find quick answers to your questions. </p>
 
       </div>
     </div><!-- end row -->

@@ -1,6 +1,6 @@
 ActiveAdmin.register Property do
 
-	permit_params :title, :listing_type, :location, :isPublished, :bedrooms, :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id, :near_by_location, :description, :tag, :longitude, :latitude
+	permit_params :title, :listing_type, :location, :isPublished, :isFeatured, :bedrooms, :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id, :near_by_location, :description, :tag, :longitude, :latitude
 
 	scope :all
 	scope :rent
@@ -10,6 +10,11 @@ ActiveAdmin.register Property do
 	scope :unpublished
 	scope :featured
 	scope :not_featured
+  
+  # batch_action :isFeatured do |selection|
+  #   Property.find(selection).each { |property| property.update(isFeatured: 1) }
+  #   redirect_to collection_path, notice: "The properties have been featured."
+  # end
 
 	action_item :Publish, only: :show do 
 		link_to "Publish", Publish_admin_property_path(property), method: :put if !property.isPublished?

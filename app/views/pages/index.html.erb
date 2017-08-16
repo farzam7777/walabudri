@@ -58,7 +58,10 @@
         <a href="<%= property_path(featured) %>" class="property-content">
           <div class="property-title">
             <h4> <%= featured.title %> </h4>
-            <p class="property-address"><i class="fa fa-map-marker icon"></i> <%= featured.address %> </p>
+            <p class="property-address">
+              <i class="fa fa-map-marker icon"></i> 
+              <%= featured.address %> 
+            </p>
           </div>
           <table class="property-details">
             <tr>
@@ -71,7 +74,9 @@
         <a href="<%= property_path(featured) %>" class="property-img">
             <div class="img-fade"></div>
             <div class="property-tag button alt featured">Featured</div>
-            <div class="property-tag button status">For <%= featured.tag.capitalize %></div>
+            <div class="property-tag button status">
+              For Sale
+            </div>
             <div class="property-price"> <%= featured.price %> SDG</div>
             <div class="property-color-bar"></div>
             <%= image_tag featured.image.url, style: "height: 210px; width: 100%;" %>
