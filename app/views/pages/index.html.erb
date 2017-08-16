@@ -102,7 +102,7 @@
     <span class="slider-next"><i class="fa fa-angle-right"></i></span>
   </div>
   
-  <div class="slider-wrap" style="margin-top: 4%;width: 80%; margin-left: 10%;">
+  <div class="slider-wrap responsive-slider-wrap" style="margin-top: 4%;width: 80%; margin-left: 10%;">
     <div class="slider slider-featured2">
     <% @featureds = Property.all.where(isFeatured: 1, tag: "Rent") %>
     <% @featureds.each do |featured| %>

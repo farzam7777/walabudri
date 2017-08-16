@@ -130,6 +130,40 @@ abbr {display: none}
     margin-left: -30% !important;
     margin-top: 0% !important;
   }
+  
+  .responsive-slider-wrap{
+    margin-top: 15% !important;
+  }
+  
+  .responsive-property-price{
+    bottom: 36px !important;
+    left: 24px !important;
+  }
+  
+  .responsive-property-tag{
+    right: 42px !important;
+  }
+  
+  .responsive-property-content{
+    padding-bottom: 50% !important;
+  }
+  
+  .responsive-property-footer{
+    padding-left: 2% !important;
+  }
+  
+  .responsive-property-details{
+    font-size: 14px !important;
+    width: auto !important;
+    margin-top: 18% !important;
+    float: left !important;
+    margin-left: -96% !important;
+    margin-bottom: 15%;
+  }
+  
+  .responsive-property-text{
+    padding-bottom: 33% !important;
+  }
 }
 
 @media only screen and (min-width: 550px) and (max-width: 800px) {
@@ -143,6 +177,10 @@ abbr {display: none}
     margin-left: 2% !important;
     width: 9% !important;
     margin-top: 0% !important;
+  }
+  
+  .responsive-slider-wrap{
+    margin-top: 8% !important;
   }
 }
 
