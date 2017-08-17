@@ -55,7 +55,7 @@
     <% @featureds = Property.all.where(isFeatured: 1, tag: "Sell") %>
     <% @featureds.each do |featured| %>
       <div class="property property-hidden-content slide">
-        <a href="<%= property_path(featured) %>" class="property-content">
+        <a href="<%= property_path(featured) %>" class="property-content responsive-property-content" style="width: 90%;" >
           <div class="property-title">
             <h4> <%= featured.title %> </h4>
             <p class="property-address">
@@ -71,7 +71,7 @@
             </tr>
           </table>
         </a>
-        <a href="<%= property_path(featured) %>" class="property-img">
+        <a href="<%= property_path(featured) %>" class="property-img responsive-property-img" style="width: 90%;">
             <div class="img-fade"></div>
             <div class="property-tag button alt featured">Featured</div>
             <div class="property-tag button status">
@@ -107,7 +107,7 @@
     <% @featureds = Property.all.where(isFeatured: 1, tag: "Rent") %>
     <% @featureds.each do |featured| %>
       <div class="property property-hidden-content slide">
-        <a href="<%= property_path(featured) %>" class="property-content">
+        <a href="<%= property_path(featured) %>" class="property-content responsive-property-content" style="width: 90%;">
           <div class="property-title">
             <h4> <%= featured.title %> </h4>
             <p class="property-address"><i class="fa fa-map-marker icon"></i> <%= featured.address %> </p>
@@ -120,7 +120,7 @@
             </tr>
           </table>
         </a>
-        <a href="<%= property_path(featured) %>" class="property-img">
+        <a href="<%= property_path(featured) %>" class="property-img responsive-property-img" style="width: 90%;">
             <div class="img-fade"></div>
             <div class="property-tag button alt featured">Featured</div>
             <div class="property-tag button status">For <%= featured.tag.capitalize %></div>
