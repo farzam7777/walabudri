@@ -1,3 +1,5 @@
+<% WtfLang::API.key = "fa9d6d9faf06420ada0090796f8c778d" %>
+
 <section class="subheader">
   <div class="container">
     <h1><%= @property.title %></h1>
@@ -43,15 +45,17 @@
             <div class="clear"></div>
 					</div>
 					<div class="property-single-tags">
-						<div class="property-tag button status" style="background: blueviolet"><%= link_to @property.tag, "#", style: "color: white;" %></div>
+						<div class="property-tag button status" style="background: blueviolet">
+							<% if @property.tag == 'Sell' %>
+			          For Sale
+			        <% else %>
+			          For <%= @property.tag %>
+			        <% end %>
+						</div>
+						
 						<% if can? :update, @property %>
 						 	<div class="property-tag button alt featured"><%= link_to "Edit", 	edit_property_path(@property), style: "color: white;" %></div>
 						 <% end %>
-						 <% if @property.isPublished == 1 %>
-						 	<div class="property-tag button status"><%= link_to "Published", "#", style: "color: white;" %></div>
-						 <% else %>
-						 	<div class="property-tag button status"><%= link_to "Pending", "#", style: "color: white;" %></div>
-						 <% end %>	
 
 						 <% if can? :destroy, @property %>
 						 	<div class="property-tag button alt2 featured"><%= link_to "Delete", property_path(@property), style: "color: white;", method: :delete, data: {confirm: "You sure?"} %></div>
@@ -119,7 +123,10 @@
 				<h4>
 					<span>Description</span> <%= image_tag "images/divider-half.png", :class => "divider-hex" %>
 				</h4>
-				<p><%= raw(@property.description) %></p>
+				
+				<p <%= "dir=rtl" if @property.description.full_lang == 'arabic' %>>
+					<%= raw(@property.description) %>
+				</p>
 
 				<div class="tabs">
 			        <ul>
@@ -190,16 +197,27 @@
 				        <div class="agent-content" style="float: none">
 				            <a href="<%= page_path('contact') %>" class="button button-icon small right" style="float: right;"><i class="fa fa-angle-right"></i>Contact US</a>
 				            <div class="agent-details">
-				                <h4><a href="#">Araddi Agent</a></h4>
-				                <p><i class="fa fa-envelope icon"></i>info@araddi.com</p>
-				                <p><i class="fa fa-phone icon"></i>(+249) 9123 70 343  </p>
+			                <h4><a href="#">Araddi Agent</a></h4>
+			                <p><i class="fa fa-envelope icon"></i>info@araddi.com</p>
+			                <p><i class="fa fa-phone icon"></i>(+249) 901-93-3162 </p>
 				            </div>
 				            <ul class="social-icons">
-				                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-				                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-				                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+			                <li>
+			                	<a target="_blank" href="https://www.facebook.com/araddirealestate/">
+			                		<i class="fa fa-facebook"></i>
+			                	</a>
+			                </li>
+			                <li>
+			                	<a target="_blank" href="https://www.instagram.com/araddi_com/?hl=en">
+			                		<i class="fa fa-instagram"></i>
+			                	</a>
+			                </li>
+			                <li>
+			                	<a target="_blank" href="https://twitter.com/AraddiRealty">
+			                		<i class="fa fa-twitter"></i>
+			                	</a>
+			                </li>
+			                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
 				            </ul>
 				        </div>
 				        <div class="clear"></div>

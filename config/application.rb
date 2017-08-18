@@ -1,6 +1,7 @@
 require_relative 'boot'
 
 require 'rails/all'
+require 'wtf_lang'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -16,6 +17,6 @@ module Wala
     config.assets.precompile += Ckeditor.assets
     config.assets.precompile += %w( ckeditor/* )
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
-    config.assets.initialize_on_precompile = false 
+    config.assets.initialize_on_precompile = false
   end
 end
