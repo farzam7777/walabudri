@@ -101,7 +101,17 @@ ActiveAdmin.register Property do
       row :isPublished
       row :isFeatured
       row :tag
+      row "Images" do
+        ul do
+          property.images.each do |img|
+            li do 
+              image_tag(img.image.url(:large))
+            end
+          end
+        end
+      end
     end
+    
     active_admin_comments
   end
 
@@ -138,7 +148,7 @@ ActiveAdmin.register Property do
       f.inputs "Images" do
         f.has_many :images, allow_destroy: true do |p|
           p.input :image, :hint => p.object.image.present? \
-      ? image_tag(p.object.image.url(:large))
+      ? image_tag(p.object.image.url(:medium))
       : content_tag(:span, "no image yet")
         end
       end
