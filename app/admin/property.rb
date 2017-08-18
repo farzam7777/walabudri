@@ -1,3 +1,5 @@
+WtfLang::API.key = "fa9d6d9faf06420ada0090796f8c778d"
+
 ActiveAdmin.register Property do
 
 	permit_params :title, :listing_type, :location, :isPublished, :isFeatured, :bedrooms, :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id, :near_by_location, :description, :tag, :longitude, :latitude
@@ -70,6 +72,36 @@ ActiveAdmin.register Property do
     actions
   end
   
+  show do
+    attributes_table do
+      row :user
+      row :title
+      row :listing_type
+      row :location
+      row :address
+      row :bedrooms
+      row :bath
+      row :furnished
+      row :area
+      row :price
+      if property.description.full_lang == 'arabic'
+        row :description, dir: 'rtl'
+      else
+        row :description
+      end
+      row :availibility
+      row :image do
+        image_tag property.image.url(:medium)
+      end
+      row :longitude
+      row :latitude
+      row :isPublished
+      row :isFeatured
+      row :tag
+    end
+    active_admin_comments
+  end
+  
   form do |f|
     f.inputs "Property Details" do
     	f.input :user_id, as: :select, collection: User.all.map{|x| [x.email, x.id]}
@@ -82,7 +114,15 @@ ActiveAdmin.register Property do
       f.input :furnished
       f.input :area
       f.input :price
-      f.input :description
+      if f.object.new_record?
+        f.input :description
+      else
+        if f.object.description.full_lang == 'arabic'
+          f.input :description, input_html: { dir: 'rtl' }
+        else
+          f.input :description
+        end
+      end
       f.input :availibility
       f.input :image, :as => :file, :hint => f.object.image.present? \
       ? image_tag(f.object.image.url(:medium))
