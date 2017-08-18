@@ -104,8 +104,7 @@ ActiveAdmin.register Property do
     end
     active_admin_comments
   end
-  
-  jcropable
+
   form multipart: true do |f|
     f.inputs "Property Details" do
     	f.input :user_id, as: :select, collection: User.all.map{|x| [x.email, x.id]}
@@ -138,7 +137,7 @@ ActiveAdmin.register Property do
       f.input :tag, as: :select, collection: ['Rent', 'Sell'], include_blank: false
       f.inputs "Images" do
         f.has_many :images, allow_destroy: true do |p|
-          p.input :image, style: 'margin-left: 1%;', as: :jcropable, :hint => p.object.image.present? \
+          p.input :image, :hint => p.object.image.present? \
       ? image_tag(p.object.image.url(:large))
       : content_tag(:span, "no image yet")
         end
