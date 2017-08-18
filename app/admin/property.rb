@@ -2,8 +2,11 @@ WtfLang::API.key = "fa9d6d9faf06420ada0090796f8c778d"
 
 ActiveAdmin.register Property do
 
-	permit_params :title, :listing_type, :location, :isPublished, :isFeatured, :bedrooms, :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id, :near_by_location, :description, :tag, :longitude, :latitude
-
+	permit_params :title, :listing_type, :location, :isPublished, :isFeatured, :bedrooms,
+                :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id,
+                :near_by_location, :description, :tag, :longitude, :latitude, 
+                images_attributes: [:id, :property_id, :image, :_destroy]
+                
 	scope :all
 	scope :rent
 	scope :buy
@@ -102,7 +105,8 @@ ActiveAdmin.register Property do
     active_admin_comments
   end
   
-  form do |f|
+  jcropable
+  form multipart: true do |f|
     f.inputs "Property Details" do
     	f.input :user_id, as: :select, collection: User.all.map{|x| [x.email, x.id]}
       f.input :title
@@ -132,6 +136,13 @@ ActiveAdmin.register Property do
       f.input :isPublished
       f.input :isFeatured
       f.input :tag, as: :select, collection: ['Rent', 'Sell'], include_blank: false
+      f.inputs "Images" do
+        f.has_many :images, allow_destroy: true do |p|
+          p.input :image, style: 'margin-left: 1%;', as: :jcropable, :hint => p.object.image.present? \
+      ? image_tag(p.object.image.url(:large))
+      : content_tag(:span, "no image yet")
+        end
+      end
     end
     f.button :Submit
   end

@@ -12,11 +12,12 @@ ActiveAdmin.register Image do
     actions
   end
 
+  jcropable
   form do |f|
     f.inputs "Image Details" do
       f.input :property_id, as: :select, collection: Property.all.map{|x| [x.title, x.id]}
-      f.input :image, :as => :file, :hint => f.object.image.present? \
-    ? image_tag(f.object.image.url(:medium))
+      f.input :image, as: :jcropable, :hint => f.object.image.present? \
+    ? image_tag(f.object.image.url(:large))
     : content_tag(:span, "no image yet") 
     end
     f.button :Submit

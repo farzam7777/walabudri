@@ -2,6 +2,7 @@ class Property < ApplicationRecord
 
 	belongs_to :user
 	has_many   :images
+	accepts_nested_attributes_for :images, allow_destroy: true
 
 	has_many   :favorites
 	# has_many   :users, through: :favorites
