@@ -1,6 +1,6 @@
 <header data-bind="component: { name: 'main-header', params: $data }, visible: (!isPortrait() || showingModals() <= 0) &amp;&amp; headerVisible">
 
-<a href="<%= page_path('index') %>"> <%= image_tag 'images/logo6.png', class: "logo responsive_logo", 'data-bind' => "click: logoClick", style: 'margin-left: 1%;' %> </a>
+<a href="<%= page_path('index') %>"> <%= image_tag 'images/high-res-logo.png', class: "logo responsive_logo", 'data-bind' => "click: logoClick", style: 'margin-left: 1%;' %> </a>
 <!-- ko component: { name: 'hamburger-menu',  params: $root } --><div class="hamburger" onClick="hamburgerToggle()"></div>
 <div class="mobileMenu" data-bind="visible: mobileMenu() &amp;&amp; $root.isPortrait()" style="display: none;" id="mobile_menu">
     <ul>
@@ -17,7 +17,14 @@
         <li><a href="<%= edit_user_registration_path %>">Profile</a></li>
       <% end %>
       <li><a href="<%= new_property_path %>">Submit New Property</a></li>
-      <div class="translation1" style="display: none"> <%= render 'iframe' %> </div>
+      <li class="translation1"> 
+        <div id="google_translate_element"></div>
+        <script type="text/javascript">
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL, multilanguagePage: true}, 'google_translate_element');
+          }
+        </script>
+      </li>
     </ul>
     
 </div>
@@ -32,8 +39,14 @@
     <% if user_signed_in? %>
       <li><a href="<%= edit_user_registration_path %>">Profile</a></li>
     <% end %>
-    <li> 
-      <div class="translation2" style="margin-top: 1%;"> <%= render 'iframe' %> </div>
+    <li class="translation2" style="width: 28%;"> 
+      <div id="google_translate_element"></div>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL, multilanguagePage: true}, 'google_translate_element');
+        }
+      </script>
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </li>
 </ul>
 <div id="secondaryMenu">
@@ -55,11 +68,11 @@
   $( document ).ready(function() {
     if ($(window).width() < 481){
       $('.translation2').remove();
-      $('.translation1').css('display', 'block');
+      $('.translation1').css('display', 'inline');
     }
     else{
       $('.translation1').remove();
-      $('.translation2').css('display', 'block');
+      $('.translation2').css('display', '-webkit-inline-box');
     }
   });
 </script>

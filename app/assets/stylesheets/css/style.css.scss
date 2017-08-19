@@ -185,6 +185,10 @@ abbr {display: none}
   .sell-property-agent-contact{
     margin-right: 24% !important;
   }
+  
+  .responsive-footer-text{
+    text-align: center !important;
+  }
 }
 
 @media only screen and (min-width: 550px) and (max-width: 800px) {
@@ -203,6 +207,10 @@ abbr {display: none}
   .responsive-slider-wrap{
     margin-top: 8% !important;
   }
+  
+  .responsive-footer-text{
+    text-align: center !important;
+  }
 }
 
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
@@ -218,12 +226,11 @@ abbr {display: none}
 }
 
 .footer-logo-class{ 
-  margin-top: -16%;
+  margin-top: -3%;
   margin-left: 0%;
   margin-bottom: -3%;
-  background: white;
-  padding: 5px;
   border-radius: 2px;
+  width: 55% !important;
 }
 
 .details{
@@ -618,7 +625,8 @@ textarea.border,
 .social-icons li:last-child { padding-right:0px; }
 .social-icons.circle li a {
 	font-size:14px;
-	border:1px solid #48a0dc;
+	border:1px solid white;
+  color: white !important;
 	width:28px;
 	height:28px;
 	display:inline-block;
@@ -2129,7 +2137,7 @@ header { background:white; width:100%; position:fixed; z-index:1000; }
  /* 04 FOOTER
 /*====================================================================================*/
 footer { 
-	background:#323746; 
+	background:linear-gradient(to bottom, #5d6d7e 0%, #90a4ae 100%); 
 	padding:60px 0px;
 	color:#8e95ac;
 	font-size:13px;
