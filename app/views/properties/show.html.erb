@@ -128,21 +128,25 @@
 					<%= raw(@property.description) %>
 				</p>
 
-				<div class="tabs">
-			        <ul>
-			          <li><a href="#tabs-1"><i class="fa fa-pencil icon"></i>Additional Details</a></li>
-			        </ul>
-			        <div id="tabs-1" class="ui-tabs-hide">
-			          <ul class="additional-details-list">
-			          	<li>Property Location: <span><%= @property.location %></span></li>
-			          	<li>Property Availability: <span><%= @property.availibility %></span></li>
-			          	<li>Furnished <span><%= human_boolean(@property.furnished) %></span></li>
-			          	<li>Posted at <span><%= time_ago_in_words(@property.created_at) %> ago</span></li>
-			          	<li>Longitude <span><%= @property.longitude %></span></li>
-			          	<li>Latitude <span><%= @property.latitude %></span></li>
-			          </ul>
-			        </div>
-			    </div>
+				<div>
+					<a href="#"><i class="fa fa-pencil icon"></i>Additional Details</a> <hr>
+	        <div id="tabs-1" class="">
+	          <ul>
+	          	<div class="row">
+		          	<div class="col-lg-6 col-md-6">
+			          	<li class="details">Property Location: <span><%= @property.location %></span></li>
+			          	<li  class="details">Property Availability: <span><%= @property.availibility %></span></li>
+			          	<li class="details">Furnished: <span><%= human_boolean(@property.furnished) %></span></li>
+			          </div>
+		          	<div class="col-lg-6 col-md-6">
+			          	<li  class="details">Posted at: <span><%= time_ago_in_words(@property.created_at) %> ago</span></li>
+			          	<li class="details">Longitude: <span><%= @property.longitude %></span></li>
+			          	<li class="details">Latitude: <span><%= @property.latitude %></span></li>
+		          	</div>
+		          </div>
+	          </ul>
+	        </div>
+	    	</div>
 			</div><!-- end description -->
 
 			<div class="widget property-single-item property-location">

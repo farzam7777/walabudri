@@ -217,6 +217,18 @@ abbr {display: none}
   border-radius: 2px;
 }
 
+.details{
+  list-style: none !important;
+  line-height: 3em;
+  font-family: inherit;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: white !important;
+}
+
+li.details span{
+  font-weight: 600 !important; 
+}
+
 header {
 position: fixed;
 top: 0;
