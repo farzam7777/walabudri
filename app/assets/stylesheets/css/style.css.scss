@@ -225,12 +225,16 @@ abbr {display: none}
   }
 }
 
+.footer-text-color{
+  color: #566573 !important;
+}
+
 .footer-logo-class{ 
-  margin-top: -3%;
+  margin-top: -21%;
   margin-left: 0%;
   margin-bottom: -3%;
   border-radius: 2px;
-  width: 55% !important;
+  width: 36% !important;
 }
 
 .details{
@@ -625,8 +629,8 @@ textarea.border,
 .social-icons li:last-child { padding-right:0px; }
 .social-icons.circle li a {
 	font-size:14px;
-	border:1px solid white;
-  color: white !important;
+	border:1px solid #566573;
+  color: #566573 !important;
 	width:28px;
 	height:28px;
 	display:inline-block;
@@ -634,7 +638,7 @@ textarea.border,
 	padding-top:4px;
 	border-radius:100%;
 }
-.social-icons.circle li a:hover { background:#48a0dc; border-color:#48a0dc; color:white; }
+.social-icons.circle li a:hover { background:#566573; border-color:#566573; color:white !important; }
 
 /** ALERT BOXES **/
 .alert-box {
@@ -2137,9 +2141,9 @@ header { background:white; width:100%; position:fixed; z-index:1000; }
  /* 04 FOOTER
 /*====================================================================================*/
 footer { 
-	background:linear-gradient(to bottom, #5d6d7e 0%, #90a4ae 100%); 
+	background:white; 
 	padding:60px 0px;
-	color:#8e95ac;
+	color:#566573;
 	font-size:13px;
 	position:relative;
 	z-index:10;

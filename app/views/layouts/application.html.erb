@@ -20,6 +20,7 @@
     <%= stylesheet_link_tag    'scss/static', media: 'all', 'data-turbolinks-track': 'reload' %>
     
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <%= render 'navbar' %>
@@ -33,8 +34,8 @@
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget">
                 <div align="center"> <a class="footer-logo" href="<%= page_path('index') %>"><%= image_tag "images/high-res-logo.png", alt: "", class: 'responsive-footer-logo footer-logo-class', style: 'width: 33%' %></a> </div>
-                <p style="font-size: 15px; text-align: center; color: white; font-size: 16px">Follow Us</p>
-                <div class="divider"></div>
+                <h3 class="footer-text-color" style="text-align: center; font-size: 16px; margin-top: 10.5%;">Follow Us</h3>
+                <div class="divider" style="background: #566573"></div>
                 <ul class="social-icons circle" style="text-align: center;">
                     <li style="margin-right: 6%;">
                       <a target="_blank" href="https://www.facebook.com/araddirealestate/">
@@ -58,46 +59,46 @@
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget from-the-blog responsive-footer-text">
-                <h4><span style="color: #D0D3D4">Company</span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
+                <h4><span class="footer-text-color"> <strong> Company </strong> </span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
                 <ul>
                     <li>
-                      <a href="<%= page_path('about') %>"><h3 style="color: #D0D3D4">About Us</h3></a>
+                      <a href="<%= page_path('about') %>"><h3 class="footer-text-color">About Us</h3></a>
                       <div class="clear"></div>
                     </li>
                     <li>
-                      <a href="<%= page_path('terms') %>"><h3 style="color: #D0D3D4">Terms of Service</h3></a>
+                      <a href="<%= page_path('terms') %>"><h3 class="footer-text-color">Terms of Service</h3></a>
                       <div class="clear"></div>
                     </li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget from-the-blog responsive-footer-text">
-                <h4><span style="color: #D0D3D4">Help & Support</span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
+                <h4><span class="footer-text-color"> <strong> Help & Support </strong> </span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
                 
                 <ul>
                     <li>
-                      <a href="<%= page_path('faq') %>"><h3 style="color: #D0D3D4">Questions?</h3></a>
+                      <a href="<%= page_path('faq') %>"><h3 class="footer-text-color">Questions?</h3></a>
                       <div class="clear"></div>
                     </li>
                     <li>
-                      <a href="<%= page_path('feedback') %>"><h3 style="color: #D0D3D4">Website Feedback</h3></a>
+                      <a href="<%= page_path('feedback') %>"><h3 class="footer-text-color">Website Feedback</h3></a>
                       <div class="clear"></div>
                     </li>
                     <li>
-                      <a href="<%= page_path('scams') %>"><h3 style="color: #D0D3D4">Avoid Scams</h3></a>
+                      <a href="<%= page_path('scams') %>"><h3 class="footer-text-color">Avoid Scams</h3></a>
                       <div class="clear"></div>
                     </li>
                 </ul>
             </div>
             
             <div class="col-lg-3 col-md-3 col-sm-12 widget footer-widget from-the-blog responsive-footer-text">
-                <h4><span style="color: #D0D3D4">Contact Us</span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
+                <h4><span class="footer-text-color"> <strong> Contact Us </strong> </span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
                 <ul>
                     <li>
-                      <a href="<%= page_path('contact') %>"><h3 style="color: #D0D3D4">(+249) 901-93-3162</h3></a>
+                      <a href="<%= page_path('contact') %>"><h3 class="footer-text-color">(+249) 901-93-3162</h3></a>
                       <div class="clear"></div>
                     </li>
                     <li>
-                      <a href="<%= page_path('contact') %>"><h3 style="color: #D0D3D4">info@araddi.com</h3></a>
+                      <a href="<%= page_path('contact') %>"><h3 class="footer-text-color">info@araddi.com</h3></a>
                       <div class="clear"></div>
                     </li>
                 </ul>
