@@ -154,11 +154,10 @@ abbr {display: none}
   
   .responsive-property-details{
     font-size: 14px !important;
-    width: auto !important;
+    width: 261% !important;
     margin-top: 18% !important;
-    float: left !important;
-    margin-left: -96% !important;
-    margin-bottom: 15%;
+    margin-left: -139% !important;
+    margin-bottom: 10%;
   }
   
   .responsive-property-text{
@@ -227,6 +226,12 @@ abbr {display: none}
 
 .footer-text-color{
   color: #566573 !important;
+}
+
+.our-story-divider{
+  background: lightgrey !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
 }
 
 .footer-logo-class{ 
@@ -629,7 +634,6 @@ textarea.border,
 .social-icons li:last-child { padding-right:0px; }
 .social-icons.circle li a {
 	font-size:14px;
-	border:1px solid #566573;
   color: #566573 !important;
 	width:28px;
 	height:28px;
@@ -1283,7 +1287,7 @@ header { background:white; width:100%; position:fixed; z-index:1000; }
 }
 .property-row .property-title h4 a { font-size:20px; }
 .property-row .property-address { font-size:16px; }
-.property-row .property-content { background:white; padding:20px; width:65%; float:left; }
+.property-row .property-content { background:white; padding:30px; width:65%; float:left; }
 .property-row .property-text { font-size:14px; margin-top:18px; line-height:1.6; }
 .property-row .property-details { font-size:14px; width:auto; }
 .property-row .property-footer { 
@@ -1851,8 +1855,9 @@ header { background:white; width:100%; position:fixed; z-index:1000; }
 .widget .recent-property:last-child { margin-bottom:0px; }
 
 .widget.advanced-search h4 {
-	background:#48a0dc;
+	background:white;
 	position:relative;
+  color: #566573 !important;
 	z-index:10;
 	color:white;
 	padding:4% 5%;
@@ -2095,24 +2100,28 @@ header { background:white; width:100%; position:fixed; z-index:1000; }
 
 /** CONTACT **/
 .contact-details {
-	background:#48a0dc url(../images/contact-bg.png) no-repeat bottom;
+	background:white;
 	background-size:cover;
 }
 .contact-item { min-height:220px; background:rgba(0, 0, 0, 0.05); border:1px solid rgba(255, 255, 255, 0.3); padding:30px; color:white; text-align:center; }
-.contact-item h4 { color:white; font-size:20px; font-weight:600; }
+.contact-item h4 { color:#566573; font-size:20px; font-weight:600; }
 .contact-item .fa {
 	font-size:30px;
 	width:58px;
 	height:58px;
 	text-align:center;
 	padding-top:11px;
-	border:2px solid white;
+	border:2px solid #566573;
 	border-radius:100%;
 	margin-bottom:20px;
+  color: #566573 !important
 }
-.contact-item .social-icons li { padding:0; }
-.contact-item .social-icons .fa { border:none; color:white; font-size:17px; width:35px; height:35px; padding-top:10px; margin-bottom:0px; }
-.contact-item p { margin-bottom:0px; }
+.contact-item .social-icons li { padding:0; margin-top: 4% }
+.contact-item .social-icons .fa { border:none; color:#566573; margin-right: 2% !important; font-size:17px; width:35px; height:35px; padding-top:10px; margin-bottom:0px; }
+.contact-item .social-icons .fa:hover {
+  color: white !important; background: black;
+}
+.contact-item p { margin-bottom:0px; color: #566573 }
 
 /** LOGIN **/
 .login p { text-align:center; }
