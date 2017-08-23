@@ -12,7 +12,10 @@ class User < ApplicationRecord
 
 	validates_confirmation_of :password         
 
-	has_attached_file :image, styles: { large: "750x441>", medium: "300x300>", thumb: "100x100#" }
+	has_attached_file :image, 
+	styles: { large: "750x441>", medium: "300x300>", thumb: "100x100#" }, 
+	default_url: ActionController::Base.helpers.asset_path("logo4.png")
+	
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 	
 	validates :first_name, presence: true

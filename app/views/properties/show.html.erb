@@ -168,7 +168,7 @@
 			<% if @property.tag != "Sell" %>
 				<div class="widget property-single-item property-agent">
 					<h4>
-						<span>Agent</span> <%= image_tag "images/divider-half.png", :class => "divider-hex" %>
+						<span>Agent Information</span> <%= image_tag "images/divider-half.png", :class => "divider-hex" %>
 						<div class="divider-fade"></div>
 					</h4>
 					<div class="agent">
@@ -190,12 +190,13 @@
 			<% else %>
 				<div class="widget property-single-item property-agent">
 					<h4>
-						<span>Homely</span> <%= image_tag "images/divider-half.png", :class => "divider-hex" %>
+						<span>Agent Information</span> <%= image_tag "images/divider-half.png", :class => "divider-hex" %>
 						<div class="divider-fade"></div>
 					</h4>
 					<div class="agent">
 						<div class="row">
-							<div class="col-lg-5 col-md-5">
+							<div class="col-lg-1 col-md-1"></div>
+							<div class="col-lg-4 col-md-4 responsive-agent-photo">
 				        <a href="#" class="agent-img">
 				            <div class=""></div>
 				            <%= image_tag "images/logo4.png" %>
@@ -240,8 +241,6 @@
 		</div><!-- end col -->
 		
 			<%= render "advanced_search" %>
-			
-			<%= render "neighbourhood" %>
 
 			<div class="widget widget-sidebar recent-properties">
 			  <h4><span>View More Properties</span> <%= image_tag "images/divider-half.png" %></h4>
@@ -273,8 +272,5 @@
 
 <%= render 'newsletter' %>
 
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-598b62ce6aeb1503">
-	var addthis_config = addthis_config||{};
-  addthis_config.ui_email_note = 'Check this out!';
-</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-598b62ce6aeb1503"></script>
 
