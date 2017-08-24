@@ -538,8 +538,8 @@ a:hover { color:#68b4e8; text-decoration:none; }
 	background-color:#59aee9;
 }
 
-.button.alt { background-color:#4fba6f; }
-.button.alt:hover { background-color:#5fc97e; }
+.button.alt { background-color:#59aee9; }
+.button.alt:hover { background-color:#59aee9; }
 
 .button.small {
 	padding:6px 23px 6px 23px;
@@ -2113,7 +2113,7 @@ header { background:white; width:100%; position:fixed; z-index:1000; }
 	background:white;
 	background-size:cover;
 }
-.contact-item { min-height:220px; background:#59aee9; border:1px solid rgba(255, 255, 255, 0.3); padding:30px; color:white; text-align:center; }
+.contact-item { margin-bottom: 3% ;min-height:220px; background:#59aee9; border:1px solid rgba(255, 255, 255, 0.3); padding:30px; color:white; text-align:center; }
 .contact-item h4 { color:white; font-size:20px; font-weight:600; }
 .contact-item .fa {
 	font-size:30px;
