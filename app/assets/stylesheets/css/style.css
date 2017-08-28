@@ -237,6 +237,11 @@ abbr {display: none}
   }
 }
 
+.sell-page-icons{
+  font-size: 110px !important;
+  color: #59aee9;
+}
+
 .footer-text-color{
   color: #566573 !important;
 }
