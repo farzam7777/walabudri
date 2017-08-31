@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170831084746) do
+ActiveRecord::Schema.define(version: 20170831104600) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "namespace"
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 20170831084746) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "answer",      limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "question_id"
   end
 
   create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -117,6 +124,12 @@ ActiveRecord::Schema.define(version: 20170831084746) do
     t.string   "tag"
   end
 
+  create_table "questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "question",   limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "settings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "phone"
     t.string   "email"
@@ -136,6 +149,34 @@ ActiveRecord::Schema.define(version: 20170831084746) do
     t.text     "tips_avoid_scams_text",                limit: 65535
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
+    t.string   "main_image_file_name"
+    t.string   "main_image_content_type"
+    t.integer  "main_image_file_size"
+    t.datetime "main_image_updated_at"
+    t.string   "rent_top_image_file_name"
+    t.string   "rent_top_image_content_type"
+    t.integer  "rent_top_image_file_size"
+    t.datetime "rent_top_image_updated_at"
+    t.string   "buy_top_image_file_name"
+    t.string   "buy_top_image_content_type"
+    t.integer  "buy_top_image_file_size"
+    t.datetime "buy_top_image_updated_at"
+    t.string   "sell_top_image_file_name"
+    t.string   "sell_top_image_content_type"
+    t.integer  "sell_top_image_file_size"
+    t.datetime "sell_top_image_updated_at"
+    t.string   "blog_top_image_file_name"
+    t.string   "blog_top_image_content_type"
+    t.integer  "blog_top_image_file_size"
+    t.datetime "blog_top_image_updated_at"
+    t.string   "our_story_top_image_file_name"
+    t.string   "our_story_top_image_content_type"
+    t.integer  "our_story_top_image_file_size"
+    t.datetime "our_story_top_image_updated_at"
+    t.string   "contact_us_top_image_file_name"
+    t.string   "contact_us_top_image_content_type"
+    t.integer  "contact_us_top_image_file_size"
+    t.datetime "contact_us_top_image_updated_at"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

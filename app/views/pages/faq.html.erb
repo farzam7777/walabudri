@@ -1,3 +1,5 @@
+<% @questions = Question.includes(:answer).all %>
+
 <section class="subheader">
   <div class="container">
     <h1>Frequently Asked Questions</h1>
@@ -12,73 +14,10 @@
     <div class="row">
       <div class="col-lg-8 col-md-8">
         <div id="accordion" class="content">
-          <h3>How do I list my property?</h3>
-          <div>
-            <p>
-              To list your property, you must first <%= link_to 'Register', new_user_registration_path, style: 'color: blue' %> here. Once you’re registered, click <%= link_to 'List Property', new_property_path, style: 'color: blue' %> and follow the required steps. 
-            </p>
-          </div>
-          <h3>What happens after I list my property?</h3>
-          <div>
-            <p>
-              Once you submit your listing, you will need to call us within 24 hours to verify additional information. Once we confirm the information provided is accurate, your listing will go live.
-            </p>
-          </div>
-          <h3>How do I edit my property information once it’s posted?</h3>
-          <div>
-            <p>
-              To edit your listings click <%= link_to 'Login', new_user_session_path, style: 'color: blue' %>, enter your email and password then click edit to change any of the information. 
-            </p>
-          </div>
-          <h3>Can I have more than one listings?</h3>
-          <div>
-            <p>
-              Yes, you may have multiple properties listed.
-            </p>            
-          </div>
-          <h3>My property is no longer available, how do I bring it down?</h3>
-          <div>
-            <p>
-              You may <%= link_to 'Login', new_user_session_path, style: 'color: blue' %> using your username and password to delete your property. If having trouble, please <%= link_to 'Contact Us', page_path('contact'), style: 'color: blue' %>.
-            </p>
-          </div>
-          <h3>How long will my property be posted?</h3>
-          <div>
-            <p>
-              Listings will be available on our platform based on the initial signed agreement between both parties. However, our staff reviews listings regularly to ensure all properties listed on our platform are still available to our clients. Therefore, we ask you to delete your listing(s) once it is no longer available. 
-            </p>
-          </div>
-          <h3>How do I search for a specific property?</h3>
-          <div>
-            <p>
-              You can search for a property by going to the <%= link_to 'Homepage', page_path('index'), style: 'color: blue' %> and entering your search criteria based on your specific needs. For example, if you’re looking to rent an apartment in Khartoum, select Khartoum under neighborhood, enter your price point, number of bedrooms, then click search. 
-            </p>
-          </div>
-          <h3>I’ve found a property that I like, what do I do next?</h3>
-          <div>
-            <p>
-              To reserve or get more information on a specific property, you will need to contact the listing agent directly. The agent’s contact information is listed on the property page. 
-            </p>
-          </div>
-          <h3>I’m having trouble reaching the listing agent, what do I do?</h3>
-          <div>
-            <p>
-              If you’re having trouble reaching the listing agent you may <%= link_to 'Contact Us', page_path('contact'), style: 'color: blue' %> and we will assist you. 
-            </p>
-          </div>
-          <h3>How do I make a payment once I find a property?</h3>
-          <div>
-            <p>
-              Payments for rental properties are made directly with the listing agent. Araddi is not involved or responsible for transactions made directly between the client and the listing agent. 
-            </p>
-          </div>
-          <h3>I have found a property for a specific price, but once I contact the listing agent he/she gave me a different price.</h3>
-          <div>
-            <p>
-              All prices shown on our platform should be fixed. If agent gives you a different price, please call us directly. 
-            </p>
-          </div>
-          
+          <% @questions.each do |question| %>
+            <h3> <%= question.question %> </h3>
+            <div> <%= raw(question.answer.answer) %> </div>
+          <% end %>
         </div>
       </div>
       <div class="col-lg-4 col-md-4">
