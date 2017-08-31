@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170831104600) do
+ActiveRecord::Schema.define(version: 20170831131654) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "namespace"
@@ -133,22 +133,22 @@ ActiveRecord::Schema.define(version: 20170831104600) do
   create_table "settings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "phone"
     t.string   "email"
-    t.text     "welcome_msg",                          limit: 65535
+    t.text     "welcome_msg",                             limit: 65535
     t.string   "fb_link"
     t.string   "twitter_link"
     t.string   "instagram_link"
     t.string   "youtube_link"
-    t.text     "about_us_welcome_msg",                 limit: 65535
-    t.text     "about_us_text",                        limit: 65535
-    t.text     "terms_of_services_text",               limit: 65535
-    t.text     "accuracy_of_info_text",                limit: 65535
-    t.text     "membership_and_account_reg_text",      limit: 65535
-    t.text     "general_ownership_of_account_text",    limit: 65535
-    t.text     "changes_to_the_terms_of_service_text", limit: 65535
-    t.text     "avoid_scams_text",                     limit: 65535
-    t.text     "tips_avoid_scams_text",                limit: 65535
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
+    t.text     "about_us_welcome_msg",                    limit: 65535
+    t.text     "about_us_text",                           limit: 65535
+    t.text     "terms_of_services_text",                  limit: 65535
+    t.text     "accuracy_of_info_text",                   limit: 65535
+    t.text     "membership_and_account_reg_text",         limit: 65535
+    t.text     "general_ownership_of_account_text",       limit: 65535
+    t.text     "changes_to_the_terms_of_service_text",    limit: 65535
+    t.text     "avoid_scams_text",                        limit: 65535
+    t.text     "tips_avoid_scams_text",                   limit: 65535
+    t.datetime "created_at",                                            null: false
+    t.datetime "updated_at",                                            null: false
     t.string   "main_image_file_name"
     t.string   "main_image_content_type"
     t.integer  "main_image_file_size"
@@ -177,6 +177,10 @@ ActiveRecord::Schema.define(version: 20170831104600) do
     t.string   "contact_us_top_image_content_type"
     t.integer  "contact_us_top_image_file_size"
     t.datetime "contact_us_top_image_updated_at"
+    t.string   "our_story_background_image_file_name"
+    t.string   "our_story_background_image_content_type"
+    t.integer  "our_story_background_image_file_size"
+    t.datetime "our_story_background_image_updated_at"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

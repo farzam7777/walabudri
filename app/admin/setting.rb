@@ -5,7 +5,8 @@ ActiveAdmin.register Setting do
                 :accuracy_of_info_text, :membership_and_account_reg_text, 
                 :general_ownership_of_account_text, :changes_to_the_terms_of_service_text, 
                 :avoid_scams_text, :tips_avoid_scams_text, :main_image, :rent_top_image, 
-                :sell_top_image, :blog_top_image, :our_story_top_image, :contact_us_top_image
+                :sell_top_image, :blog_top_image, :our_story_top_image, :contact_us_top_image, 
+                :our_story_background_image
 
 
   show do
@@ -64,6 +65,9 @@ ActiveAdmin.register Setting do
       row :blog_top_image do
         image_tag setting.blog_top_image.url(:medium)
       end
+      row :our_story_background_image do
+        image_tag setting.our_story_background_image.url(:medium)
+      end
     end
     
     active_admin_comments
@@ -111,6 +115,10 @@ ActiveAdmin.register Setting do
       f.input :blog_top_image, :as => :file, :hint => f.object.blog_top_image.present? \
       ? image_tag(f.object.blog_top_image.url(:large))
       : content_tag(:span, "No Blog Page Top Image Yet")
+      
+      f.input :our_story_background_image, :as => :file, :hint => f.object.our_story_background_image.present? \
+      ? image_tag(f.object.our_story_background_image.url(:large))
+      : content_tag(:span, "No Our Story Page Background Image Yet")
     end
     f.actions
   end
@@ -174,6 +182,9 @@ ActiveAdmin.register Setting do
     end
     column "Blog Page Top Image" do |image|
       image_tag image.blog_top_image.url(:thumb)
+    end
+    column "Our Story Background Image" do |image|
+      image_tag image.our_story_background_image.url(:thumb)
     end
     actions
   end
