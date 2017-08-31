@@ -14,34 +14,11 @@
         <div id="accordion" class="content">
           <h3>Avoid Scams</h3>
           <div>
-            <p>
-            It's easy to get swept up in the urgency to find a new home, but make sure you do your research to protect yourself from scams. </p>
-            <p> Finding a home to rent or purchase or a work space can be a time consuming process. Scammers know this and cash in on eager property seekers who rush into agreements without doing the necessary research. Online real estate sites make it easy for scammers to steal photos and descriptions of real places, and make it appear as if it’s their own.
-            </p>
+            <%= raw(Setting.first.avoid_scams_text) %>
           </div>
           <h3>Here are tips to help you avoid scam </h3>
           <div>
-            <p>
-              <ul>
-                
-                <li>
-                  <b> Watch out for deals that are too good. </b> Scammers lure you in by promising low rents and selling price, extra amenities, great locations, and other perks. If the price seems much better than offered elsewhere, it may be a scam.
-                </li>
-                
-                <li>
-                  <b> Make sure you do your due diligence. </b> Always try to find out more information on a real estate agent to ensure they are in fact authorized to rent or sell the property. 
-                </li>
-                
-                <li>
-                  <b> See the property in person. </b> Don’t send money to someone you’ve never met for a property you haven’t seen. If you can’t visit an apartment or house yourself, ask someone you trust to go and confirm that it is what was advertised.
-                </li>
-                
-                <li>
-                  <b> Consult an attorney before you purchase any property. </b> Seek legal advice to ensure the information provided by the selling agent is accurate and true. Make sure the attorney receives full history of the property and its ownership from the the state’s legal entity responsible for providing this information. 
-                </li>
-
-              </ul>
-            </p>
+            <%= raw(Setting.first.tips_avoid_scams_text) %>
           </div>
           
         </div>

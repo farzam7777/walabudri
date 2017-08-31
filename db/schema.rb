@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170823123727) do
+ActiveRecord::Schema.define(version: 20170831084746) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "namespace"
@@ -115,6 +115,27 @@ ActiveRecord::Schema.define(version: 20170823123727) do
     t.integer  "isPublished",                      default: 0
     t.integer  "isFeatured",                       default: 0
     t.string   "tag"
+  end
+
+  create_table "settings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "phone"
+    t.string   "email"
+    t.text     "welcome_msg",                          limit: 65535
+    t.string   "fb_link"
+    t.string   "twitter_link"
+    t.string   "instagram_link"
+    t.string   "youtube_link"
+    t.text     "about_us_welcome_msg",                 limit: 65535
+    t.text     "about_us_text",                        limit: 65535
+    t.text     "terms_of_services_text",               limit: 65535
+    t.text     "accuracy_of_info_text",                limit: 65535
+    t.text     "membership_and_account_reg_text",      limit: 65535
+    t.text     "general_ownership_of_account_text",    limit: 65535
+    t.text     "changes_to_the_terms_of_service_text", limit: 65535
+    t.text     "avoid_scams_text",                     limit: 65535
+    t.text     "tips_avoid_scams_text",                limit: 65535
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

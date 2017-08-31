@@ -14,14 +14,14 @@
         <div class="contact-item">
           <i class="fa fa-envelope"></i>
           <h4>Email Us</h4>
-          <p>info@araddi.com</p>
+          <p> <%= raw(Setting.first.email) %> </p>
         </div>
       </div>
       <div class="col-lg-4 col-md-4">
         <div class="contact-item">
           <i class="fa fa-phone"></i>
           <h4>Call Us</h4>
-          <a href="#"><p style="color: white">(+249) 901-93-3162</p></a>
+          <a href="#"><p style="color: white"> <%= raw(Setting.first.phone) %> </p></a>
         </div>
       </div>
       <div class="col-lg-4 col-md-4">
@@ -30,22 +30,22 @@
           <h4>Connect With Us</h4>
           <ul class="social-icons">
             <li>
-              <a target="_blank" href="https://www.facebook.com/araddirealestate/">
+              <a target="_blank" href="<%= raw(Setting.first.fb_link) %>">
                 <i class="fa fa-facebook"></i>
               </a>
             </li>
             <li>
-              <a target="_blank" href="https://www.instagram.com/araddi_com/?hl=en">
+              <a target="_blank" href="<%= raw(Setting.first.instagram_link) %>">
                 <i class="fa fa-instagram"></i>
               </a>
             </li>
             <li>
-              <a target="_blank" href="https://twitter.com/AraddiRealty">
+              <a target="_blank" href="<%= raw(Setting.first.twitter_link) %>">
                 <i class="fa fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a target="_blank" href="<%= raw(Setting.first.youtube_link) %>">
                 <i class="fa fa-youtube"></i>
               </a>
             </li>

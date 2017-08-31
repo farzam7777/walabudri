@@ -39,24 +39,28 @@
                 <div class="divider" style="background: #566573"></div>
                 <ul class="social-icons circle" style="text-align: center;">
                     <li style="margin-right: 6%;">
-                      <a target="_blank" href="https://www.facebook.com/araddirealestate/">
+                      <a target="_blank" href=" <%= raw(Setting.first.fb_link) %> ">
                         <i class="fa fa-facebook"></i>
                       </a>
                     </li>
                     
                     <li style="margin-right: 6%;">
-                      <a target="_blank" href="https://www.instagram.com/araddi_com/?hl=en">
+                      <a target="_blank" href=" <%= raw(Setting.first.instagram_link) %> ">
                         <i class="fa fa-instagram"></i>
                       </a>
                     </li>
                     
                     <li style="margin-right: 6%;">
-                      <a target="_blank" href="https://twitter.com/AraddiRealty">
+                      <a target="_blank" href=" <%= raw(Setting.first.twitter_link) %> ">
                         <i class="fa fa-twitter"></i>
                       </a>
                     </li>
                     
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    <li>
+                      <a target="_blank" href=" <%= raw(Setting.first.youtube_link) %> ">
+                        <i class="fa fa-youtube"></i>
+                      </a>
+                    </li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget from-the-blog responsive-footer-text">
@@ -95,11 +99,11 @@
                 <h4><span class="footer-text-color"> <strong> Contact Us </strong> </span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
                 <ul>
                     <li>
-                      <a href="<%= page_path('contact') %>"><h3 class="footer-text-color">(+249) 901-93-3162</h3></a>
+                      <a href="<%= page_path('contact') %>"><h3 class="footer-text-color"><%= raw(Setting.first.phone) %></h3></a>
                       <div class="clear"></div>
                     </li>
                     <li>
-                      <a href="<%= page_path('contact') %>"><h3 class="footer-text-color">info@araddi.com</h3></a>
+                      <a href="<%= page_path('contact') %>"><h3 class="footer-text-color"><%= raw(Setting.first.email) %></h3></a>
                       <div class="clear"></div>
                     </li>
                 </ul>
