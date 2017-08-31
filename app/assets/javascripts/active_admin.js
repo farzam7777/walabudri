@@ -3,4 +3,4 @@
 //= require ckeditor/ckeditor
 //= require ckeditor/init
 
-var CKEDITOR_BASEPATH = 'http://assets.localhost:3000/assets/ckeditor/';
+var CKEDITOR_BASEPATH = 'http://assets.walabudri.herokuapp.com/assets/ckeditor/';
