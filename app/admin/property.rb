@@ -4,7 +4,7 @@ ActiveAdmin.register Property do
 
 	permit_params :title, :listing_type, :location, :isPublished, :isFeatured, :bedrooms,
                 :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id,
-                :near_by_location, :description, :tag, :longitude, :latitude, 
+                :near_by_location, :description, :tag, :longitude, :latitude, :currency,  
                 images_attributes: [:id, :property_id, :image, :_destroy]
                 
 	scope :all
@@ -63,15 +63,18 @@ ActiveAdmin.register Property do
 	
 	index do
     selectable_column
+    column :id
     column :user do |property|
       property.user.first_name
     end
     column "Image" do |image|
         image_tag image.image.url(:thumb)
     end
-    Property.column_names.each do |c|
-      column c.to_sym
-    end
+    column :title
+    column :listing_type
+    column :address
+    column :location
+    column :price
     actions
   end
   
@@ -86,6 +89,7 @@ ActiveAdmin.register Property do
       row :bath
       row :furnished
       row :area
+      row :currency
       row :price
       if property.description.full_lang == 'arabic'
         row :description, dir: 'rtl'
@@ -117,7 +121,7 @@ ActiveAdmin.register Property do
 
   form multipart: true do |f|
     f.inputs "Property Details" do
-    	f.input :user_id, as: :select, collection: User.all.map{|x| [x.email, x.id]}
+    	f.input :user
       f.input :title
       f.input :listing_type, as: :select, collection: ['Apartment', 'House', 'Villa', 'Office', 'Farm House', 'Empty Land'], include_blank: false
       f.input :location, as: :select, collection: ['Khartoum', 'Bahri, Khartoum/North', 'Umdurman'], include_blank: false
@@ -126,6 +130,7 @@ ActiveAdmin.register Property do
       f.input :bath
       f.input :furnished
       f.input :area
+      f.input :currency, as: :select, collection: ['USD', 'SDG'], include_blank: false
       f.input :price
       if f.object.new_record?
         f.input :description
@@ -156,7 +161,7 @@ ActiveAdmin.register Property do
     f.button :Submit
   end
   
-  filter :user_id, as: :select, collection: User.all.map{|x| [x.email, x.id]}
+  filter :user
   filter :title
   filter :address
   filter :location
@@ -166,6 +171,7 @@ ActiveAdmin.register Property do
   filter :bath
   filter :furnished
   filter :area
+  filter :currency, as: :select, collection: ['USD', 'SDG']
   filter :price
   filter :description
   filter :availibility

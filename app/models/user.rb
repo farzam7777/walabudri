@@ -23,4 +23,8 @@ class User < ApplicationRecord
 	validates :family_name, presence: true
 	validates :contact, presence: true
 	validates :terms, acceptance: true
+
+	def to_s
+		first_name + ' ' + family_name
+	end
 end

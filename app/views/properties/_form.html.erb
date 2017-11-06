@@ -39,18 +39,26 @@
           </div>
         </div>
 
-        <div class="row" style="margin-bottom: 3%;">
-          <div class="col-lg-4 col-md-4">
-            <div class="form-block">
-              <%= f.input :price, input_html: { class: 'border', min: 0, placeholder: "Price Per Month SDG" }, label: 'Rent Price' %>
+        <div class="row" style="margin-bottom: 5%;">
+          <div class="col-lg-6 col-md-6">
+            <div class="form-block border">
+              <%= f.input :currency, as: :select, collection: ['USD', 'SDG'], include_blank:' Select Currency' %>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4">
+          <div class="col-lg-6 col-md-6">
+            <div class="form-block">
+              <%= f.input :price, input_html: { class: 'border', min: 0, placeholder: "Price Per Month" }, label: 'Rent Price' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-bottom: 3%;">
+          <div class="col-lg-6 col-md-6">
             <div class="form-block">
               <%= f.input :area, input_html: { class: 'border', min: 0, placeholder: "Area in Meter Sq" } %>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4">
+          <div class="col-lg-6 col-md-6">
             <div class="form-block border">
               <%= f.input :availibility, as: :date, order: [:day, :month, :year], label: 'Availibility (DD/MM/YYYY)' %>
             </div>
@@ -75,6 +83,19 @@
           </div>
         </div>
         
+        <div class="row" style="margin-bottom: 5%;">
+          <div class="col-lg-6 col-md-6">
+            <div class="form-block border" style="margin-bottom: 4%;">
+              <%= f.input :longitude, input_html: { class: 'border', placeholder: '{ Optional }' } %>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="form-block" style="margin-bottom: 3%;"> 
+              <%= f.input :latitude, input_html: { class: 'border', placeholder: '{ Optional }' } %>
+            </div>
+          </div>
+        </div>
+
         <div class="row" style="margin-bottom: 5%;">
           <div class="col-lg-6 col-md-6">
             <div class="form-block border" style="margin-bottom: 4%;">

@@ -143,6 +143,6 @@ class PropertiesController < ApplicationController
   end
 
   def property_params
-	params.require(:property).permit!
+	 params.require(:property).permit!
   end
 end

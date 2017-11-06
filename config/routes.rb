@@ -57,10 +57,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   HighVoltage.configure do |config|
-    	config.route_drawer = HighVoltage::RouteDrawers::Root
-    end
+  	config.route_drawer = HighVoltage::RouteDrawers::Root
+  end
 
-    HighVoltage.configure do |config|
+  HighVoltage.configure do |config|
   	config.home_page = 'index'	
-    end  
+  end  
 end

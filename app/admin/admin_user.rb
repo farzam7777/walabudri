@@ -8,7 +8,9 @@ ActiveAdmin.register AdminUser do
     column :current_sign_in_at
     column :sign_in_count
     column :created_at
-    actions
+    if current_admin_user.super_admin?
+      actions
+    end
   end
 
   filter :email
@@ -19,8 +21,10 @@ ActiveAdmin.register AdminUser do
   form do |f|
     f.inputs "Admin Details" do
       f.input :email
-      f.input :password
-      f.input :password_confirmation
+      if current_admin_user.super_admin?
+        f.input :password
+        f.input :password_confirmation
+      end
     end
     f.actions
   end

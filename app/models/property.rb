@@ -34,8 +34,16 @@ class Property < ApplicationRecord
 	validates :image, presence: true
 	validates :address, length: { minimum: 10 }
 	validates :description, length: { minimum: 15 }
+	validates :currency, presence: true
 	validates :description, presence: true
 	validate :empty_land_option_for_sell_tag
+	validate :non_zero
+
+	def non_zero
+	  if self.price <= 0
+	     self.errors.add(:price, "price can't be zero or negative")
+	  end
+	end
 
 	def empty_land_option_for_sell_tag
 		if self.listing_type == "Empty Land" && self.tag != "Sell"
@@ -55,4 +63,7 @@ class Property < ApplicationRecord
 		end	
 	end
 
+	def price_with_currency
+		price.to_s + ' ' + currency
+	end
 end
