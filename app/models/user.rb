@@ -1,8 +1,8 @@
 class User < ApplicationRecord
 
-  has_many :properties, :dependent => :destroy
+  has_many :properties, dependent: :destroy
 
- 	has_many   :favorites
+ 	has_many   :favorites, dependent: :destroy
 	# has_many   :properties, through: :favorites, :dependent => :destroy
 		
 	# Include default devise modules. Others available are:
