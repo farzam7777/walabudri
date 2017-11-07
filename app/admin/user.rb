@@ -29,8 +29,12 @@ ActiveAdmin.register User do
 	form multipart: true do |f|
 	  f.inputs "User Details" do
 	  	f.input :email
-	  	f.input :password
-	  	f.input :password_confirmation
+	  	if f.object.id.nil?
+        f.inputs "Password" do
+        f.input :password,              :label => "Password"
+        f.input :password_confirmation, :label => "Password Confirmation"
+      end
+    end
 	    f.input :first_name
 	    f.input :middle_name
 	    f.input :family_name
