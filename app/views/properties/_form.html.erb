@@ -29,7 +29,7 @@
         <div class="row" style="margin-bottom: 5%;">
           <div class="col-lg-6 col-md-6">
             <div class="form-block border">
-              <%= f.input :tag, as: :select, collection: ['Rent', 'Sell'], include_blank:' Select Tag' %>
+              <%= f.input :tag, as: :select, collection: [["For Rent", "Rent"], ["For Sale", "Sell"]], include_blank:' Select Tag' %>
             </div>
           </div>
           <div class="col-lg-6 col-md-6">
@@ -47,7 +47,7 @@
           </div>
           <div class="col-lg-6 col-md-6">
             <div class="form-block">
-              <%= f.input :price, input_html: { class: 'border', min: 0, placeholder: "Price Per Month" }, label: 'Rent Price' %>
+              <%= f.input :price, input_html: { class: 'border', min: 0, placeholder: "Price Per Month" }, label: 'Price' %>
             </div>
           </div>
         </div>

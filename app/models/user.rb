@@ -25,6 +25,6 @@ class User < ApplicationRecord
 	validates :terms, acceptance: true
 
 	def to_s
-		first_name + ' ' + family_name
+		first_name + ' ' + middle_name
 	end
 end

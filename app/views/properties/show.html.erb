@@ -40,7 +40,7 @@
 				<div class="property-header">
 					<div class="property-title">
 						<h4><%= @property.title %></h4>
-            <div class="property-price-single right"><%= @property.price_with_currency %>  <span>Per Month</span></div>
+            <div class="property-price-single right"><%= number_with_delimiter(@property.price, delimiter: ',') %> <%= @property.currency %> <span><%= "Per Month" if @property.tag == "Rent" %></span></div>
 						<p class="property-address"><i class="fa fa-map-marker icon"></i><%= @property.address %></p>
             <div class="clear"></div>
 					</div>
@@ -179,7 +179,7 @@
 				        </a>
 				        <div class="agent-content">
 				            <div class="agent-details" style="line-height: 2.5em">
-				                <h4><a href="#"><%= @property.user.first_name.capitalize %></a></h4>
+				                <h4><a href="#"><%= @property.user.to_s.capitalize %></a></h4>
 				                <p><i class="fa fa-envelope icon"></i><%= @property.user.email %></p>
 				                <p><i class="fa fa-phone icon"></i><%= @property.user.contact %></p>
 				            </div>

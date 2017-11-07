@@ -65,7 +65,7 @@ ActiveAdmin.register Property do
     selectable_column
     column :id
     column :user do |property|
-      property.user.first_name
+      property.user.to_s.capitalize
     end
     column "Image" do |image|
         image_tag image.image.url(:thumb)

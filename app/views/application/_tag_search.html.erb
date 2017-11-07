@@ -11,6 +11,19 @@
       <%= f.number_field :bedrooms_lteq, class: "area-filter border", placeholder: "Max Beds", min: 0 %>
       <div class="clear"></div>
     </div>
+
+    <% if tag_value == 'Rent' %>
+      <div class="form-block border">
+        <%= f.select :currency_eq, options_for_select([["USD", "USD"], ["SDG", "SDG"]]), { prompt: "Select Price in USD or SDG" }, { class: 'border' } %>
+        <div class="clear"></div>
+      </div>
+
+      <div class="form-block">
+        <%= f.number_field :price_gteq, class: "area-filter border", placeholder: "Min Price", min: 0 %>
+        <%= f.number_field :price_lteq, class: "area-filter border", placeholder: "Max Price", min: 0 %>
+        <div class="clear"></div>
+      </div>
+    <% end %>
     
     <div class="form-block">
       <%= f.number_field :bath_gteq, class: "area-filter border", placeholder: "Min Baths", min: 0 %>

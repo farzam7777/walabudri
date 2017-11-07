@@ -59,7 +59,8 @@
           </div>
           
           <div class="form-block" style="margin-top: 2%;">
-            <strong> Terms and Conditions </strong> <%= f.check_box(:terms) %>
+            <strong> Terms and Conditions </strong> 
+            <%= f.check_box :terms, style: '-webkit-appearance: checkbox' %>
             <%= f.label(:terms, "I understand that checking this box constitutes a legal signature confirming all of the information entered is accurate and I have read and agree to the Terms of Service.", style: "font-weight: 100") %>
           </div>
 

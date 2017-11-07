@@ -77,7 +77,7 @@
             <div class="property-tag button status">
               For Sale
             </div>
-            <div class="property-price"> <%= featured.price %> SDG</div>
+            <div class="property-price"> <%= number_with_delimiter(featured.price, delimiter: ',') %> <%= featured.currency %></div>
             <div class="property-color-bar"></div>
             <%= image_tag featured.image.url, style: "height: 210px; width: 100%;" %>
         </a>
@@ -124,7 +124,7 @@
             <div class="img-fade"></div>
             <div class="property-tag button alt featured">Featured</div>
             <div class="property-tag button status">For <%= featured.tag.capitalize %></div>
-            <div class="property-price"> <%= featured.price %> SDG</div>
+            <div class="property-price"> <%= number_with_delimiter(featured.price, delimiter: ',') %> <%= featured.currency %></div>
             <div class="property-color-bar"></div>
             <%= image_tag featured.image.url, style: "height: 210px; width: 100%;" %>
         </a>
