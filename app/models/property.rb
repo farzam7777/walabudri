@@ -36,6 +36,7 @@ class Property < ApplicationRecord
 	validates :description, length: { minimum: 15 }
 	validates :currency, presence: true
 	validates :description, presence: true
+	validates :user, presence: true
 	validate :empty_land_option_for_sell_tag
 	validate :non_zero
 
