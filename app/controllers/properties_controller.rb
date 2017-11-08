@@ -143,6 +143,13 @@ class PropertiesController < ApplicationController
     render 'index'
   end
 
+  def Unpublish
+    @property = Property.find(params[:id])
+    @property.isPublished = 0
+    @property.save
+    redirect_to page_path('my_properties'), notice: 'Propertiy is successfully Unpublished'
+  end
+
   def property_params
 	 params.require(:property).permit!
   end

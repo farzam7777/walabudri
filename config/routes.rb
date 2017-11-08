@@ -49,6 +49,10 @@ Rails.application.routes.draw do
     collection do 
       get 'buy'
     end
+
+    member do
+      post 'Unpublish'
+    end
   end
   
   resources :blogs

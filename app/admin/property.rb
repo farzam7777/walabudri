@@ -9,7 +9,6 @@ ActiveAdmin.register Property do
                 
 	scope :all
 	scope :rent
-	scope :buy
 	scope :sell
 	scope :published
 	scope :unpublished
@@ -75,7 +74,16 @@ ActiveAdmin.register Property do
     column :address
     column :location
     column :price
-    actions
+    column "isPublished" do |property|
+      isPublished_status(property.isPublished)
+    end
+    column "isFeatured" do |property|
+      isFeatured_status(property.isFeatured)
+    end
+    actions dropdown: true do |property|
+      item "Publish", Publish_admin_property_path(property), method: :put if !property.isPublished?
+      item "UnPublish", UnPublish_admin_property_path(property), method: :put if property.isPublished?
+    end
   end
   
   show do

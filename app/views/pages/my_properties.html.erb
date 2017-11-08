@@ -13,6 +13,13 @@
 	  </div>
 	</section>
 
+	<% flash.each do |key,value| %>
+		<div class="alert-box success" style="width: 35%; margin-left: 29.5%; margin-top: 2%; margin-bottom: -3%; ">
+			<span style="float: left"><i class="fa fa-check icon"></i></span>
+			<p id="notice" style="margin-bottom: 0%;"><%= value %></p>
+		</div>
+	<% end %>
+
 	<section class="module my-properties">
 	  <div class="container">
 	  
@@ -31,19 +38,23 @@
 				  </tr>
 				  <% @properties.each do |property| %>
 					  <tr>
-						<td class="property-img"><a href="property-single.html"><%= image_tag property.image.url %></a></td>
-						<td class="property-title">
-							<a href="property-single.html"><%= property.title %></a><br/>
-							<p class="property-address"><i class="fa fa-map-marker icon"></i><%= property.address %></p>
-							<p><strong><%= property.price %> SDG </strong></p>
-						</td>
-						<td class="property-post-status"><span class="button small alt"> <%= isPublished_status(property.isPublished) %></span></td>
-						<td class="property-date"><%= property.created_at.strftime("%m/%d/%Y") %></td>
-						<td class="property-actions">
-							<a href="<%= property_path(property) %>"><i class="fa fa-eye icon"></i>View</a>
-							<a href="<%= edit_property_path(property) %>"><i class="fa fa-pencil icon"></i>Edit</a>
-							<a><i class="fa fa-close icon"></i></a><%= link_to "Delete", property_path(property),  method: :delete, data: {confirm: "You sure?"}, style: "margin-left: -6%;" %>
-						</td>
+							<td class="property-img"><a href="<%= property_path(property) %>"><%= image_tag property.image.url %></a></td>
+							<td class="property-title">
+								<a href="property-single.html"><%= property.title %></a><br/>
+								<p class="property-address"><i class="fa fa-map-marker icon"></i><%= property.address %></p>
+								<p><strong><%= property.price %> SDG </strong></p>
+							</td>
+							<td class="property-post-status"><span class="button small alt"> <%= isPublished_status(property.isPublished) %></span></td>
+							<td class="property-date"><%= property.created_at.strftime("%m/%d/%Y") %></td>
+							<td class="property-actions">
+								<% if property.isPublished? %>
+									<%= link_to 'Unpublish', Unpublish_property_path(property), method: :post, class: 'fa fa-eye icon' %>
+								<% else %>
+									<%= link_to 'Unpublish', Unpublish_property_path(property), method: :post, class: 'fa fa-eye icon', style: 'pointer-events: none; color: grey' %>
+								<% end %>
+								<a href="<%= edit_property_path(property) %>"><i class="fa fa-pencil icon"></i>Edit</a>
+								<a><i class="fa fa-close icon"></i></a><%= link_to "Delete", property_path(property),  method: :delete, data: {confirm: "You sure?"}, style: "margin-left: -6%;" %>
+							</td>	
 					  </tr>
 				  <% end %>
 				  
