@@ -86,6 +86,7 @@ class PropertiesController < ApplicationController
     @search = Property.ransack(params[:q])  
   	@property = Property.find(params[:id])
     @locations = Property.distinct.pluck(:location)
+    @image = Image.new
   end
 
   def destroy
