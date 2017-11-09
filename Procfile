@@ -1,1 +1,1 @@
-web: bundle exec passenger start -p $PORT --max-pool-size 100
+web: bundle exec passenger start -p $PORT --max-pool-size 10
