@@ -58,9 +58,9 @@
             <%= f.text_field :contact, :class => "border" %>
           </div>
           
-          <div class="form-block" style="margin-top: 2%;">
-            <strong> Terms and Conditions </strong> 
-            <%= f.check_box :terms, style: '-webkit-appearance: checkbox' %>
+          <div class="form-block" style="margin-top: 2%;"> 
+            <span> <%= f.check_box :terms, style: '-webkit-appearance: checkbox' %> </span>
+            <strong> Terms and Conditions </strong>
             <%= f.label(:terms, "I understand that checking this box constitutes a legal signature confirming all of the information entered is accurate and I have read and agree to the Terms of Service.", style: "font-weight: 100") %>
           </div>
 
