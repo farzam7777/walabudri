@@ -65,15 +65,17 @@
 </header>
 
 <script type="text/javascript">
-  $( document ).ready(function() {
-    if ($(window).width() < 481){
-      $('.translation2').remove();
-      $('.translation1').css('display', 'inline');
-    }
-    else{
-      $('.translation1').remove();
-      $('.translation2').css('display', '-webkit-inline-box');
-    }
+  document.addEventListener("DOMContentLoaded", function(event) { 
+    $( document ).ready(function() {
+      if ($(window).width() < 481){
+        $('.translation2').remove();
+        $('.translation1').css('display', 'inline');
+      }
+      else{
+        $('.translation1').remove();
+        $('.translation2').css('display', '-webkit-inline-box');
+      }
+    });
   });
 </script>
 
