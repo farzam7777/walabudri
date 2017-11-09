@@ -24,7 +24,6 @@ gem 'non-stupid-digest-assets', '~> 1.0.4'
 gem 'wtf_lang'
 gem 'activeadmin_addons'
 gem 'bootsnap', require: false
-gem 'rails-dev-tweaks', '~> 1.1'
 
 gem 'rails', '~> 5.0.3'
 gem 'puma', '~> 3.0'
