@@ -1,1 +1,101 @@
-function initialize(){var e={zoom:13,scrollwheel:!1,center:new google.maps.LatLng(39.29,-76.5)},n=new google.maps.Map(document.getElementById("map-canvas"),e),o=new google.maps.Marker({position:n.getCenter(),map:n,icon:"images/pin.png"}),i=new google.maps.Marker({position:new google.maps.LatLng(39.2833,-76.5267),map:n,icon:"images/pin.png"}),a=new google.maps.Marker({position:new google.maps.LatLng(39.2833,-76.5567),map:n,icon:"images/pin.png"}),g=new google.maps.Marker({position:new google.maps.LatLng(39.3133,-76.5597),map:n,icon:"images/pin.png"}),p=new google.maps.Marker({position:new google.maps.LatLng(39.2933,-76.565),map:n,icon:"images/pin.png"}),s=new google.maps.Marker({position:new google.maps.LatLng(39.2723,-76.54),map:n,icon:"images/pin.png"}),t='<div class="info-box"><img src="images/property-img1.jpg" class="info-box-img" alt="" /><h4>587 Smith Avenue</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in ultrices metus sit amet [...]</p><a href="property_single.html" class="button small">View Details</a><br/></div>',m=new google.maps.InfoWindow({content:t});google.maps.event.addListener(o,"click",function(){m.open(n,o)}),google.maps.event.addListener(i,"click",function(){m.open(n,i)}),google.maps.event.addListener(a,"click",function(){m.open(n,a)}),google.maps.event.addListener(g,"click",function(){m.open(n,g)}),google.maps.event.addListener(p,"click",function(){m.open(n,p)}),google.maps.event.addListener(s,"click",function(){m.open(n,s)})}google.maps.event.addDomListener(window,"load",initialize);
+//intialize the map
+function initialize() {
+  var mapOptions = {
+    zoom: 13,
+    scrollwheel: false,
+    center: new google.maps.LatLng(39.29000, -76.5000)
+  };
+
+var map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+
+
+// MARKERS
+/****************************************************************/
+
+//add a marker1
+var marker = new google.maps.Marker({
+    position: map.getCenter(),
+    map: map,
+    icon: 'images/pin.png'
+});
+
+//add a marker2
+var marker2 = new google.maps.Marker({
+    position: new google.maps.LatLng(39.2833, -76.5267),
+    map: map,
+    icon: 'images/pin.png'
+});
+
+//add a marker3
+var marker3 = new google.maps.Marker({
+    position: new google.maps.LatLng(39.2833, -76.5567),
+    map: map,
+    icon: 'images/pin.png'
+});
+
+//add a marker4
+var marker4 = new google.maps.Marker({
+    position: new google.maps.LatLng(39.3133, -76.5597),
+    map: map,
+    icon: 'images/pin.png'
+});
+
+//add a marker5
+var marker5 = new google.maps.Marker({
+    position: new google.maps.LatLng(39.2933, -76.5650),
+    map: map,
+    icon: 'images/pin.png'
+});
+
+//add a marker6
+var marker6 = new google.maps.Marker({
+    position: new google.maps.LatLng(39.2723, -76.5400),
+    map: map,
+    icon: 'images/pin.png'
+});
+
+
+
+// INFO BOXES
+/****************************************************************/
+
+//show info box for marker1
+var contentString = '<div class="info-box"><img src="images/property-img1.jpg" class="info-box-img" alt="" /><h4>587 Smith Avenue</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in ultrices metus' + 
+                    ' sit amet [...]</p><a href="property_single.html" class="button small">View Details</a><br/></div>';
+
+var infowindow = new google.maps.InfoWindow({ content: contentString });
+
+google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+  });
+
+
+//show info box for marker2
+google.maps.event.addListener(marker2, 'click', function() {
+    infowindow.open(map,marker2);
+  });
+
+//show info box for marker3
+google.maps.event.addListener(marker3, 'click', function() {
+    infowindow.open(map,marker3);
+  });
+
+//show info box for marker4
+google.maps.event.addListener(marker4, 'click', function() {
+    infowindow.open(map,marker4);
+  });
+
+//show info box for marker5
+google.maps.event.addListener(marker5, 'click', function() {
+    infowindow.open(map,marker5);
+  });
+
+//show info box for marker6
+google.maps.event.addListener(marker6, 'click', function() {
+    infowindow.open(map,marker6);
+  });
+
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
