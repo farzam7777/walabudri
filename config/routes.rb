@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {confirmations: 'confirmations'}
 
   resources :properties do
-    resources :images
+    resources :images, only: [:new, :create]
     
     member do
       get 'mark_favorite'
@@ -55,7 +55,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :blogs
+  resources :blogs, only: [:index, :show]
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
