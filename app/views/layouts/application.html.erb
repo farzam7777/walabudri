@@ -11,11 +11,11 @@
     
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload', async: true, cache: true %>
-    
-    <%= stylesheet_link_tag    'scss/mobile', media: 'all', 'data-turbolinks-track': 'reload', async: true, cache: true %>
-    
-    <%= stylesheet_link_tag    'scss/static', media: 'all', 'data-turbolinks-track': 'reload', async: true, cache: true %>
+    <%= RailsCriticalCssServer::Rewrite.call self do %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload', async: true, cache: true %>
+      <%= stylesheet_link_tag    'scss/mobile', media: 'all', 'data-turbolinks-track': 'reload', async: true, cache: true %>
+      <%= stylesheet_link_tag    'scss/static', media: 'all', 'data-turbolinks-track': 'reload', async: true, cache: true %>
+    <% end %>
     
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', async: true, cache: true %>
     

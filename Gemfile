@@ -24,6 +24,7 @@ gem 'non-stupid-digest-assets', '~> 1.0.4'
 gem 'wtf_lang'
 gem 'activeadmin_addons'
 gem 'bootsnap', require: false
+gem 'rails_critical_css_server'
 
 gem 'rails', '~> 5.0.3'
 gem "passenger"
