@@ -40,6 +40,7 @@ gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'b
 
 gem 'rails_12factor', group: :production
 gem 'pg', '~> 0.21.0', group: :production
+gem 'heroku-deflater', group: :production
 
 group :development, :test do
 
