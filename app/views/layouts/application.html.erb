@@ -11,13 +11,13 @@
     
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload', async: true %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload', async: true, cache: true %>
     
-    <%= stylesheet_link_tag    'scss/mobile', media: 'all', 'data-turbolinks-track': 'reload', async: true %>
+    <%= stylesheet_link_tag    'scss/mobile', media: 'all', 'data-turbolinks-track': 'reload', async: true, cache: true %>
     
-    <%= stylesheet_link_tag    'scss/static', media: 'all', 'data-turbolinks-track': 'reload', async: true %>
+    <%= stylesheet_link_tag    'scss/static', media: 'all', 'data-turbolinks-track': 'reload', async: true, cache: true %>
     
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', async: true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', async: true, cache: true %>
     
   </head>
 
@@ -116,16 +116,16 @@
 
 <!-- JavaScript file links -->
 
-<%= javascript_include_tag 'js/jquery-3.1.1.min.js', 'data-turbolinks-track': 'reload', async: true %>
-<%= javascript_include_tag 'assets/jquery-ui-1.12.1/jquery-ui.min.js', 'data-turbolinks-track': 'reload', async: true %>
+<%= javascript_include_tag 'js/jquery-3.1.1.min.js', 'data-turbolinks-track': 'reload', async: true, cache: true %>
+<%= javascript_include_tag 'assets/jquery-ui-1.12.1/jquery-ui.min.js', 'data-turbolinks-track': 'reload', async: true, cache: true %>
 
-<%= javascript_include_tag 'js/bootstrap.min.js', 'data-turbolinks-track': 'reload', async: true %>
-<%= javascript_include_tag 'assets/slick-1.6.0/slick.min.js', 'data-turbolinks-track': 'reload', async: true %>
-<%= javascript_include_tag 'assets/chosen-1.6.2/chosen.jquery.min.js', 'data-turbolinks-track': 'reload', async: true %>
+<%= javascript_include_tag 'js/bootstrap.min.js', 'data-turbolinks-track': 'reload', async: true, cache: true %>
+<%= javascript_include_tag 'assets/slick-1.6.0/slick.min.js', 'data-turbolinks-track': 'reload', async: true, cache: true %>
+<%= javascript_include_tag 'assets/chosen-1.6.2/chosen.jquery.min.js', 'data-turbolinks-track': 'reload', async: true, cache: true %>
 
-<%= javascript_include_tag 'js/isotope.min.js', 'data-turbolinks-track': 'reload', async: true %>
-<%= javascript_include_tag 'js/wNumb.js', 'data-turbolinks-track': 'reload', async: true %>
-<%= javascript_include_tag 'js/nouislider.min.js', 'data-turbolinks-track': 'reload', async: true %>
-<%= javascript_include_tag 'js/global.js', 'data-turbolinks-track': 'reload', async: true %>
-<%= javascript_include_tag 'js/hamburder-menu.js', 'data-turbolinks-track': 'reload', async: true %>
+<%= javascript_include_tag 'js/isotope.min.js', 'data-turbolinks-track': 'reload', async: true, cache: true %>
+<%= javascript_include_tag 'js/wNumb.js', 'data-turbolinks-track': 'reload', async: true, cache: true %>
+<%= javascript_include_tag 'js/nouislider.min.js', 'data-turbolinks-track': 'reload', async: true, cache: true %>
+<%= javascript_include_tag 'js/global.js', 'data-turbolinks-track': 'reload', async: true, cache: true %>
+<%= javascript_include_tag 'js/hamburder-menu.js', 'data-turbolinks-track': 'reload', async: true, cache: true %>
 </html>
