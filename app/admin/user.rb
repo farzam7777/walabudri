@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
 
-	permit_params :email, :first_name, :image, :contact, :id, :middle_name, :family_name, :terms, :password, :password_confirmation
+	permit_params :email, :first_name, :image, :contact, :id, :middle_name, :family_name, :terms, :password, :password_confirmation, :whats_app
 
 	action_item :Approve, only: :show do 
 		link_to "Approve", Approve_admin_user_path(user), method: :put if !user.confirmed?
@@ -23,6 +23,7 @@ ActiveAdmin.register User do
 	  column :family_name
 	  image_column :image, style: :thumb
 	  column :contact
+	  column :whats_app
 	  actions
 	end
 
@@ -39,6 +40,7 @@ ActiveAdmin.register User do
 	    f.input :middle_name
 	    f.input :family_name
 	    f.input :contact
+	    f.input :whats_app
 	    f.input :terms, input_html: { value: 1 }
 	    f.input :image, :as => :file, :hint => f.object.image.present? \
 	    ? image_tag(f.object.image.url(:medium))

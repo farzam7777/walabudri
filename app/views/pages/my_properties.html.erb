@@ -48,9 +48,9 @@
 							<td class="property-date"><%= property.created_at.strftime("%m/%d/%Y") %></td>
 							<td class="property-actions">
 								<% if property.isPublished? %>
-									<%= link_to 'Unpublish', Unpublish_property_path(property), method: :post, class: 'fa fa-eye icon' %>
+									<%= link_to 'Unpublish', Unpublish_property_path(property), class: 'fa fa-eye icon' %>
 								<% else %>
-									<%= link_to 'Unpublish', Unpublish_property_path(property), method: :post, class: 'fa fa-eye icon', style: 'pointer-events: none; color: grey' %>
+									<%= link_to 'Unpublish', Unpublish_property_path(property), class: 'fa fa-eye icon', style: 'pointer-events: none; color: grey' %>
 								<% end %>
 								<a href="<%= edit_property_path(property) %>"><i class="fa fa-pencil icon"></i>Edit</a>
 								<a><i class="fa fa-close icon"></i></a><%= link_to "Delete", property_path(property),  method: :delete, data: {confirm: "You sure?"}, style: "margin-left: -6%;" %>

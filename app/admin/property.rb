@@ -5,7 +5,7 @@ ActiveAdmin.register Property do
 	permit_params :title, :listing_type, :location, :isPublished, :isFeatured, :bedrooms,
                 :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id,
                 :near_by_location, :description, :tag, :longitude, :latitude, :currency,  
-                images_attributes: [:id, :property_id, :image, :_destroy]
+                :unpublished_date, images_attributes: [:id, :property_id, :image, :_destroy]
                 
 	scope :all
 	scope :rent
@@ -39,12 +39,14 @@ ActiveAdmin.register Property do
 	member_action :Publish, method: :put do
 		property = Property.find(params[:id])
 		property.update(isPublished: 1)
+    property.update(unpublished_date: nil)
 		redirect_to admin_property_path(property)
 	end	
 
 	member_action :UnPublish, method: :put do
 		property = Property.find(params[:id])
 		property.update(isPublished: 0)
+    property.update(unpublished_date: DateTime.now)
 		redirect_to admin_property_path(property)
 	end
 
@@ -80,6 +82,14 @@ ActiveAdmin.register Property do
     column "isFeatured" do |property|
       isFeatured_status(property.isFeatured)
     end
+    column :area
+    column :tag
+    column :bedrooms
+    column :bath
+    column :unpublished_date
+    column 'Published Date' do |property|
+      property.created_at
+    end
     actions dropdown: true do |property|
       item "Publish", Publish_admin_property_path(property), method: :put if !property.isPublished?
       item "UnPublish", UnPublish_admin_property_path(property), method: :put if property.isPublished?
@@ -113,6 +123,7 @@ ActiveAdmin.register Property do
       row :isPublished
       row :isFeatured
       row :tag
+      row :unpublished_date
       row "Images" do
         ul do
           property.images.each do |img|

@@ -51,7 +51,7 @@ Rails.application.routes.draw do
     end
 
     member do
-      post 'Unpublish'
+      get 'Unpublish'
     end
   end
   

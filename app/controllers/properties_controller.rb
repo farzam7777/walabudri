@@ -145,7 +145,8 @@ class PropertiesController < ApplicationController
 
   def Unpublish
     @property = Property.find(params[:id])
-    @property.isPublished = 0
+    @property.update(isPublished: 0)
+    @property.update(unpublished_date: DateTime.now)
     @property.save
     redirect_to page_path('my_properties'), notice: 'Propertiy is successfully Unpublished'
   end

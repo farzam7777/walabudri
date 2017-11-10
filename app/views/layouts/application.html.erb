@@ -63,49 +63,59 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget from-the-blog responsive-footer-text">
+            <div class="col-lg-2 col-md-2 col-sm-3 widget footer-widget from-the-blog responsive-footer-text">
                 <h4><span class="footer-text-color"> <strong> Company </strong> </span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
                 <ul>
-                    <li>
-                      <a href="<%= page_path('about') %>"><h3 class="footer-text-color">About Us</h3></a>
-                      <div class="clear"></div>
-                    </li>
-                    <li>
-                      <a href="<%= page_path('terms') %>"><h3 class="footer-text-color">Terms of Service</h3></a>
-                      <div class="clear"></div>
-                    </li>
+                  <li>
+                    <a href="<%= page_path('about') %>"><h3 class="footer-text-color">About Us</h3></a>
+                    <div class="clear"></div>
+                  </li>
+                  <li>
+                    <a href="<%= page_path('terms') %>"><h3 class="footer-text-color">Terms of Service</h3></a>
+                    <div class="clear"></div>
+                  </li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget from-the-blog responsive-footer-text">
+            <div class="col-lg-2 col-md-2 col-sm-3 widget footer-widget from-the-blog responsive-footer-text">
                 <h4><span class="footer-text-color"> <strong> Help & Support </strong> </span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
                 
                 <ul>
-                    <li>
-                      <a href="<%= page_path('faq') %>"><h3 class="footer-text-color">Questions?</h3></a>
-                      <div class="clear"></div>
-                    </li>
-                    <li>
-                      <a href="<%= page_path('feedback') %>"><h3 class="footer-text-color">Website Feedback</h3></a>
-                      <div class="clear"></div>
-                    </li>
-                    <li>
-                      <a href="<%= page_path('scams') %>"><h3 class="footer-text-color">Avoid Scams</h3></a>
-                      <div class="clear"></div>
-                    </li>
+                  <li>
+                    <a href="<%= page_path('faq') %>"><h3 class="footer-text-color">Questions?</h3></a>
+                    <div class="clear"></div>
+                  </li>
+                  <li>
+                    <a href="<%= page_path('feedback') %>"><h3 class="footer-text-color">Website Feedback</h3></a>
+                    <div class="clear"></div>
+                  </li>
+                  <li>
+                    <a href="<%= page_path('scams') %>"><h3 class="footer-text-color">Avoid Scams</h3></a>
+                    <div class="clear"></div>
+                  </li>
                 </ul>
             </div>
             
-            <div class="col-lg-3 col-md-3 col-sm-12 widget footer-widget from-the-blog responsive-footer-text">
+            <div class="col-lg-2 col-md-2 col-sm-12 widget footer-widget from-the-blog responsive-footer-text">
                 <h4><span class="footer-text-color"> <strong> Contact Us </strong> </span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
                 <ul>
-                    <li>
-                      <a href="<%= page_path('contact') %>"><h3 class="footer-text-color"><%= raw(Setting.first.phone) %></h3></a>
-                      <div class="clear"></div>
-                    </li>
-                    <li>
-                      <a href="<%= page_path('contact') %>"><h3 class="footer-text-color"><%= raw(Setting.first.email) %></h3></a>
-                      <div class="clear"></div>
-                    </li>
+                  <li>
+                    <a href="<%= page_path('contact') %>"><h3 class="footer-text-color"><%= raw(Setting.first.phone) %></h3></a>
+                    <div class="clear"></div>
+                  </li>
+                  <li>
+                    <a href="<%= page_path('contact') %>"><h3 class="footer-text-color"><%= raw(Setting.first.email) %></h3></a>
+                    <div class="clear"></div>
+                  </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-2 col-sm-12 widget footer-widget from-the-blog responsive-footer-text">
+                <h4><span class="footer-text-color"> <strong> Chat With Us </strong> </span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
+                <ul>
+                  <li>
+                    <a href="#"><h3 class="footer-text-color"><%= raw(Setting.first.whats_app) %></h3></a>
+                    <div class="clear"></div>
+                  </li>
                 </ul>
             </div>
         </div><!-- end row -->

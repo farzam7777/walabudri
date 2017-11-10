@@ -182,6 +182,9 @@
 				                <h4><a href="#"><%= @property.user.to_s.capitalize %></a></h4>
 				                <p><i class="fa fa-envelope icon"></i><%= @property.user.email %></p>
 				                <p><i class="fa fa-phone icon"></i><%= @property.user.contact %></p>
+				                <% if @property.user.whats_app.present? %>
+				                	<p> <i class="fa fa-whatsapp icon" style="font-size: 15px"></i> <%= @property.user.whats_app %> </p>
+				                <% end %>
 				            </div>
 				        </div>
 				        <div class="clear"></div>

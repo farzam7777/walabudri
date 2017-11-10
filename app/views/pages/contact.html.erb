@@ -10,21 +10,28 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-lg-4 col-md-4">
+      <div class="col-lg-3 col-md-3">
         <div class="contact-item">
           <i class="fa fa-envelope"></i>
           <h4>Email Us</h4>
           <p> <%= raw(Setting.first.email) %> </p>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4">
+      <div class="col-lg-3 col-md-3">
         <div class="contact-item">
           <i class="fa fa-phone"></i>
           <h4>Call Us</h4>
           <a href="#"><p style="color: white"> <%= raw(Setting.first.phone) %> </p></a>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4">
+      <div class="col-lg-3 col-md-3">
+        <div class="contact-item">
+          <i class="fa fa-whatsapp"></i>
+          <h4>Chat with Us</h4>
+          <a href="#"> <p style="color: white"> <%= raw(Setting.first.whats_app) %> </p> </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3">
         <div class="contact-item">
           <i class="fa fa-share-alt"></i>
           <h4>Connect With Us</h4>
@@ -58,7 +65,7 @@
 </section>
 
 <% flash.each do |key,value| %>
-  <div class="alert-box success" style="width: 35%; margin-left: 10%; margin-top: 2%; margin-bottom: -3%; ">
+  <div class="alert-box success" style="width: 35%; margin-left: 8%; margin-top: 2%; margin-bottom: -3%; ">
     <span style="float: left"><i class="fa fa-check icon"></i></span>
     <p id="notice" style="margin-bottom: 0%;"><%= value %></p>
   </div>
@@ -83,13 +90,13 @@
         <input type="hidden" name="authenticity_token" value="wvP/4RGCvXYxBJ+pfqTeRzTI5pUdtRFuuP9eA5fNOmoawgH0jzsQgni4fUe9nTUmGjlsGl7GsEM82XxexhZSOA==">
         <div class="form-block">
           <label>Name *</label>
-          <input class="requiredField" type="text" placeholder="Your Name" name="name" value="" />
+          <input class="requiredField" type="text" placeholder="Your Name" name="name" value="" required="" />
         </div>
         <div class="row">
           <div class="col-lg-6 col-md-6">
             <div class="form-block">
               <label>Email *</label>
-              <input class="email requiredField" type="email" placeholder="Your email" name="email" value="" />
+              <input class="email requiredField" type="email" placeholder="Your email" name="email" value="" required="" />
             </div>
           </div>
           <div class="col-lg-6 col-md-6">
@@ -105,7 +112,7 @@
             </div>
         <div class="form-block">
           <label>Message *</label>
-          <textarea class="requiredField" placeholder="Your message..." name="message"></textarea>
+          <textarea class="requiredField" placeholder="Your message..." name="message" required=""></textarea>
         </div>
         <div class="form-block">
           <input type="submit" value="Submit" />

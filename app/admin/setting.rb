@@ -6,12 +6,13 @@ ActiveAdmin.register Setting do
                 :general_ownership_of_account_text, :changes_to_the_terms_of_service_text, 
                 :avoid_scams_text, :tips_avoid_scams_text, :main_image, :rent_top_image, 
                 :sell_top_image, :blog_top_image, :our_story_top_image, :contact_us_top_image, 
-                :our_story_background_image
+                :our_story_background_image, :whats_app
 
 
   show do
     attributes_table do
       row :phone
+      row :whats_app
       row :email
       row :welcome_msg  do |setting|
         raw(setting.welcome_msg)
@@ -76,6 +77,7 @@ ActiveAdmin.register Setting do
   form multipart: true do |f|
     f.inputs "Settings" do
       f.input :phone
+      f.input :whats_app
       f.input :email
       f.input :welcome_msg, as: :ckeditor
       f.input :fb_link
@@ -126,6 +128,7 @@ ActiveAdmin.register Setting do
   index do
     selectable_column
     column :phone
+    column :whats_app
     column :email
     column :welcome_msg do |setting|
       raw(setting.welcome_msg)
