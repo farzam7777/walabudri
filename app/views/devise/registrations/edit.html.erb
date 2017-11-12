@@ -62,6 +62,11 @@
                <%= f.label :whats_app, "Whats App Number", style: "margin-bottom: -2%;" %><br />
                <%= f.text_field :whats_app, :class => "border" %>
             </div>
+
+            <div class="form-block">
+              <%= f.label :current_password, style: "margin-bottom: 0%;" %> <i>(we need your current password to confirm your changes)</i><br />
+              <%= f.password_field :current_password, autocomplete: "off", :class => "border" %>
+            </div>
           </div>
         </div>
 
@@ -83,11 +88,6 @@
               <%= f.label :password_confirmation, style: "margin-bottom: 0%;" %><br />
               <%= f.password_field :password_confirmation, autocomplete: "off", :class => "border" %>
             </div>
-            
-            <div class="form-block">
-                <%= f.label :current_password, style: "margin-bottom: 0%;" %> <i>(we need your current password to confirm your changes)</i><br />
-                <%= f.password_field :current_password, autocomplete: "off", :class => "border" %>
-              </div>
           
             <div class="form-block">
               <%= f.submit "Save Changes" %>
