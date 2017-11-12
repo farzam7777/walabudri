@@ -1,0 +1,51 @@
+<section class="subheader">
+  <div class="container">
+    <h1>Profile</h1>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Profile</a></div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<section class="module favorited-properties">
+  <div class="container">
+    <div class="row">
+      <%= render "sidebar" %>
+
+      <div class="col-lg-9 col-md-9">
+        <% flash.each do |key,value| %>
+          <div class="alert-box success" style="width: 42%; background-color: transparent;">
+            <span style="float: left; margin-top: 0%;"><i class="fa fa-check icon"></i></span>
+            <p id="notice" style="margin-bottom: 0%; margin-top: auto;"><%= value %></p>
+          </div>
+        <% end %>
+        <h2 style="margin-bottom: 4%;">Update Password</h2>
+        <%= simple_form_for(@user, url: { action: "update_password" } ) do |f| %>
+          <div class="row">
+            <div class="col-lg-8">
+              
+              <div class="form-block">
+                <%= f.input :current_password, label: 'Old Password', autofocus: true, class: 'border', required: true %>
+              </div>
+              
+              <div class="form-block">
+                <%= f.input :password, label: "New Password", autocomplete: 'off', class: 'border', required: true %>
+              </div>
+              
+              <div class="form-block">
+                <%= f.input :password_confirmation, autocomplete: 'off', class: 'border', required: true %>
+              </div>
+
+              <div class="form-block">
+                <%= f.submit "Update Password" %>
+              </div>     
+            </div>
+            <div class="col-lg-4"></div>
+          </div>
+        <% end %>
+      
+      </div><!-- end col -->
+    </div><!-- end row -->
+  </div><!-- end container -->
+</section>
+
+<%= render 'newsletter' %>

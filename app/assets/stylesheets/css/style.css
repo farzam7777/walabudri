@@ -70,6 +70,10 @@ abbr {display: none}
   display: none;
 }
 
+.error{
+  color: red;
+}
+
 @media only screen and (max-width: 500px) {
     .main-heading {
       margin-left: 0% !important;
