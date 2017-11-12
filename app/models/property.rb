@@ -36,14 +36,8 @@ class Property < ApplicationRecord
 	validates :currency, presence: true
 	validates :description, presence: true
 	validates :user, presence: true
+	validates :unit, presence: true
 	validate :empty_land_option_for_sell_tag
-	validate :non_zero
-
-	def non_zero
-	  if self.price <= 0
-	     self.errors.add(:price, "price can't be zero or negative")
-	  end
-	end
 
 	def empty_land_option_for_sell_tag
 		if self.listing_type == "Empty Land" && self.tag != "Sell"

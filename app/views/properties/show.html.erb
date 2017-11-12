@@ -9,7 +9,7 @@
 </section> 	
 
 <% flash.each do |key,value| %>
-	<div class="alert-box success" style="width: 35%; margin-left: 10%; margin-top: 2%; margin-bottom: -3%; ">
+	<div class="alert-box success" style="width: 35%; margin-left: 8%; margin-top: 2%; margin-bottom: -3%; ">
 		<span style="float: left"><i class="fa fa-check icon"></i></span>
 		<p id="notice" style="margin-bottom: 0%;"><%= value %></p>
 	</div>
@@ -69,7 +69,7 @@
 					<tr>
 						<td><i class="fa fa-bed"></i> <span><%= @property.bedrooms %></span> Bedrooms</td>
 						<td><i class="fa fa-tint"></i> <span><%= @property. bath %></span> Baths</td>
-						<td><i class="fa fa-expand"></i> <span><%= @property.area %></span> Meter Sq </td>
+						<td><i class="fa fa-expand"></i> <span><%= @property.area %></span> <%= @property.unit %> </td>
 					</tr>
 				</table>
 
@@ -256,7 +256,7 @@
 					<div class="col-lg-4 col-md-4 col-sm-4"><a href="<%= property_path(recent) %>"><%= image_tag recent.image.url %></a></div>
 					<div class="col-lg-8 col-md-8 col-sm-8">
 					  <h5><a href="<%= property_path(recent) %>"><%= recent.title %></a></h5>
-					  <p><strong><%= recent.price %> SDG</strong> Per Month</p>
+					  <p><strong><%= recent.price %> <%= recent.currency %> </strong> Per Month </p>
 					</div>
 				  </div>
 				</div>

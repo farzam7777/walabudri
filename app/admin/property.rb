@@ -4,7 +4,7 @@ ActiveAdmin.register Property do
 
 	permit_params :title, :listing_type, :location, :isPublished, :isFeatured, :bedrooms,
                 :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id,
-                :near_by_location, :description, :tag, :longitude, :latitude, :currency,  
+                :near_by_location, :description, :tag, :longitude, :latitude, :currency, :unit,  
                 :unpublished_date, images_attributes: [:id, :property_id, :image, :_destroy]
                 
 	scope :all
@@ -83,6 +83,7 @@ ActiveAdmin.register Property do
       isFeatured_status(property.isFeatured)
     end
     column :area
+    column :unit
     column :tag
     column :bedrooms
     column :bath
@@ -107,6 +108,7 @@ ActiveAdmin.register Property do
       row :bath
       row :furnished
       row :area
+      row :unit
       row :currency
       row :price
       if property.description.full_lang == 'arabic'
@@ -148,6 +150,7 @@ ActiveAdmin.register Property do
       f.input :bedrooms
       f.input :bath
       f.input :furnished
+      f.input :unit, as: :select, collection: ['Acre', 'Meter Square'], include_blank: false
       f.input :area
       f.input :currency, as: :select, collection: ['USD', 'SDG'], include_blank: false
       f.input :price
@@ -189,6 +192,7 @@ ActiveAdmin.register Property do
   filter :bedrooms
   filter :bath
   filter :furnished
+  filter :unit, as: :select, collection: ['Acre', 'Meter Square']
   filter :area
   filter :currency, as: :select, collection: ['USD', 'SDG']
   filter :price

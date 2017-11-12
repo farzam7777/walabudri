@@ -29,12 +29,12 @@
         <div class="row" style="margin-bottom: 5%;">
           <div class="col-lg-6 col-md-6">
             <div class="form-block border">
-              <%= f.input :tag, as: :select, collection: [["For Rent", "Rent"], ["For Sale", "Sell"]], include_blank:' Select Tag' %>
+              <%= f.input :tag, as: :select, collection: [["For Rent", "Rent"], ["For Sale", "Sell"]], include_blank:' Select Tag', required: false %>
             </div>
           </div>
           <div class="col-lg-6 col-md-6">
             <div class="form-block border">
-               <%= f.input :location, as: :select, collection: ['Khartoum', 'Bahri, Khartoum/north', 'Umdurman'], include_blank:' Select Location' %>
+               <%= f.input :location, as: :select, collection: ['Khartoum', 'Bahri, Khartoum/north', 'Umdurman'], include_blank:' Select Location', required: false %>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@
         <div class="row" style="margin-bottom: 5%;">
           <div class="col-lg-6 col-md-6">
             <div class="form-block border">
-              <%= f.input :currency, as: :select, collection: ['USD', 'SDG'], include_blank:' Select Currency' %>
+              <%= f.input :currency, as: :select, collection: ['USD', 'SDG'], include_blank:' Select Currency', required: false %>
             </div>
           </div>
           <div class="col-lg-6 col-md-6">
@@ -53,12 +53,17 @@
         </div>
 
         <div class="row" style="margin-bottom: 3%;">
-          <div class="col-lg-6 col-md-6">
+          <div class="col-lg-4 col-md-4">
             <div class="form-block">
               <%= f.input :area, input_html: { class: 'border', min: 0, placeholder: "Area in Meter Sq" } %>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6">
+          <div class="col-lg-4 col-md-4">
+            <div class="form-block border">
+              <%= f.input :unit, label: 'Area Unit', as: :select, collection: ['Acre', 'Meter Square'], include_blank:' Select Area Unit', required: false %>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
             <div class="form-block border">
               <%= f.input :availibility, as: :date, order: [:day, :month, :year], label: 'Availibility (DD/MM/YYYY)' %>
             </div>
@@ -99,12 +104,12 @@
         <div class="row" style="margin-bottom: 5%;">
           <div class="col-lg-6 col-md-6">
             <div class="form-block border" style="margin-bottom: 4%;">
-              <%= f.input :listing_type, as: :select, collection: ['Apartment', 'House', 'Villa', 'Office', 'Farm House', 'Empty Land'], include_blank: 'Select Listing Type' %>
+              <%= f.input :listing_type, as: :select, collection: ['Apartment', 'House', 'Villa', 'Office', 'Farm House', 'Empty Land'], include_blank: 'Select Listing Type', required: false %>
             </div>
           </div>
           <div class="col-lg-6 col-md-6">
             <div class="form-block" style="margin-bottom: 3%;"> 
-              <%= f.input :image, input_html: { class: 'border', style: 'padding: 8px; width: 100%;' } %>
+              <%= f.input :image, as: :file, input_html: { class: 'border', style: 'padding: 8px; width: 100%;' }, required: false %>
             </div>
           </div>
         </div>
