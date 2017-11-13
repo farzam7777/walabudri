@@ -88,7 +88,9 @@ ActiveAdmin.register Property do
     column :unit
     column :tag
     column :bedrooms
-    column :bath
+    column 'Bathrooms' do |property|
+      property.bath
+    end
     column :unpublished_date
     column 'Published Date' do |property|
       property.created_at
@@ -110,7 +112,9 @@ ActiveAdmin.register Property do
       row :location
       row :address
       row :bedrooms
-      row :bath
+      row 'Bathrooms' do
+        property.bath
+      end
       row :furnished
       row :area
       row :unit
@@ -153,7 +157,7 @@ ActiveAdmin.register Property do
       f.input :location, as: :select, collection: ['Khartoum', 'Bahri/Khartoum North', 'Omdurman'], include_blank: false
       f.input :address
       f.input :bedrooms
-      f.input :bath
+      f.input :bath, label: 'Bathrooms'
       f.input :furnished
       f.input :unit, as: :select, collection: ['Acre', 'Square Meter'], include_blank: false
       f.input :area
@@ -196,7 +200,7 @@ ActiveAdmin.register Property do
   filter :tag, as: :select, collection: ['Rent', 'Sell']
   filter :listing_type, as: :select, collection: ['Apartment', 'House', 'Villa', 'Office', 'Farm', 'Empty Land']
   filter :bedrooms
-  filter :bath
+  filter :bath, label: 'Bathrooms'
   filter :furnished
   filter :unit, as: :select, collection: ['Acre', 'Square Meter']
   filter :area
