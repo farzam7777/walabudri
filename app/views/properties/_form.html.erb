@@ -54,13 +54,13 @@
 
         <div class="row" style="margin-bottom: 3%;">
           <div class="col-lg-4 col-md-4">
-            <div class="form-block">
-              <%= f.input :area, input_html: { class: 'border', min: 0, placeholder: "Area in Meter Sq" } %>
+            <div class="form-block border">
+              <%= f.input :unit, label: 'Area Unit', as: :select, collection: ['Acre', 'Square Metre'], include_blank:' Select Area Unit', required: false %>
             </div>
           </div>
           <div class="col-lg-4 col-md-4">
-            <div class="form-block border">
-              <%= f.input :unit, label: 'Area Unit', as: :select, collection: ['Acre', 'Meter Square'], include_blank:' Select Area Unit', required: false %>
+            <div class="form-block">
+              <%= f.input :area, input_html: { class: 'border', min: 0, placeholder: "Enter Area Size" } %>
             </div>
           </div>
           <div class="col-lg-4 col-md-4">

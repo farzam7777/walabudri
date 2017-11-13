@@ -47,6 +47,14 @@ abbr {display: none}
  /* CUSTOM MENU
 /*====================================================================================*/
 
+.listing_type{
+  margin-left: -3% !important;
+}
+
+.requisition_number{
+  width: 53% !important;
+}
+
 .goog-te-combo{
   color: black;
   font-weight: 500;
@@ -192,6 +200,13 @@ abbr {display: none}
   .responsive-footer-text{
     text-align: center !important;
   }
+  .listing_type{
+    margin-left: 0% !important;
+  }
+
+  .requisition_number{
+    width: 100% !important;
+  }
 }
 
 @media only screen and (min-width: 550px) and (max-width: 800px) {
@@ -213,6 +228,13 @@ abbr {display: none}
   
   .responsive-footer-text{
     text-align: center !important;
+  }
+  .listing_type{
+    margin-left: 0% !important;
+  }
+
+  .requisition_number{
+    width: 100% !important;
   }
 }
 
@@ -274,10 +296,6 @@ abbr {display: none}
 
 li.details span{
   font-weight: 600 !important; 
-}
-
-select{
- -webkit-appearance:menulist !important;
 }
 
 header {

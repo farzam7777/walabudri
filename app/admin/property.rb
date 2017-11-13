@@ -64,7 +64,9 @@ ActiveAdmin.register Property do
 	
 	index do
     selectable_column
-    column :id
+    column 'Requisition Number' do |property|
+      property.id
+    end
     column :user do |property|
       property.user.to_s.capitalize
     end
@@ -100,6 +102,9 @@ ActiveAdmin.register Property do
   show do
     attributes_table do
       row :user
+      row 'Requisition Number' do
+        property.id
+      end
       row :title
       row :listing_type
       row :location
@@ -184,6 +189,7 @@ ActiveAdmin.register Property do
   end
   
   filter :user
+  filter :id, label: 'Requisition Number'
   filter :title
   filter :address
   filter :location

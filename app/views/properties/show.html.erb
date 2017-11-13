@@ -61,7 +61,16 @@
 						 	<div class="property-tag button alt2 featured"><%= link_to "Delete", property_path(@property), style: "color: white;", method: :delete, data: {confirm: "You sure?"} %></div>
 						 <% end %>	
 
-						<div class="property-type right">Property Type: <a href="#"><%= @property.listing_type %></a></div>
+						<div class="property-type right">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-6 listing_type">
+									Property Type: <a href="#"><%= @property.listing_type %></a>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 requisition_number">
+									Requisition Number: <a href="#"><%= @property.id %></a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 
