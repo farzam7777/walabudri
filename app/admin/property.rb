@@ -149,8 +149,8 @@ ActiveAdmin.register Property do
     f.inputs "Property Details" do
     	f.input :user
       f.input :title
-      f.input :listing_type, as: :select, collection: ['Apartment', 'House', 'Villa', 'Office', 'Farm House', 'Empty Land'], include_blank: false
-      f.input :location, as: :select, collection: ['Khartoum', 'Bahri, Khartoum/North', 'Umdurman'], include_blank: false
+      f.input :listing_type, as: :select, collection: ['Apartment', 'House', 'Villa', 'Office', 'Farm', 'Empty Land'], include_blank: false
+      f.input :location, as: :select, collection: ['Khartoum', 'Bahri/Khartoum North', 'Omdurman'], include_blank: false
       f.input :address
       f.input :bedrooms
       f.input :bath
@@ -192,9 +192,9 @@ ActiveAdmin.register Property do
   filter :id, label: 'Requisition Number'
   filter :title
   filter :address
-  filter :location
+  filter :location, as: :select, collection: ['Khartoum', 'Bahri/Khartoum North', 'Omdurman']
   filter :tag, as: :select, collection: ['Rent', 'Sell']
-  filter :listing_type, as: :select, collection: ['Apartment', 'House', 'Villa', 'Office', 'Farm House', 'Empty Land']
+  filter :listing_type, as: :select, collection: ['Apartment', 'House', 'Villa', 'Office', 'Farm', 'Empty Land']
   filter :bedrooms
   filter :bath
   filter :furnished

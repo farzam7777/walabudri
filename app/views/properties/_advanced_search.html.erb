@@ -12,7 +12,7 @@
 
 	  <div class="form-block border">
 			<%= f.label :location_eq, "Location" %>
-			<%= f.select :location_eq, options_for_select([["Khartoum", "Khartoum"], ["Bahri, Khartoum/north", "Bahri, Khartoum/north"], ["Umdurman", "Umdurman"]]), {include_blank: "Select Location" }, { class: "border" }%>
+			<%= f.select :location_eq, options_for_select([["Khartoum", "Khartoum"], ["Bahri/Khartoum North", "Bahri/Khartoum North"], ["Omdurman", "Omdurman"]]), {include_blank: "Select Location" }, { class: "border" }%>
 	  </div>
 
 	  <div class="form-block border">
@@ -22,7 +22,7 @@
 
 	  <div class="form-block border">
 			<%= f.label :listing_type_eq, "Property Listing Type" %>
-			<%= f.select :listing_type_eq, options_for_select([["Apartment", "Apartment"], ["House", "House"], ["Villa", "Villa"], ["Office", "Office"], ["Farm House", "Farm House"], ["Empty Land", "Empty Land"]]), { include_blank: "Select Listing Type" }, { class: "border" } %>
+			<%= f.select :listing_type_eq, options_for_select([["Apartment", "Apartment"], ["House", "House"], ["Villa", "Villa"], ["Office", "Office"], ["Farm", "Farm"], ["Empty Land", "Empty Land"]]), { include_blank: "Select Listing Type" }, { class: "border" } %>
 	  </div>
 
 	  <div class="form-block">
@@ -33,9 +33,9 @@
 	  </div>
 
 	  <div class="form-block">
-			<label>Baths</label>
-			<%= f.number_field :bath_gteq, class: "area-filter border", placeholder: "Min Baths", min: 0 %>
-			<%= f.number_field :bath_lteq, class: "area-filter border", placeholder: "Max Baths", min: 0 %>
+			<label>Bathrooms</label>
+			<%= f.number_field :bath_gteq, class: "area-filter border", placeholder: "Min Bathrooms", min: 0 %>
+			<%= f.number_field :bath_lteq, class: "area-filter border", placeholder: "Max Bathrooms", min: 0 %>
 			<div class="clear"></div>
 	  </div>
 
