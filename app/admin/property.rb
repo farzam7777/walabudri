@@ -155,7 +155,7 @@ ActiveAdmin.register Property do
       f.input :bedrooms
       f.input :bath
       f.input :furnished
-      f.input :unit, as: :select, collection: ['Acre', 'Meter Square'], include_blank: false
+      f.input :unit, as: :select, collection: ['Acre', 'Square Meter'], include_blank: false
       f.input :area
       f.input :currency, as: :select, collection: ['USD', 'SDG'], include_blank: false
       f.input :price
@@ -198,7 +198,7 @@ ActiveAdmin.register Property do
   filter :bedrooms
   filter :bath
   filter :furnished
-  filter :unit, as: :select, collection: ['Acre', 'Meter Square']
+  filter :unit, as: :select, collection: ['Acre', 'Square Meter']
   filter :area
   filter :currency, as: :select, collection: ['USD', 'SDG']
   filter :price
