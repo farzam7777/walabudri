@@ -48,7 +48,8 @@ abbr {display: none}
 /*====================================================================================*/
 
 .listing_type{
-  margin-left: -3% !important;
+  margin-left: -11% !important;
+  width: 58% !important;
 }
 
 .requisition_number{
@@ -202,6 +203,7 @@ abbr {display: none}
   }
   .listing_type{
     margin-left: 0% !important;
+    width: 100% !important;
   }
 
   .requisition_number{
@@ -231,6 +233,7 @@ abbr {display: none}
   }
   .listing_type{
     margin-left: 0% !important;
+    width: 100% !important;
   }
 
   .requisition_number{
