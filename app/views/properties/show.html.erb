@@ -218,8 +218,9 @@
 				        <div class="agent-content">
 				            <div class="agent-details">
 			                <h4><a href="#">Araddi Agent</a></h4>
-			                <p><i class="fa fa-envelope icon"></i>info@araddi.com</p>
-			                <p><i class="fa fa-phone icon"></i>(+249) 901-93-3162 </p>
+			                <p><i class="fa fa-envelope icon"></i><%= Setting.first.email %></p>
+			                <p style="width: 102%;"><i class="fa fa-phone icon"></i> <%= raw(Setting.first.phone) %> </p>
+			                <p style="width: 105%;"><i class="fa fa-whatsapp icon" style="font-size: 15px"></i> <%= raw(Setting.first.whats_app) %> </p>
 				            </div>
 				            <ul class="social-icons">
 			                <li>
