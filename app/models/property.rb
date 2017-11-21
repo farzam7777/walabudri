@@ -19,6 +19,8 @@ class Property < ApplicationRecord
 	scope :not_featured, ->{ where(isFeatured: 0) }
 	scope :rent, ->{ where(tag: "Rent") }
 	scope :sell, ->{ where(tag: "Sell") }
+	scope :Sold, ->{ where(status: "Sold") }
+	scope :Rented, ->{ where(status: "Rented") }
 
 	validates :title, presence: true
 	validates :address, presence: true

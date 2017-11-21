@@ -10,6 +10,8 @@ ActiveAdmin.register Property do
 	scope :all
 	scope :rent
 	scope :sell
+  scope :Sold
+  scope :Rented
 	scope :published
 	scope :unpublished
 	scope :featured
