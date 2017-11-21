@@ -53,6 +53,24 @@
 			        <% end %>
 						</div>
 						
+						<% if !@property.status.present? && @property.tag == 'Sell' %>
+							<div class="property-tag button status" style="background: yellow">
+								<strong style="color: black;">Not Sold Yet</strong>
+							</div>
+						<% elsif @property.status.present? && @property.tag == 'Sell' %>
+							<div class="property-tag button status" style="background: crimson">
+								<strong>Property Sold</strong>
+							</div>
+						<% elsif !@property.status.present? && @property.tag == 'Rent' %>
+							<div class="property-tag button status" style="background: yellow">
+								<strong style="color: black;">Not Rented Yet</strong>
+							</div>
+						<% else %>
+							<div class="property-tag button status" style="background: crimson">
+								<strong>Property Rented</strong>
+							</div>
+						<% end %>
+						
 						<% if can? :update, @property %>
 						 	<div class="property-tag button alt featured"><%= link_to "Edit", 	edit_property_path(@property), style: "color: white;" %></div>
 						 <% end %>

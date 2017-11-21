@@ -5,7 +5,7 @@ ActiveAdmin.register Property do
 	permit_params :title, :listing_type, :location, :isPublished, :isFeatured, :bedrooms,
                 :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id,
                 :near_by_location, :description, :tag, :longitude, :latitude, :currency, :unit,  
-                :unpublished_date, images_attributes: [:id, :property_id, :image, :_destroy]
+                :unpublished_date, :status, images_attributes: [:id, :property_id, :image, :_destroy]
                 
 	scope :all
 	scope :rent
@@ -36,6 +36,22 @@ ActiveAdmin.register Property do
 		link_to "UnFeatured", UnFeatured_admin_property_path(property), method: :put if property.isFeatured?
 	end	
 
+  action_item :mark_property_sold, only: :show do
+    link_to 'Mark Property Sold', mark_property_sold_admin_property_path(property), method: :put if property.tag == 'Sell' && !property.status.present?
+  end
+
+  action_item :un_mark_property_sold, only: :show do
+    link_to 'Unmark Property Sold', un_mark_property_sold_admin_property_path(property), method: :put if property.status == 'Sold'
+  end
+
+  action_item :mark_property_rented, only: :show do
+    link_to 'Mark Property Rented', mark_property_rented_admin_property_path(property), method: :put if property.tag == 'Rent' && !property.status.present? 
+  end
+
+  action_item :un_mark_property_rented, only: :show do
+    link_to 'Unmark Property Rented', un_mark_property_rented_admin_property_path(property), method: :put if property.status == 'Rented'
+  end
+
 	member_action :Publish, method: :put do
 		property = Property.find(params[:id])
 		property.update(isPublished: 1)
@@ -61,6 +77,30 @@ ActiveAdmin.register Property do
 		property.update(isFeatured: 0)
 		redirect_to admin_property_path(property)
 	end	
+
+  member_action :mark_property_sold, method: :put do
+    property = Property.find(params[:id])
+    property.update(status: 'Sold')
+    redirect_to admin_property_path(property)
+  end
+
+  member_action :mark_property_rented, method: :put do
+    property = Property.find(params[:id])
+    property.update(status: 'Rented')
+    redirect_to admin_property_path(property)
+  end
+
+  member_action :un_mark_property_sold, method: :put do
+    property = Property.find(params[:id])
+    property.update(status: '')
+    redirect_to admin_property_path(property)
+  end
+
+  member_action :un_mark_property_rented, method: :put do
+    property = Property.find(params[:id])
+    property.update(status: '')
+    redirect_to admin_property_path(property)
+  end
 	
 	index do
     selectable_column
@@ -77,6 +117,7 @@ ActiveAdmin.register Property do
     column :listing_type
     column :address
     column :location
+    column :status
     column :price
     column "isPublished" do |property|
       isPublished_status(property.isPublished)
@@ -110,6 +151,7 @@ ActiveAdmin.register Property do
       row :title
       row :listing_type
       row :location
+      row :status
       row :address
       row :bedrooms
       row 'Bathrooms' do
@@ -180,6 +222,7 @@ ActiveAdmin.register Property do
       f.input :latitude
       f.input :isPublished
       f.input :isFeatured
+      f.input :status, as: :select, collection: ['Sold', 'Rented']
       f.input :tag, as: :select, collection: ['Rent', 'Sell'], include_blank: false
       f.inputs "Images" do
         f.has_many :images, allow_destroy: true do |p|
@@ -209,6 +252,7 @@ ActiveAdmin.register Property do
   filter :description
   filter :availibility
   filter :image
+  filter :status, as: :select, collection: ['Sold', 'Rented']
   filter :isPublished, as: :select, collection: ['1', '0']
   filter :isFeatured, as: :select, collection: ['1', '0']
 end
