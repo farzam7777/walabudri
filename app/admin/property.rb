@@ -141,6 +141,10 @@ ActiveAdmin.register Property do
     actions dropdown: true do |property|
       item "Publish", Publish_admin_property_path(property), method: :put if !property.isPublished?
       item "UnPublish", UnPublish_admin_property_path(property), method: :put if property.isPublished?
+      item 'Mark Sold', mark_property_sold_admin_property_path(property), method: :put if property.tag == 'Sell' && !property.status.present?
+      item 'Mark UnSold', un_mark_property_sold_admin_property_path(property), method: :put if property.status == 'Sold'
+      item 'Mark Rented', mark_property_rented_admin_property_path(property), method: :put if property.tag == 'Rent' && !property.status.present?
+      item 'Unmark Rented', un_mark_property_rented_admin_property_path(property), method: :put if property.status == 'Rented'      
     end
   end
   
